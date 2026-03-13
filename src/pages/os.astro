@@ -10,18 +10,17 @@ import Base from '../layouts/Base.astro';
 >
 
   <style>
-    /* Dark mode override — Charleston palette */
     .os-page {
-      --bg:         #2B2C2E;   /* Charleston */
-      --bg-alt:     #252628;   /* Slightly darker */
-      --surface:    #35373A;   /* Charleston surface */
-      --text:       #E9E8EE;   /* Bright Gray */
-      --text-2:     #C4C3CC;   /* Light mid-tone */
-      --text-3:     #9799A6;   /* Manatee */
-      --text-muted: #6B6E78;   /* Muted */
+      --bg:         #2B2C2E;
+      --bg-alt:     #252628;
+      --surface:    #35373A;
+      --text:       #E9E8EE;
+      --text-2:     #C4C3CC;
+      --text-3:     #9799A6;
+      --text-muted: #6B6E78;
       --border:     #3D3F43;
-      --green:      #4DB405;   /* Primary brand green */
-      --gold:       #9A8860;   /* Warm label accent */
+      --green:      #4DB405;
+      --gold:       #9A8860;
     }
 
     @keyframes blink {
@@ -39,56 +38,72 @@ import Base from '../layouts/Base.astro';
       animation: blink 1.2s ease-in-out infinite;
     }
 
-    .os-form-input {
+    .os-input {
       background: rgba(255,255,255,0.04);
       border: 1.5px solid rgba(154,136,96,0.2);
       color: #E9E8EE;
       caret-color: #4DB405;
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 4px;
+      font-family: "IBM Plex Mono", "Courier New", monospace;
+      font-size: 13px;
+      outline: none;
       transition: border-color 0.15s ease, box-shadow 0.15s ease;
     }
-    .os-form-input:focus {
-      outline: none;
+
+    .os-input:focus {
       border-color: rgba(77,180,5,0.5);
       box-shadow: 0 0 0 3px rgba(77,180,5,0.08);
     }
-    .os-form-input::placeholder { color: rgba(151,153,166,0.5); }
-    .os-form-input option { background: #35373A; color: #E9E8EE; }
+
+    .os-input::placeholder {
+      color: rgba(151,153,166,0.5);
+    }
+
+    .os-input option {
+      background: #35373A;
+      color: #E9E8EE;
+    }
   </style>
 
   <script>
-    // Swap nav logo to white on this dark page
     document.addEventListener('DOMContentLoaded', () => {
       const logo = document.querySelector('nav img[alt="Grownetics"]') as HTMLImageElement | null;
       if (logo) logo.src = '/images/logo-white.png';
     });
   </script>
 
+
   <!-- ═══════════════════════════════════════════════════════
-       FULL-PAGE HERO — ONE SCROLL, MAXIMUM DRAMA
+       FULL-PAGE HERO
   ═══════════════════════════════════════════════════════════ -->
   <section
     class="relative min-h-screen flex items-center justify-center overflow-hidden"
     style="background: #2B2C2E;"
     aria-labelledby="os-headline"
   >
-    <!-- Graph paper grid on Charleston -->
+    <!-- Graph paper grid -->
     <div
       class="absolute inset-0"
       style="background-image: linear-gradient(rgba(154,136,96,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(154,136,96,0.04) 1px, transparent 1px); background-size: 72px 72px;"
     ></div>
-    <!-- Green glow — bottom left -->
+    <!-- Green glow -->
     <div
       class="absolute pointer-events-none"
       style="bottom: -150px; left: -150px; width: 700px; height: 700px; border-radius: 50%; background: radial-gradient(circle, rgba(77,180,5,0.08) 0%, transparent 70%);"
     ></div>
-    <!-- Warm glow — top right -->
+    <!-- Warm glow top right -->
     <div
       class="absolute top-0 right-0 pointer-events-none"
       style="width: 500px; height: 500px; background: radial-gradient(circle at top right, rgba(154,136,96,0.05) 0%, transparent 70%);"
     ></div>
 
-    <!-- Catalog header bar — Archival DNA on dark -->
-    <div class="absolute left-0 right-0" style="top: 64px; border-bottom: 1px solid rgba(154,136,96,0.1); padding: 10px 0; z-index: 10;">
+    <!-- Catalog header bar -->
+    <div
+      class="absolute left-0 right-0 z-10"
+      style="top: 64px; border-bottom: 1px solid rgba(154,136,96,0.1); padding: 10px 0;"
+    >
       <div class="container flex items-center justify-between">
         <span class="font-mono text-xs tracking-widest" style="color: rgba(154,136,96,0.45);">
           GROWNETICS FIELD CATALOG · VOL. II · RESTRICTED ACCESS
@@ -102,14 +117,12 @@ import Base from '../layouts/Base.astro';
     <div class="container relative z-10 py-32">
       <div class="max-w-3xl mx-auto text-center">
 
-        <!-- § reference -->
         <div class="flex items-center justify-center gap-3 mb-10">
           <div class="h-px w-12" style="background: linear-gradient(to right, transparent, rgba(154,136,96,0.4))"></div>
           <span class="font-mono text-xs tracking-widest uppercase" style="color: rgba(154,136,96,0.55);">§ 001 · Coming H2 2026</span>
           <div class="h-px w-12" style="background: linear-gradient(to left, transparent, rgba(154,136,96,0.4))"></div>
         </div>
 
-        <!-- Status badges -->
         <div class="flex flex-wrap justify-center gap-3 mb-10">
           <span
             class="font-mono text-xs tracking-widest uppercase px-3 py-1.5 rounded border"
@@ -121,7 +134,6 @@ import Base from '../layouts/Base.astro';
           >Early Access Opening</span>
         </div>
 
-        <!-- Headline -->
         <h1
           id="os-headline"
           class="font-display font-bold mb-4"
@@ -132,7 +144,6 @@ import Base from '../layouts/Base.astro';
           <span class="cursor-blink" aria-hidden="true"></span>
         </h1>
 
-        <!-- Three sparse paragraphs — every word earns its place -->
         <div class="mt-10 mb-12 text-left max-w-xl mx-auto space-y-5">
           <p style="color: rgba(151,153,166,0.9); font-size: 1.05rem; line-height: 1.7;">
             Grownetics OS is the AI operations layer for commercial cultivation — the thing
@@ -149,14 +160,12 @@ import Base from '../layouts/Base.astro';
           </p>
         </div>
 
-        <!-- Divider -->
         <div class="flex items-center gap-4 mb-8 justify-center">
           <div class="h-px flex-1 max-w-20" style="background: linear-gradient(to right, transparent, rgba(154,136,96,0.3))"></div>
           <span class="font-mono text-xs tracking-widest" style="color: rgba(154,136,96,0.45);">WAITLIST</span>
           <div class="h-px flex-1 max-w-20" style="background: linear-gradient(to left, transparent, rgba(154,136,96,0.3))"></div>
         </div>
 
-        <!-- Waitlist form — 2 fields -->
         <form
           action="https://grownetics.com/forms/os-waitlist"
           method="POST"
@@ -171,12 +180,12 @@ import Base from '../layouts/Base.astro';
             placeholder="Work email"
             required
             autocomplete="email"
-            class="os-form-input w-full px-4 py-3 rounded font-mono text-sm"
+            class="os-input"
           />
 
           <select
             name="facility_size"
-            class="os-form-input w-full px-4 py-3 rounded font-mono text-sm"
+            class="os-input"
             aria-label="Facility size"
           >
             <option value="">Facility size (canopy sq ft)</option>
@@ -195,17 +204,15 @@ import Base from '../layouts/Base.astro';
           </button>
         </form>
 
-        <!-- Trust line -->
         <p class="font-mono text-xs mt-5" style="color: rgba(107,110,120,0.65);">
           No pitch. No timeline promises. When it's ready, you'll be first.
         </p>
 
-        <!-- Back to main site -->
         <div class="mt-12">
           <a
             href="/"
-            class="font-mono text-xs"
-            style="color: rgba(154,136,96,0.45); text-decoration: none; transition: color 0.15s;"
+            class="font-mono text-xs transition-colors duration-150"
+            style="color: rgba(154,136,96,0.45);"
             onmouseover="this.style.color='rgba(154,136,96,0.75)'"
             onmouseout="this.style.color='rgba(154,136,96,0.45)'"
           >
@@ -220,7 +227,7 @@ import Base from '../layouts/Base.astro';
   <!-- ═══════════════════════════════════════════════════════
        § 002 — THREE CAPABILITIES
   ═══════════════════════════════════════════════════════════ -->
-  <section style="background: #252628; padding: 96px 0;" aria-label="Platform preview">
+  <section style="background: #252628; padding: 96px 0;" aria-label="Platform capabilities preview">
     <div class="container">
 
       <div class="flex items-center gap-3 mb-14">
@@ -267,7 +274,7 @@ import Base from '../layouts/Base.astro';
 
 
   <!-- ═══════════════════════════════════════════════════════
-       SECOND FORM — Final CTA
+       § 003 — SECOND WAITLIST CTA
   ═══════════════════════════════════════════════════════════ -->
   <section
     style="background: #2B2C2E; padding: 96px 0; position: relative; overflow: hidden;"
@@ -316,7 +323,7 @@ import Base from '../layouts/Base.astro';
             placeholder="Work email"
             required
             autocomplete="email"
-            class="os-form-input flex-1 px-4 py-3 rounded font-mono text-sm"
+            class="os-input flex-1"
           />
           <button
             type="submit"

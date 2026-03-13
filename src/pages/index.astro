@@ -25,11 +25,11 @@ import CTASection from '../components/CTASection.astro';
         width="1920"
         height="1080"
       />
-      <div class="absolute inset-0 bg-gradient-to-r from-parchment via-parchment/92 to-parchment/15"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-parchment via-parchment/90 to-parchment/20"></div>
       <div class="absolute inset-0 bg-gradient-to-t from-parchment/60 via-transparent to-transparent"></div>
     </div>
 
-    <div class="container relative z-10 py-24">
+    <div class="container relative z-10 py-28">
       <div class="max-w-2xl">
 
         <div class="section-ref mb-8">
@@ -54,12 +54,8 @@ import CTASection from '../components/CTASection.astro';
         </p>
 
         <div class="flex flex-wrap gap-4">
-          <a href="/cropvision" class="btn btn-primary">
-            Explore the Stack →
-          </a>
-          <a href="/contact" class="btn btn-ghost">
-            Book a Discovery Call
-          </a>
+          <a href="/cropvision" class="btn btn-primary">Explore the Stack →</a>
+          <a href="/contact" class="btn btn-ghost">Book a Discovery Call</a>
         </div>
 
         <div class="mt-12 flex flex-wrap items-center gap-6">
@@ -170,7 +166,7 @@ import CTASection from '../components/CTASection.astro';
         <ProductCard
           name="Unity"
           tagline="Control."
-          description="Predictive climate, CO2, and lighting automation. UL-certified. 20% average energy savings. Precision that compounds over time."
+          description="Predictive climate, CO₂, and lighting automation. UL-certified. 20% average energy savings. Precision that compounds over time."
           href="/unity"
           badge="Automate"
           badgeType="gold"
@@ -211,12 +207,10 @@ import CTASection from '../components/CTASection.astro';
     style="padding: 96px 0; background: #2B2C2E;"
     aria-labelledby="os-teaser-headline"
   >
-    <!-- Graph paper grid — brand-toned on dark bg -->
     <div
       class="absolute inset-0"
       style="background-image: linear-gradient(rgba(154,136,96,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(154,136,96,0.04) 1px, transparent 1px); background-size: 72px 72px;"
     ></div>
-    <!-- Green glow -->
     <div
       class="absolute bottom-0 left-0 w-2/3 h-80 pointer-events-none"
       style="background: radial-gradient(ellipse at bottom left, rgba(77,180,5,0.10) 0%, transparent 70%);"
@@ -239,14 +233,19 @@ import CTASection from '../components/CTASection.astro';
           </span>
         </div>
 
-        <h2 id="os-teaser-headline" class="font-display font-semibold mb-5"
-            style="font-size: clamp(2rem, 4.5vw, 3.25rem); color: #E9E8EE; line-height: 1.15;">
+        <h2
+          id="os-teaser-headline"
+          class="font-display font-semibold mb-5"
+          style="font-size: clamp(2rem, 4.5vw, 3.25rem); color: #E9E8EE; line-height: 1.15;"
+        >
           Grownetics OS is the AI layer<br />
           <span style="color: #4DB405;">that connects it all.</span>
         </h2>
 
-        <p class="text-base leading-relaxed mb-8 max-w-2xl"
-           style="color: rgba(151,153,166,0.9); font-size: 1.05rem;">
+        <p
+          class="text-base leading-relaxed mb-8 max-w-2xl"
+          style="color: rgba(151,153,166,0.9); font-size: 1.05rem;"
+        >
           Every data point your stack collects. Every decision your team makes.
           One intelligence layer that coordinates them — and gets smarter with every grow.
         </p>
@@ -270,7 +269,6 @@ import CTASection from '../components/CTASection.astro';
         <span class="ref-label">§ 004 · Proven at Commercial Scale</span>
       </div>
 
-      <!-- Stats bar -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16 reveal">
         {[
           { value: "1M+", label: "sq ft managed", detail: "CO · CA · Canada · International" },
@@ -286,7 +284,6 @@ import CTASection from '../components/CTASection.astro';
         ))}
       </div>
 
-      <!-- Client strip -->
       <div class="flex flex-col items-center">
         <p class="font-mono text-xs text-ink-3 uppercase tracking-widest mb-8">
           Deployed in commercial facilities
@@ -302,7 +299,7 @@ import CTASection from '../components/CTASection.astro';
 
 
   <!-- ═══════════════════════════════════════════════════════
-       § 005 — TESTIMONIAL
+       § 005 — TESTIMONIALS
   ═══════════════════════════════════════════════════════════ -->
   <section class="section" aria-labelledby="testimonials-headline">
     <div class="container">
@@ -342,7 +339,9 @@ import CTASection from '../components/CTASection.astro';
   </section>
 
 
-  <!-- § 006 — FINAL CTA -->
+  <!-- ═══════════════════════════════════════════════════════
+       § 006 — FINAL CTA
+  ═══════════════════════════════════════════════════════════ -->
   <section
     class="section relative overflow-hidden"
     style="background: #2B2C2E;"
@@ -360,8 +359,11 @@ import CTASection from '../components/CTASection.astro';
         <div class="h-px w-12" style="background: linear-gradient(to left, transparent, rgba(154,136,96,0.4))"></div>
       </div>
 
-      <h2 id="final-cta-headline" class="font-display font-bold mb-5"
-          style="font-size: clamp(2rem, 4.5vw, 3rem); color: #E9E8EE; line-height: 1.15;">
+      <h2
+        id="final-cta-headline"
+        class="font-display font-bold mb-5"
+        style="font-size: clamp(2rem, 4.5vw, 3rem); color: #E9E8EE; line-height: 1.15;"
+      >
         Your operation can perform better<br />than it does today.
       </h2>
       <p class="text-base mb-10" style="color: rgba(151,153,166,0.85); max-width: 46ch; margin-inline: auto; line-height: 1.65;">
@@ -369,7 +371,11 @@ import CTASection from '../components/CTASection.astro';
       </p>
       <div class="flex flex-wrap gap-4 justify-center">
         <a href="/contact" class="btn btn-primary">Book a Discovery Call →</a>
-        <a href="/cropvision" class="btn border text-parchment/60 hover:text-parchment/90" style="border-color: rgba(255,255,255,0.15);">
+        <a
+          href="/cropvision"
+          class="btn"
+          style="border: 1px solid rgba(255,255,255,0.2); color: rgba(233,232,238,0.65);"
+        >
           Explore the Stack
         </a>
       </div>

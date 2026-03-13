@@ -8,16 +8,18 @@ import Base from '../layouts/Base.astro';
   canonical="/contact"
 >
 
-  <!-- HERO -->
+  <!-- ═══════════════════════════════════════════════════════
+       HERO + FORM
+  ═══════════════════════════════════════════════════════════ -->
   <section class="relative pt-32 pb-16 graph-grid" aria-labelledby="contact-headline">
     <div class="container">
       <div class="grid md:grid-cols-2 gap-16">
 
-        <!-- Left: info -->
+        <!-- Left: info + framing -->
         <div>
           <div class="section-ref mb-6">
             <div class="section-ref-bar"></div>
-            <span class="ref-label">§ 001 · Get in Touch</span>
+            <span class="ref-label">§ 001 · Let's Talk</span>
           </div>
 
           <h1 id="contact-headline" class="display-xl mb-5">
@@ -26,8 +28,9 @@ import Base from '../layouts/Base.astro';
           </h1>
           <p class="text-xl font-display italic text-ink-2 mb-4">
             A free one-hour discovery call. No agenda except understanding your facility.
+            No pitch unless you ask for one.
           </p>
-          <p class="text-lg text-ink-3 leading-relaxed mb-6 max-w-xl">
+          <p class="text-lg text-ink-3 leading-relaxed mb-5 max-w-xl">
             We talk to a lot of operators. The most productive first conversations are the
             ones where you show up with a specific problem — a room that's been inconsistent,
             a facility you're designing, a scale-up you're trying to get right.
@@ -61,17 +64,17 @@ import Base from '../layouts/Base.astro';
           <div class="border-t pt-6" style="border-color: var(--border-light)">
             <div class="space-y-3">
               <div class="flex items-center gap-3">
-                <span class="font-mono text-xs text-gold uppercase tracking-widest w-20">Email</span>
+                <span class="font-mono text-xs text-gold uppercase tracking-widest w-24">Email</span>
                 <a href="mailto:hello@grownetics.com" class="text-sm text-green hover:underline">
                   hello@grownetics.com
                 </a>
               </div>
               <div class="flex items-center gap-3">
-                <span class="font-mono text-xs text-gold uppercase tracking-widest w-20">Location</span>
+                <span class="font-mono text-xs text-gold uppercase tracking-widest w-24">Location</span>
                 <span class="text-sm text-ink-3">Boulder, CO 80302</span>
               </div>
               <div class="flex items-center gap-3">
-                <span class="font-mono text-xs text-gold uppercase tracking-widest w-20">Response</span>
+                <span class="font-mono text-xs text-gold uppercase tracking-widest w-24">Response</span>
                 <span class="text-sm text-ink-3">Within 1 business day</span>
               </div>
             </div>
@@ -81,9 +84,9 @@ import Base from '../layouts/Base.astro';
         <!-- Right: form -->
         <div>
           <div class="card p-8">
-            <h2 class="font-mono text-xs tracking-widest uppercase text-ink-3 mb-6">
-              § 001 · Let's Talk
-            </h2>
+            <div class="font-mono text-xs tracking-widest uppercase text-ink-3 mb-6">
+              Book a Discovery Call
+            </div>
 
             <form
               action="https://grownetics.com/forms/discovery-call"
@@ -171,7 +174,8 @@ import Base from '../layouts/Base.astro';
                         type="checkbox"
                         name="interests"
                         value={opt.value}
-                        class="w-4 h-4 accent-green rounded flex-shrink-0"
+                        class="w-4 h-4 rounded flex-shrink-0"
+                        style="accent-color: var(--green);"
                       />
                       <span class="text-sm text-ink-3 group-hover:text-ink transition-colors">
                         {opt.label}
@@ -219,7 +223,6 @@ import Base from '../layouts/Base.astro';
             </form>
           </div>
 
-          <!-- Alternative: email directly -->
           <div class="mt-4 text-center">
             <p class="text-sm text-ink-3">
               Prefer email?{' '}
@@ -234,9 +237,12 @@ import Base from '../layouts/Base.astro';
   </section>
 
 
-  <!-- § 002 — Not sure where to start? -->
+  <!-- ═══════════════════════════════════════════════════════
+       § 002 — OTHER INQUIRIES
+  ═══════════════════════════════════════════════════════════ -->
   <section class="section section-alt">
     <div class="container">
+
       <div class="section-ref">
         <div class="section-ref-bar"></div>
         <span class="ref-label">§ 002 · Other Inquiries</span>
@@ -247,21 +253,21 @@ import Base from '../layouts/Base.astro';
           {
             type: "Product Demo",
             desc: "See CropVision or Unity in a live facility scenario. 30 minutes, tailored to your grow type.",
-            cta: "Request a Demo",
-            href: "#",
+            cta: "Request a Demo →",
+            href: "/contact",
             icon: "📺",
           },
           {
             type: "RFQ / Proposal",
             desc: "Need a formal quote? Send us your facility specs and we'll put together a detailed proposal within 5 business days.",
-            cta: "Send an RFQ",
+            cta: "Send an RFQ →",
             href: "mailto:hello@grownetics.com?subject=RFQ",
             icon: "📄",
           },
           {
             type: "Partnership",
             desc: "Integrators, distributors, and design/build firms — let's talk about how Grownetics technology fits your offer.",
-            cta: "Reach Out",
+            cta: "Reach Out →",
             href: "mailto:hello@grownetics.com?subject=Partnership",
             icon: "🤝",
           },
@@ -270,8 +276,11 @@ import Base from '../layouts/Base.astro';
             <div class="text-2xl mb-3">{item.icon}</div>
             <h3 class="font-semibold text-ink mb-2">{item.type}</h3>
             <p class="text-sm text-ink-3 leading-relaxed mb-4">{item.desc}</p>
-            <a href={item.href} class="font-mono text-xs text-green tracking-widest uppercase hover:underline">
-              {item.cta} →
+            <a
+              href={item.href}
+              class="font-mono text-xs text-green tracking-widest uppercase hover:underline"
+            >
+              {item.cta}
             </a>
           </div>
         ))}

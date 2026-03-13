@@ -9,11 +9,20 @@ import CTASection from '../components/CTASection.astro';
   canonical="/about"
 >
 
-  <!-- HERO -->
+  <!-- ═══════════════════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════════════════════ -->
   <section class="relative min-h-[55vh] flex items-center graph-grid pt-16" aria-labelledby="about-headline">
     <div class="absolute inset-0 overflow-hidden">
-      <img src="/images/bg-about.png" alt="" role="presentation"
-           class="w-full h-full object-cover opacity-15" loading="eager" width="1200" height="800" />
+      <img
+        src="/images/bg-about.png"
+        alt=""
+        role="presentation"
+        class="w-full h-full object-cover opacity-15"
+        loading="eager"
+        width="1200"
+        height="800"
+      />
       <div class="absolute inset-0" style="background: linear-gradient(to right, var(--bg) 60%, transparent)"></div>
     </div>
 
@@ -21,29 +30,63 @@ import CTASection from '../components/CTASection.astro';
       <div class="max-w-2xl">
         <div class="section-ref mb-6">
           <div class="section-ref-bar"></div>
-          <span class="ref-label">§ 001 · Our Story</span>
+          <span class="ref-label">§ 001 · Who We Are</span>
         </div>
 
         <h1 id="about-headline" class="display-xl mb-5">
-          60+ years in the rooms.<br />
-          <span style="color: var(--green)">1,000,000+ square feet managed.</span>
+          Built by people who've been<br />
+          <span style="color: var(--green)">in the grow rooms.</span>
         </h1>
         <p class="text-xl font-display italic text-ink-2 mb-4">
-          Built by people who've been in the grow rooms.
-        </p>
-        <p class="text-lg text-ink-3 leading-relaxed max-w-xl">
           Grownetics was founded on a simple frustration: the technology available to
           commercial CEA operators was too fragile, too fragmented, and too far removed
           from how cultivation actually works.
+        </p>
+        <p class="text-lg text-ink-3 leading-relaxed max-w-xl">
+          We didn't build our products from a software background. We built them from grow
+          room experience — from watching good growers fight bad systems, from watching
+          efficient facilities get squeezed by rising input costs.
         </p>
       </div>
     </div>
   </section>
 
 
-  <!-- § 002 — ORIGIN STORY -->
+  <!-- ═══════════════════════════════════════════════════════
+       § 001 — BY THE NUMBERS
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="section section-surface">
+    <div class="container">
+
+      <div class="section-ref">
+        <div class="section-ref-bar"></div>
+        <span class="ref-label">§ 001 · By the Numbers</span>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 reveal">
+        {[
+          { value: "1M+", label: "sq ft managed", detail: "CO · CA · Canada · International" },
+          { value: "60+", label: "Years combined experience", detail: "Engineering + cultivation expertise" },
+          { value: "UL", label: "Certified controls", detail: "Industrial-grade reliability" },
+          { value: "UC", label: "Research affiliated", detail: "University of Colorado studies" },
+        ].map((stat) => (
+          <div class="card p-5 text-center">
+            <div class="stat-number text-2xl mb-1">{stat.value}</div>
+            <div class="font-display font-semibold text-sm text-ink mb-1">{stat.label}</div>
+            <div class="font-mono text-xs text-ink-3 leading-snug">{stat.detail}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       § 002 — ORIGIN STORY
+  ═══════════════════════════════════════════════════════════ -->
   <section class="section section-alt">
     <div class="container">
+
       <div class="section-ref">
         <div class="section-ref-bar"></div>
         <span class="ref-label">§ 002 · Origin</span>
@@ -52,8 +95,8 @@ import CTASection from '../components/CTASection.astro';
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div class="reveal">
           <h2 class="display-md mb-6">
-            We didn't build our products from<br />a software background.<br />
-            <span style="color: var(--terracotta)">We built them from grow room experience.</span>
+            We didn't build from<br />a software background.<br />
+            <span style="color: var(--terracotta)">We built from grow room experience.</span>
           </h2>
           <p class="text-ink-3 leading-relaxed mb-4">
             From watching good growers fight bad systems. From watching efficient facilities
@@ -61,7 +104,7 @@ import CTASection from '../components/CTASection.astro';
             operation doesn't have the tools it actually needs.
           </p>
           <p class="text-ink-3 leading-relaxed mb-4">
-            That frustration turned into CropVision. Then Unity. Then Facility Design.
+            That frustration turned into CropVision. Then Unity. Then Foundation.
             And soon, Grownetics OS. Everything we build is for the operator who takes
             their craft seriously and needs technology that takes it seriously too.
           </p>
@@ -78,7 +121,7 @@ import CTASection from '../components/CTASection.astro';
             { year: "2015", event: "Founded in Boulder, CO" },
             { year: "2016", event: "First commercial deployment — Colorado" },
             { year: "2018", event: "Expanded to California and Canada" },
-            { year: "2020", event: "1M+ sqft milestone crossed" },
+            { year: "2020", event: "1M+ sq ft milestone crossed" },
             { year: "2022", event: "UL Certification achieved for Unity" },
             { year: "2025", event: "Grownetics OS development begins" },
           ].map((item) => (
@@ -93,12 +136,15 @@ import CTASection from '../components/CTASection.astro';
   </section>
 
 
-  <!-- § 003 — WHAT WE BELIEVE -->
+  <!-- ═══════════════════════════════════════════════════════
+       § 003 — WHAT WE BELIEVE
+  ═══════════════════════════════════════════════════════════ -->
   <section class="section">
     <div class="container">
+
       <div class="section-ref">
         <div class="section-ref-bar" style="background: var(--green)"></div>
-        <span class="ref-label">§ 003 · Principles</span>
+        <span class="ref-label">§ 003 · What Drives Us</span>
       </div>
 
       <div class="max-w-xl mb-12">
@@ -108,7 +154,7 @@ import CTASection from '../components/CTASection.astro';
         <p class="text-ink-3 leading-relaxed">
           The best facility technology does its job so well that operators stop thinking
           about it and start thinking about cultivation. That's the standard we hold
-          ourselves to — not "feature-rich" but "friction-free."
+          ourselves to — not "feature-rich" but "friction-free." Not "powerful" but "reliable."
         </p>
       </div>
 
@@ -116,7 +162,7 @@ import CTASection from '../components/CTASection.astro';
         {[
           {
             principle: "The grower isn't broken — the system is.",
-            detail: "Yield variation is almost always a systems problem. Environmental, equipment, or protocol. Not genetics. Not the grower.",
+            detail: "Yield variation is almost always a systems problem — environmental, equipment, or protocol. Not genetics. Not the grower.",
           },
           {
             principle: "Evidence first. Philosophy second.",
@@ -128,7 +174,7 @@ import CTASection from '../components/CTASection.astro';
           },
           {
             principle: "Precision at scale isn't a feature — it's survival.",
-            detail: "As CEA markets mature, the gap between efficient and inefficient operations determines who operates in five years.",
+            detail: "As CEA markets mature, the gap between efficient and inefficient operations determines who's operating in five years.",
           },
           {
             principle: "Technology amplifies expertise. It doesn't replace it.",
@@ -150,9 +196,12 @@ import CTASection from '../components/CTASection.astro';
   </section>
 
 
-  <!-- § 004 — TEAM CREDENTIALS -->
+  <!-- ═══════════════════════════════════════════════════════
+       § 004 — TEAM CREDENTIALS
+  ═══════════════════════════════════════════════════════════ -->
   <section class="section section-surface">
     <div class="container">
+
       <div class="section-ref">
         <div class="section-ref-bar" style="background: var(--gold)"></div>
         <span class="ref-label">§ 004 · The Team</span>
@@ -161,8 +210,7 @@ import CTASection from '../components/CTASection.astro';
       <div class="grid md:grid-cols-2 gap-12 items-start">
         <div class="reveal">
           <h2 class="display-md mb-6">
-            60+ years of combined experience<br />
-            in the rooms that matter.
+            60+ years of combined experience<br />in the rooms that matter.
           </h2>
           <p class="text-ink-3 leading-relaxed mb-5">
             The Grownetics team is a mix of licensed master growers, controls engineers,
@@ -182,44 +230,42 @@ import CTASection from '../components/CTASection.astro';
           </p>
         </div>
 
-        <div class="reveal">
-          <!-- Expertise areas -->
-          <div class="space-y-3">
-            {[
-              { area: "Controls Engineering", detail: "UL 508A panels, predictive algorithms, industrial automation" },
-              { area: "Cultivation Science", detail: "Licensed MGs, tissue culture to harvest, Total Crop Steering™" },
-              { area: "Facility Design", detail: "Greenfield + retrofit, CAD/BIM, compliance documentation" },
-              { area: "Systems Architecture", detail: "IoT networks, sensor integration, data infrastructure" },
-              { area: "Regulatory Compliance", detail: "CO, CA, Canada — licensing, track & trace, audits" },
-              { area: "Research Partnerships", detail: "University of Colorado affiliated studies and data validation" },
-            ].map((e) => (
-              <div class="flex items-start gap-4 p-4 rounded" style="background: var(--surface-2); border: 1px solid var(--border-light)">
-                <div class="w-1 h-1 rounded-full bg-green flex-shrink-0 mt-2"></div>
-                <div>
-                  <div class="font-semibold text-sm text-ink">{e.area}</div>
-                  <div class="text-xs text-ink-3 mt-0.5">{e.detail}</div>
-                </div>
+        <div class="reveal space-y-3">
+          {[
+            { area: "Controls Engineering", detail: "UL 508A panels, predictive algorithms, industrial automation" },
+            { area: "Cultivation Science", detail: "Licensed master growers, tissue culture to harvest, Total Crop Steering™" },
+            { area: "Facility Design", detail: "Greenfield + retrofit, CAD/BIM, compliance documentation" },
+            { area: "Systems Architecture", detail: "IoT networks, sensor integration, data infrastructure" },
+            { area: "Regulatory Compliance", detail: "CO, CA, Canada — licensing, track & trace, audits" },
+            { area: "Research Partnerships", detail: "University of Colorado affiliated studies and data validation" },
+          ].map((e) => (
+            <div class="flex items-start gap-4 p-4 rounded" style="background: var(--surface-2); border: 1px solid var(--border-light)">
+              <div class="w-1 h-1 rounded-full bg-green flex-shrink-0 mt-2"></div>
+              <div>
+                <div class="font-semibold text-sm text-ink">{e.area}</div>
+                <div class="text-xs text-ink-3 mt-0.5">{e.detail}</div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
   </section>
 
 
-  <!-- § 005 — CLIENTS -->
+  <!-- ═══════════════════════════════════════════════════════
+       § 005 — CLIENTS
+  ═══════════════════════════════════════════════════════════ -->
   <section class="section section-alt">
     <div class="container">
+
       <div class="section-ref">
         <div class="section-ref-bar"></div>
-        <span class="ref-label">§ 005 · Clients</span>
+        <span class="ref-label">§ 005 · Deployed In</span>
       </div>
 
       <div class="max-w-2xl mb-12">
-        <h2 class="display-md mb-4">
-          Operations we've helped build.
-        </h2>
+        <h2 class="display-md mb-4">Real facilities. Real results.</h2>
         <p class="text-ink-3 leading-relaxed">
           From boutique craft cultivators to multi-site operations — our clients
           share one thing: they take yield seriously.
@@ -261,7 +307,7 @@ import CTASection from '../components/CTASection.astro';
 
 
   <CTASection
-    ref="005"
+    sectionRef="006"
     eyebrow="Work With Us"
     headline="Want to know if we're the right fit? Let's find out together."
     body="Discovery calls are one hour, completely free, and genuinely useful whether you work with us or not. Come with your hardest constraint. We'll come with honest answers."

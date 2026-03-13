@@ -1,6 +1,6 @@
 ---
 interface Props {
-  ref?: string;
+  sectionRef?: string;
   eyebrow?: string;
   headline: string;
   body?: string;
@@ -10,7 +10,7 @@ interface Props {
 }
 
 const {
-  ref: refNum = '008',
+  sectionRef = '008',
   eyebrow = 'Next Steps',
   headline,
   body,
@@ -29,51 +29,39 @@ const {
   ]}
   style={variant === 'dark' ? 'background: #2B2C2E;' : ''}
 >
-  <!-- Subtle graph grid for dark variant — Archival texture -->
   {variant === 'dark' && (
     <div
       class="absolute inset-0"
-      style="background-image: linear-gradient(rgba(154,136,96,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(154,136,96,0.035) 1px, transparent 1px); background-size: 72px 72px; opacity: 1;"
+      style="background-image: linear-gradient(rgba(154,136,96,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(154,136,96,0.035) 1px, transparent 1px); background-size: 72px 72px;"
     ></div>
   )}
 
   <div class="container relative z-10">
     <div class="max-w-2xl mx-auto text-center">
 
-      <!-- § Section ref — Archival DNA -->
       <div class="flex items-center justify-center gap-3 mb-8">
         <div
-          class:list={[
-            'w-0.5 h-3.5 rounded',
-            variant === 'default' ? 'bg-gold' : 'opacity-40',
-          ]}
+          class:list={['w-0.5 h-3.5 rounded', variant === 'default' ? 'bg-gold' : '']}
           style={variant !== 'default' ? 'background: rgba(154,136,96,0.6)' : ''}
         ></div>
         <span
-          class:list={[
-            'font-mono text-xs tracking-widest uppercase',
-            variant === 'default' ? 'text-gold' : '',
-          ]}
+          class:list={['font-mono text-xs tracking-widest uppercase', variant === 'default' ? 'text-gold' : '']}
           style={variant !== 'default' ? 'color: rgba(154,136,96,0.6)' : ''}
         >
-          § {refNum} · {eyebrow}
+          § {sectionRef} · {eyebrow}
         </span>
       </div>
 
-      <h2 class:list={[
-        'display-lg mb-6',
-        variant !== 'default' ? '' : '',
-      ]}
+      <h2
+        class="display-lg mb-6"
         style={variant !== 'default' ? 'color: #E9E8EE;' : ''}
       >
         {headline}
       </h2>
 
       {body && (
-        <p class:list={[
-          'text-lg leading-relaxed mb-10 max-w-xl mx-auto',
-          variant !== 'default' ? '' : 'text-ink-3',
-        ]}
+        <p
+          class:list={['text-lg leading-relaxed mb-10 max-w-xl mx-auto', variant === 'default' ? 'text-ink-3' : '']}
           style={variant !== 'default' ? 'color: rgba(151,153,166,0.85);' : ''}
         >
           {body}
@@ -83,22 +71,15 @@ const {
       <div class="flex flex-wrap gap-4 justify-center">
         <a
           href={cta.href}
-          class:list={[
-            'btn',
-            variant === 'green' ? '' : 'btn-primary',
-          ]}
+          class:list={['btn', variant === 'green' ? '' : 'btn-primary']}
           style={variant === 'green' ? 'background: #fff; color: var(--green);' : ''}
         >
           {cta.label}
-          <span aria-hidden="true">→</span>
         </a>
         {ctaSecondary && (
           <a
             href={ctaSecondary.href}
-            class:list={[
-              'btn',
-              variant === 'default' ? 'btn-ghost' : '',
-            ]}
+            class:list={['btn', variant === 'default' ? 'btn-ghost' : '']}
             style={variant !== 'default' ? 'border: 1px solid rgba(255,255,255,0.2); color: rgba(233,232,238,0.65);' : ''}
           >
             {ctaSecondary.label}

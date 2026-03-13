@@ -9,16 +9,26 @@ import CTASection from '../components/CTASection.astro';
   canonical="/foundation"
 >
 
-  <!-- HERO -->
+  <!-- ═══════════════════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════════════════════ -->
   <section class="relative min-h-[65vh] flex items-center graph-grid pt-16" aria-labelledby="fd-headline">
     <div class="absolute inset-0 overflow-hidden">
-      <img src="/images/service-cad.jpg" alt="" role="presentation"
-           class="w-full h-full object-cover opacity-20" loading="eager" width="1200" height="800" />
+      <img
+        src="/images/service-cad.jpg"
+        alt=""
+        role="presentation"
+        class="w-full h-full object-cover opacity-20"
+        loading="eager"
+        width="1200"
+        height="800"
+      />
       <div class="absolute inset-0" style="background: linear-gradient(120deg, var(--bg) 60%, transparent)"></div>
     </div>
 
     <div class="container relative z-10 py-20">
       <div class="max-w-2xl">
+
         <div class="section-ref mb-6">
           <div class="section-ref-bar" style="background: var(--terracotta)"></div>
           <span class="ref-label" style="color: var(--terracotta)">§ 001 · Design.</span>
@@ -34,7 +44,9 @@ import CTASection from '../components/CTASection.astro';
           <span style="color: var(--terracotta)">We make it an asset.</span>
         </h1>
         <p class="text-xl font-display italic text-ink-2 mb-4">
-          Smart farm design and implementation for commercial CEA — from greenfield to retrofit.
+          Smart farm design and implementation for commercial CEA — from greenfield to
+          retrofit. Engineered for efficiency, bio-security, compliance, and precision
+          from day one.
         </p>
         <p class="text-lg text-ink-3 leading-relaxed mb-8 max-w-xl">
           As markets mature, inefficient grows disappear. The operations that survive — and
@@ -50,12 +62,15 @@ import CTASection from '../components/CTASection.astro';
   </section>
 
 
-  <!-- § 002 — MARKET REALITY -->
+  <!-- ═══════════════════════════════════════════════════════
+       § 001 — THE MARKET REALITY
+  ═══════════════════════════════════════════════════════════ -->
   <section class="section section-alt">
     <div class="container">
+
       <div class="section-ref">
         <div class="section-ref-bar" style="background: var(--terracotta)"></div>
-        <span class="ref-label" style="color: var(--terracotta)">§ 001 · What We Design For</span>
+        <span class="ref-label" style="color: var(--terracotta)">§ 001 · The Long View</span>
       </div>
 
       <div class="max-w-3xl reveal">
@@ -68,32 +83,40 @@ import CTASection from '../components/CTASection.astro';
           that compete on quality and cost — not just license position — are the ones with
           the lowest cost of production and the highest consistency.
         </p>
-        <p class="text-ink-3 leading-relaxed">
+        <p class="text-ink-3 leading-relaxed mb-5">
           Facility design is leverage. A 15% reduction in energy cost built into the
           infrastructure is permanent. A layout designed for bio-security is cheaper
           than a contamination remediation. A system designed for modularity means you
           can scale without a tear-out.
+        </p>
+        <p class="text-ink-3 leading-relaxed">
+          We've seen both sides. We've assessed facilities built without operational
+          intelligence, and we've designed ones that still run efficiently five years later.
+          The difference is in the decisions made before a single piece of equipment was ordered.
         </p>
       </div>
     </div>
   </section>
 
 
-  <!-- § 003 — FOUR PILLARS -->
+  <!-- ═══════════════════════════════════════════════════════
+       § 002 — FOUR PILLARS
+  ═══════════════════════════════════════════════════════════ -->
   <section class="section" id="pillars" aria-labelledby="pillars-headline">
     <div class="container">
+
       <div class="section-ref">
         <div class="section-ref-bar"></div>
-        <span class="ref-label">§ 003 · The Four Pillars</span>
+        <span class="ref-label">§ 002 · What We Design For</span>
       </div>
 
       <div class="max-w-xl mb-12">
         <h2 id="pillars-headline" class="display-lg mb-4">
-          Every Foundation design<br />is built on four commitments.
+          Four pillars. Every facility, every project.
         </h2>
         <p class="text-ink-3 leading-relaxed">
           Not aspirations. Engineering requirements. Each pillar is a measurable
-          design standard that every facility must meet before we sign off on it.
+          design standard that every Foundation project must satisfy.
         </p>
       </div>
 
@@ -103,8 +126,8 @@ import CTASection from '../components/CTASection.astro';
             number: "01",
             pillar: "Hyper Efficient",
             color: "var(--green)",
-            headline: "Every watt. Every gallon. Every square foot.",
-            desc: "Energy load calculations, HVAC sizing, lighting density, and water/nutrient system design — all optimized before a single permit is filed. Our facilities don't become efficient over time. They're engineered that way from day one.",
+            headline: "Every watt. Every BTU. Every gallon.",
+            desc: "We design for the operating costs of year 3, not the capital budget of year 1. Energy load calculations, HVAC sizing, lighting density, and water/nutrient system design — all optimized before a single permit is filed.",
             specs: [
               "HVAC load calculations with safety margins",
               "Lighting density mapping vs. DLI targets",
@@ -129,8 +152,8 @@ import CTASection from '../components/CTASection.astro';
             number: "03",
             pillar: "Compliant",
             color: "var(--gold)",
-            headline: "Designed to pass — every inspection, every time.",
-            desc: "Cannabis and CEA compliance requirements vary by state and municipality. Foundation designs are built to regulatory requirements from the start. Not retrofitted to comply — designed to exceed.",
+            headline: "Designed to pass — every inspection.",
+            desc: "Regulatory requirements are a moving target. We design to current standards while building in flexibility for what's coming — so your facility isn't a renovation project every time the rules change.",
             specs: [
               "State-specific regulatory mapping",
               "UL electrical specifications",
@@ -141,9 +164,9 @@ import CTASection from '../components/CTASection.astro';
           {
             number: "04",
             pillar: "Precise",
-            color: "var(--green-light)",
+            color: "var(--green)",
             headline: "CAD-level detail on every system.",
-            desc: "We don't hand you a concept drawing. Every Foundation project delivers construction-ready CAD documentation — HVAC schematics, electrical one-lines, plumbing layouts, and sensor placement guides tied to your CropVision deployment.",
+            desc: "We don't hand you a concept drawing. Every Foundation project delivers construction-ready CAD documentation — HVAC schematics, electrical one-lines, plumbing layouts, and sensor placement guides.",
             specs: [
               "Full CAD/BIM documentation package",
               "HVAC and electrical schematics",
@@ -153,8 +176,8 @@ import CTASection from '../components/CTASection.astro';
           },
         ].map((pillar) => (
           <div class="card p-7 relative overflow-hidden">
-            <div class="absolute top-0 left-0 w-1 h-full rounded-l-lg" style={`background: ${pillar.color}`}></div>
-            <div class="pl-2">
+            <div class="absolute top-0 left-0 w-1 h-full" style={`background: ${pillar.color}`}></div>
+            <div class="pl-4">
               <div class="font-mono text-xs tracking-widest mb-3" style={`color: ${pillar.color}`}>{pillar.number}</div>
               <h3 class="font-display text-2xl font-semibold text-ink mb-1">{pillar.pillar}</h3>
               <p class="font-display italic text-ink-2 mb-4">{pillar.headline}</p>
@@ -175,12 +198,25 @@ import CTASection from '../components/CTASection.astro';
   </section>
 
 
-  <!-- § 004 — GREENFIELD TO RETROFIT -->
+  <!-- ═══════════════════════════════════════════════════════
+       § 003 — SCOPE OF WORK
+  ═══════════════════════════════════════════════════════════ -->
   <section class="section section-surface">
     <div class="container">
+
       <div class="section-ref">
         <div class="section-ref-bar" style="background: var(--gold)"></div>
-        <span class="ref-label">§ 004 · Project Types</span>
+        <span class="ref-label">§ 003 · What We Deliver</span>
+      </div>
+
+      <div class="max-w-xl mb-12">
+        <h2 class="display-lg mb-4">
+          From concept to commission.
+        </h2>
+        <p class="text-ink-3 leading-relaxed">
+          Foundation projects are scoped to what your facility actually needs — not a
+          standard package that doesn't fit your situation.
+        </p>
       </div>
 
       <div class="grid md:grid-cols-3 gap-6 reveal">
@@ -188,17 +224,32 @@ import CTASection from '../components/CTASection.astro';
           {
             type: "Greenfield",
             desc: "New construction from site selection through construction documentation. Full design authority from Day 1.",
-            services: ["Site evaluation + selection", "Facility concept design", "Full CAD documentation package", "Contractor bid support"],
+            services: [
+              "Site evaluation + selection",
+              "Facility concept design",
+              "Full CAD documentation package",
+              "Contractor bid support",
+            ],
           },
           {
             type: "Retrofit",
             desc: "Existing facility optimization. We find the constraints and redesign around them — HVAC, lighting, environmental controls.",
-            services: ["Existing conditions assessment", "Constraint identification + ranking", "Phased retrofit planning", "Priority ROI analysis"],
+            services: [
+              "Existing conditions assessment",
+              "Constraint identification + ranking",
+              "Phased retrofit planning",
+              "Priority ROI analysis",
+            ],
           },
           {
             type: "Expansion",
-            desc: "Scaling an existing operation without sacrificing the efficiency of what you already built. We make new spaces perform like your best rooms.",
-            services: ["Capacity modeling", "Infrastructure integration planning", "Systems uniformity review", "Build-out documentation"],
+            desc: "Scaling an existing operation without sacrificing the efficiency of what you already built. New spaces that perform like your best rooms.",
+            services: [
+              "Capacity modeling",
+              "Infrastructure integration planning",
+              "Systems uniformity review",
+              "Build-out documentation",
+            ],
           },
         ].map((project) => (
           <div class="card p-6">
@@ -219,8 +270,59 @@ import CTASection from '../components/CTASection.astro';
   </section>
 
 
+  <!-- ═══════════════════════════════════════════════════════
+       § 004 — IMAGE + TRUST
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="section">
+    <div class="container">
+
+      <div class="section-ref">
+        <div class="section-ref-bar"></div>
+        <span class="ref-label">§ 004 · Track Record</span>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="reveal">
+          <img
+            src="/images/service-cad.jpg"
+            alt="CAD facility design drawings and engineering documentation"
+            width="600"
+            height="400"
+            class="rounded-lg shadow-warm-lg w-full object-cover"
+            loading="lazy"
+          />
+        </div>
+        <div class="reveal">
+          <h2 class="display-md mb-5">
+            Designed for the next 10 years,<br />not just the next inspection.
+          </h2>
+          <p class="text-ink-3 leading-relaxed mb-6">
+            Our facility designers have seen operations built without operational intelligence,
+            and operations designed with it. The difference in long-term performance is
+            measurable — and it shows up in energy costs, contamination rates, and
+            consistency of yield.
+          </p>
+          <div class="grid grid-cols-2 gap-4">
+            {[
+              { value: "1M+", label: "sq ft designed & deployed" },
+              { value: "60+", label: "Years combined experience" },
+              { value: "UL", label: "Certified controls integration" },
+              { value: "3", label: "Countries + multiple states" },
+            ].map((stat) => (
+              <div class="card p-4 text-center">
+                <div class="stat-number text-xl mb-1">{stat.value}</div>
+                <div class="font-mono text-xs text-ink-3 uppercase tracking-wide leading-snug">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
   <CTASection
-    ref="004"
+    sectionRef="005"
     eyebrow="Start Here"
     headline="One conversation can change what your facility costs to run."
     body="Free one-hour initial consultation. No commitment required. We'll look at your existing infrastructure or new-build plans and show you where the leverage is."

@@ -9,16 +9,26 @@ import CTASection from '../components/CTASection.astro';
   canonical="/consulting"
 >
 
-  <!-- HERO -->
+  <!-- ═══════════════════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════════════════════ -->
   <section class="relative min-h-[65vh] flex items-center graph-grid pt-16" aria-labelledby="consulting-headline">
     <div class="absolute inset-0 overflow-hidden">
-      <img src="/images/service-cultivation.jpg" alt="" role="presentation"
-           class="w-full h-full object-cover opacity-20" loading="eager" width="1200" height="800" />
+      <img
+        src="/images/service-cultivation.jpg"
+        alt=""
+        role="presentation"
+        class="w-full h-full object-cover opacity-20"
+        loading="eager"
+        width="1200"
+        height="800"
+      />
       <div class="absolute inset-0" style="background: linear-gradient(120deg, var(--bg) 60%, transparent)"></div>
     </div>
 
     <div class="container relative z-10 py-20">
       <div class="max-w-2xl">
+
         <div class="section-ref mb-6">
           <div class="section-ref-bar" style="background: var(--gold)"></div>
           <span class="ref-label" style="color: var(--gold)">§ 001 · Optimize.</span>
@@ -34,7 +44,8 @@ import CTASection from '../components/CTASection.astro';
           <span style="color: var(--gold)">Not a PowerPoint.</span>
         </h1>
         <p class="text-xl font-display italic text-ink-2 mb-4">
-          Cultivation consulting from operators who've run commercial facilities.
+          Cultivation consulting from operators who've run commercial facilities — site
+          evaluations, supplier audits, and cultivation support from tissue culture to harvest.
         </p>
         <p class="text-lg text-ink-3 leading-relaxed mb-8 max-w-xl">
           Most consultants have read the literature. Our team has managed the rooms.
@@ -50,9 +61,12 @@ import CTASection from '../components/CTASection.astro';
   </section>
 
 
-  <!-- § 002 — THE PROBLEM -->
+  <!-- ═══════════════════════════════════════════════════════
+       § 001 — THE GAPS
+  ═══════════════════════════════════════════════════════════ -->
   <section class="section section-alt">
     <div class="container">
+
       <div class="section-ref">
         <div class="section-ref-bar" style="background: var(--terracotta)"></div>
         <span class="ref-label" style="color: var(--terracotta)">§ 001 · The Gaps Other Consultants Can't Close</span>
@@ -91,17 +105,20 @@ import CTASection from '../components/CTASection.astro';
   </section>
 
 
-  <!-- § 003 — SERVICES -->
+  <!-- ═══════════════════════════════════════════════════════
+       § 002 — SERVICES
+  ═══════════════════════════════════════════════════════════ -->
   <section class="section" id="services" aria-labelledby="services-headline">
     <div class="container">
+
       <div class="section-ref">
         <div class="section-ref-bar"></div>
-        <span class="ref-label">§ 003 · Service Catalog</span>
+        <span class="ref-label">§ 002 · Service Catalog</span>
       </div>
 
       <div class="max-w-xl mb-12">
         <h2 id="services-headline" class="display-lg mb-4">
-          What Optima delivers.
+          What we deliver.
         </h2>
         <p class="text-ink-3 leading-relaxed">
           From a one-day site evaluation to multi-month cultivation support engagements —
@@ -112,43 +129,68 @@ import CTASection from '../components/CTASection.astro';
       <div class="grid sm:grid-cols-2 gap-5 reveal">
         {[
           {
-            name: "Site Evaluation",
+            name: "Site Evaluations",
             badge: "Diagnostic",
-            badgeColor: "terracotta",
             icon: "🔍",
-            desc: "A thorough operational audit of your facility — environmental systems, cultivation protocols, team workflows, and data quality. We come in, document what we find, and deliver a prioritized constraint map within five days.",
-            deliverables: ["Full environmental systems audit", "Cultivation protocol review", "Top 5 constraint identification", "Prioritized ROI improvement plan"],
+            accentColor: "var(--terracotta)",
+            desc: "A thorough operational audit of your facility — environmental systems, cultivation protocols, team workflows, and data quality. We deliver a prioritized constraint map within five days.",
+            deliverables: [
+              "Full environmental systems audit",
+              "Cultivation protocol review",
+              "Top 5 constraint identification",
+              "Prioritized ROI improvement plan",
+            ],
           },
           {
             name: "Supplier Audits",
             badge: "Vendor Due Diligence",
-            badgeColor: "gold",
             icon: "📋",
+            accentColor: "var(--gold)",
             desc: "We evaluate your current input suppliers — nutrients, lighting, HVAC, controls — against best-in-class alternatives. No kickbacks. No affiliate deals. Just an honest assessment of where you're overpaying or underspecified.",
-            deliverables: ["Current vendor performance scorecard", "Competitor capability comparison", "Switch cost analysis", "Recommended vendor shortlist"],
+            deliverables: [
+              "Current vendor performance scorecard",
+              "Competitor capability comparison",
+              "Switch cost analysis",
+              "Recommended vendor shortlist",
+            ],
           },
           {
             name: "Cultivation Support",
             badge: "Ongoing",
-            badgeColor: "green",
             icon: "🌿",
+            accentColor: "var(--green)",
             desc: "From tissue culture to harvest — ongoing cultivation support from growers who've done it at scale. Protocol development, crop steering support, weekly data reviews, and access to our expert team when you need it.",
-            deliverables: ["Stage-by-stage cultivation protocols", "Weekly data review cadence", "Total Crop Steering™ implementation", "Harvest forecasting + post-harvest analysis"],
+            deliverables: [
+              "Stage-by-stage cultivation protocols",
+              "Weekly data review cadence",
+              "Total Crop Steering™ implementation",
+              "Harvest forecasting + post-harvest analysis",
+            ],
           },
           {
             name: "Manufacturing Support",
             badge: "Post-Harvest",
-            badgeColor: "gold",
             icon: "⚙️",
+            accentColor: "var(--gold)",
             desc: "Extraction, processing, and post-harvest workflows optimized for throughput, consistency, and compliance. We close the loop from grow room to finished product.",
-            deliverables: ["Processing workflow audit", "Throughput optimization", "Compliance documentation support", "QA protocol development"],
+            deliverables: [
+              "Processing workflow audit",
+              "Throughput optimization",
+              "Compliance documentation support",
+              "QA protocol development",
+            ],
           },
         ].map((svc) => (
-          <div class="card p-7">
+          <div class="card p-7" style={`border-top: 3px solid ${svc.accentColor}`}>
             <div class="flex items-start gap-3 mb-4">
               <div class="text-2xl">{svc.icon}</div>
               <div>
-                <span class:list={['badge mb-2', `badge-${svc.badgeColor}`]}>{svc.badge}</span>
+                <div
+                  class="font-mono text-xs tracking-widest uppercase mb-1"
+                  style={`color: ${svc.accentColor}`}
+                >
+                  {svc.badge}
+                </div>
                 <h3 class="font-display text-xl font-semibold text-ink">{svc.name}</h3>
               </div>
             </div>
@@ -171,12 +213,15 @@ import CTASection from '../components/CTASection.astro';
   </section>
 
 
-  <!-- § 004 — THE NUMBER -->
+  <!-- ═══════════════════════════════════════════════════════
+       § 003 — THE BENCHMARK
+  ═══════════════════════════════════════════════════════════ -->
   <section class="section section-alt">
     <div class="container">
+
       <div class="section-ref">
         <div class="section-ref-bar" style="background: var(--green)"></div>
-        <span class="ref-label">§ 004 · The Benchmark</span>
+        <span class="ref-label">§ 003 · What Growers Achieve</span>
       </div>
 
       <div class="grid md:grid-cols-2 gap-12 items-center">
@@ -184,22 +229,21 @@ import CTASection from '../components/CTASection.astro';
           <div class="font-mono text-xs text-gold tracking-widest uppercase mb-4">
             Consistent Production Target
           </div>
-          <div class="font-display font-bold text-green mb-3" style="font-size: clamp(3rem, 8vw, 5rem)">
+          <div class="font-display font-bold text-green mb-3" style="font-size: clamp(3rem, 8vw, 5rem); line-height: 1;">
             2.5–3.2
           </div>
           <div class="font-mono text-xs text-ink-3 uppercase tracking-widest mb-6">
             lbs per light, per cycle
           </div>
           <p class="text-sm text-ink-3 leading-relaxed">
-            This isn't a best-case number. It's a repeatable, sustainable target
-            that Optima clients achieve when protocols, environment, and execution
-            are aligned.
+            This isn't a best-case number. It's a repeatable, sustainable target that
+            Optima clients achieve when protocols, environment, and execution are aligned.
           </p>
         </div>
 
         <div class="reveal">
           <h2 class="display-md mb-4">
-            The number is<br />a system outcome —<br />
+            The number is a system outcome —<br />
             <span style="color: var(--green)">not a genetic lottery.</span>
           </h2>
           <p class="text-ink-3 leading-relaxed mb-4">
@@ -209,32 +253,75 @@ import CTASection from '../components/CTASection.astro';
           </p>
           <p class="text-ink-3 leading-relaxed mb-6">
             Optima engagements systematically address every variable that stands between
-            your current average and the 2.5–3.2 target — then builds the protocols and
+            your current average and the 2.5–3.2 target — then build the protocols and
             monitoring systems to hold it there.
           </p>
-          <a href="/contact" class="btn btn-primary">
-            Start with a Site Evaluation →
-          </a>
+          <a href="/contact" class="btn btn-primary">Start with a Site Evaluation →</a>
         </div>
       </div>
     </div>
   </section>
 
 
-  <!-- § 005 — CREDENTIALS -->
+  <!-- ═══════════════════════════════════════════════════════
+       § 004 — HOW WE WORK
+  ═══════════════════════════════════════════════════════════ -->
   <section class="section section-surface">
     <div class="container">
+
+      <div class="section-ref">
+        <div class="section-ref-bar"></div>
+        <span class="ref-label">§ 004 · The Engagement Model</span>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="reveal">
+          <h2 class="display-md mb-5">
+            We work alongside your team.<br />Not above it.
+          </h2>
+          <p class="text-ink-3 leading-relaxed mb-4">
+            Consulting that works doesn't look like an external expert arriving with a
+            report. It looks like an experienced operator spending time in your facility,
+            alongside your people, working through specific challenges with the specificity
+            those challenges deserve.
+          </p>
+          <p class="text-ink-3 leading-relaxed">
+            Engagements start with a discovery call — no agenda except understanding
+            your operation. From there, we scope what's needed: a one-day site visit,
+            a multi-week embedded engagement, or ongoing support for a specific growth challenge.
+          </p>
+        </div>
+
+        <div class="reveal">
+          <img
+            src="/images/service-cultivation.jpg"
+            alt="Cultivation support in a commercial grow facility"
+            width="600"
+            height="400"
+            class="rounded-lg shadow-warm-lg w-full object-cover"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       § 005 — CREDENTIALS
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="section">
+    <div class="container">
+
       <div class="section-ref">
         <div class="section-ref-bar"></div>
         <span class="ref-label">§ 005 · Team Credentials</span>
       </div>
 
-      <div class="max-w-3xl reveal">
-        <h2 class="display-md mb-6">
-          Operators who've been there.
-        </h2>
+      <div class="max-w-3xl">
+        <h2 class="display-md mb-6 reveal">Operators who've been there.</h2>
 
-        <div class="grid sm:grid-cols-3 gap-6 mb-10">
+        <div class="grid sm:grid-cols-3 gap-6 mb-10 reveal">
           {[
             { value: "1M+", label: "sq ft managed", detail: "CO, CA, Canada, International" },
             { value: "60+", label: "Years combined", detail: "Engineering + cultivation expertise" },
@@ -248,11 +335,11 @@ import CTASection from '../components/CTASection.astro';
           ))}
         </div>
 
-        <p class="text-ink-3 leading-relaxed">
+        <p class="text-ink-3 leading-relaxed reveal">
           Grownetics consultants include licensed master growers, controls engineers,
           facility designers, and compliance specialists with hands-on track records
-          across boutique craft operations and large-scale MSOs. We've built and operated
-          the facilities we now help you optimize.
+          across boutique craft operations and large-scale multi-site operators. We've
+          built and operated the facilities we now help you optimize.
         </p>
       </div>
     </div>
@@ -260,7 +347,7 @@ import CTASection from '../components/CTASection.astro';
 
 
   <CTASection
-    ref="004"
+    sectionRef="006"
     eyebrow="Book a Consultation"
     headline="Start with a conversation. No agenda. Just your operation."
     body="We talk to a lot of operators. The most productive first conversations are the ones where you show up with a specific problem. Come with the problem — we'll come with the questions."

@@ -9,16 +9,26 @@ import CTASection from '../components/CTASection.astro';
   canonical="/unity"
 >
 
-  <!-- HERO -->
+  <!-- ═══════════════════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════════════════════ -->
   <section class="relative min-h-[65vh] flex items-center graph-grid pt-16" aria-labelledby="unity-headline">
     <div class="absolute inset-0 overflow-hidden">
-      <img src="/images/greenhouse.jpg" alt="" role="presentation"
-           class="w-full h-full object-cover opacity-25" loading="eager" width="1920" height="1080" />
+      <img
+        src="/images/greenhouse.jpg"
+        alt=""
+        role="presentation"
+        class="w-full h-full object-cover opacity-25"
+        loading="eager"
+        width="1920"
+        height="1080"
+      />
       <div class="absolute inset-0" style="background: linear-gradient(135deg, var(--bg) 55%, transparent)"></div>
     </div>
 
     <div class="container relative z-10 py-20">
       <div class="max-w-2xl">
+
         <div class="section-ref mb-6">
           <div class="section-ref-bar" style="background: var(--gold)"></div>
           <span class="ref-label" style="color: var(--gold)">§ 001 · Control.</span>
@@ -35,13 +45,14 @@ import CTASection from '../components/CTASection.astro';
           <span style="color: var(--gold)">Not managed with guesswork.</span>
         </h1>
         <p class="text-xl font-display italic text-ink-2 mb-4">
-          Predictive HVAC, CO₂, and lighting automation — UL-certified, built for industrial-scale cultivation.
+          Predictive HVAC, CO₂, and lighting automation — UL-certified, built for
+          industrial-scale cultivation. Your equipment, finally working together.
         </p>
         <p class="text-lg text-ink-3 leading-relaxed mb-8 max-w-xl">
           Reactive climate control is a tax on your operation. Every time your system
           responds to a problem, your plants have already felt it. Unity anticipates —
-          reading your environment, predicting what's coming, and adjusting before the
-          excursion happens.
+          reading your environment, predicting what's coming, and adjusting before
+          the excursion happens.
         </p>
         <div class="flex flex-wrap gap-4">
           <a href="/contact" class="btn btn-primary">Get a Quote →</a>
@@ -52,9 +63,12 @@ import CTASection from '../components/CTASection.astro';
   </section>
 
 
-  <!-- § 002 — THE PROBLEM -->
+  <!-- ═══════════════════════════════════════════════════════
+       § 001 — THE REACTIVE CONTROL PROBLEM
+  ═══════════════════════════════════════════════════════════ -->
   <section class="section section-alt">
     <div class="container">
+
       <div class="section-ref">
         <div class="section-ref-bar" style="background: var(--terracotta)"></div>
         <span class="ref-label" style="color: var(--terracotta)">§ 001 · The Reactive Control Problem</span>
@@ -85,20 +99,33 @@ import CTASection from '../components/CTASection.astro';
 
         <div class="reveal grid grid-cols-1 gap-4">
           {[
-            { before: "Reactive thermostats", after: "Predictive climate algorithms with 15-minute foresight" },
-            { before: "Separate HVAC + lighting + CO₂ controls", after: "Unified control loop — everything speaks to everything" },
-            { before: "Generic panels with minimal redundancy", after: "UL-certified controls, redundant components, zero single points of failure" },
-            { before: "Energy waste from simultaneous heating + cooling", after: "Load sequencing that prevents conflict and cuts energy 20%" },
+            {
+              before: "Reactive thermostats",
+              after: "Predictive climate algorithms with 15-minute foresight",
+            },
+            {
+              before: "Separate HVAC + lighting + CO₂ controls",
+              after: "Unified control loop — everything speaks to everything",
+            },
+            {
+              before: "Generic panels with minimal redundancy",
+              after: "UL-certified controls, redundant components, zero single points of failure",
+            },
+            {
+              before: "Energy waste from simultaneous heating + cooling",
+              after: "Load sequencing that prevents conflict and cuts energy 20%",
+            },
           ].map((item) => (
-            <div class="flex gap-4 p-4 card">
-              <div class="flex-shrink-0 text-xs">
-                <div class="font-mono text-terracotta uppercase tracking-wider mb-1">Before</div>
-                <div class="text-sm text-ink-3">{item.before}</div>
-              </div>
-              <div class="text-green/40 self-center flex-shrink-0">→</div>
-              <div class="flex-shrink-0 text-xs">
-                <div class="font-mono text-green uppercase tracking-wider mb-1">After</div>
-                <div class="text-sm text-ink">{item.after}</div>
+            <div class="card p-4">
+              <div class="grid grid-cols-2 gap-3">
+                <div>
+                  <div class="font-mono text-xs uppercase tracking-wider mb-1" style="color: var(--terracotta)">Before</div>
+                  <div class="text-sm text-ink-3">{item.before}</div>
+                </div>
+                <div>
+                  <div class="font-mono text-xs uppercase tracking-wider mb-1" style="color: var(--green)">After</div>
+                  <div class="text-sm text-ink">{item.after}</div>
+                </div>
               </div>
             </div>
           ))}
@@ -108,9 +135,12 @@ import CTASection from '../components/CTASection.astro';
   </section>
 
 
-  <!-- § 003 — HOW IT WORKS -->
+  <!-- ═══════════════════════════════════════════════════════
+       § 002 — HOW UNITY WORKS
+  ═══════════════════════════════════════════════════════════ -->
   <section class="section" id="how-it-works" aria-labelledby="unity-how-headline">
     <div class="container">
+
       <div class="section-ref">
         <div class="section-ref-bar"></div>
         <span class="ref-label">§ 002 · What Unity Controls</span>
@@ -131,21 +161,36 @@ import CTASection from '../components/CTASection.astro';
         {[
           {
             num: "01",
-            name: "Climate Control",
-            desc: "Predictive HVAC management with thermal mass modeling. Temperature, humidity, and VPD setpoints maintained within ±0.5° and ±2% RH through every stage.",
-            features: ["Predictive setpoint algorithms", "Zone-level control", "VPD-driven humidity management", "Total redundancy failsafe"],
+            name: "Predictive Climate Control",
+            desc: "HVAC and dehumidification managed by predictive algorithms that model your environment — not just react to it. Fewer excursions. Less energy. More consistent conditions.",
+            features: [
+              "Predictive setpoint algorithms",
+              "Zone-level VPD-driven control",
+              "Thermal mass modeling",
+              "Total redundancy failsafe",
+            ],
           },
           {
             num: "02",
-            name: "Hybrid Lighting",
-            desc: "Seamless integration of HPS, LED, and mixed-technology fixtures. Dynamic intensity scheduling based on DLI targets from your CropVision data.",
-            features: ["HPS + LED hybrid support", "DLI-driven scheduling", "Sunrise/sunset simulation", "Spectrum optimization"],
+            name: "Hybrid Lighting Management",
+            desc: "LED and supplemental lighting managed for spectrum, intensity, and DLI targets — not just on/off schedules. The right light, at the right time.",
+            features: [
+              "HPS + LED hybrid support",
+              "DLI-driven scheduling",
+              "Sunrise/sunset simulation",
+              "Spectrum optimization by stage",
+            ],
           },
           {
             num: "03",
-            name: "CO₂ Enrichment",
-            desc: "Canopy-level CO₂ enrichment tied directly to light intensity and stomatal conductance. Enrich when it counts, shut off when it's wasted.",
-            features: ["Photosynthesis-coupled enrichment", "Zone-level CO₂ targeting", "Leak detection + safety interlocks", "Efficiency tracking"],
+            name: "CO₂ Automation",
+            desc: "Integrated CO₂ control tied to your lighting schedule and environmental readings. Delivery when the plant can use it. Shutoff when it can't.",
+            features: [
+              "Photosynthesis-coupled enrichment",
+              "Zone-level CO₂ targeting",
+              "Leak detection + safety interlocks",
+              "Efficiency tracking",
+            ],
           },
         ].map((layer) => (
           <div class="card p-7">
@@ -167,9 +212,62 @@ import CTASection from '../components/CTASection.astro';
   </section>
 
 
-  <!-- § 004 — UL CERTIFICATION + REDUNDANCY -->
+  <!-- ═══════════════════════════════════════════════════════
+       § 003 — WHY UNITY
+  ═══════════════════════════════════════════════════════════ -->
   <section class="section section-surface">
     <div class="container">
+
+      <div class="section-ref">
+        <div class="section-ref-bar"></div>
+        <span class="ref-label">§ 003 · Industrial Reliability Without Enterprise Complexity</span>
+      </div>
+
+      <div class="max-w-xl mb-10">
+        <h2 class="display-lg mb-4">
+          Industrial reliability without<br />enterprise complexity.
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 reveal mb-12">
+        <div class="card p-6" style="border-left: 3px solid var(--terracotta)">
+          <h3 class="font-display font-semibold text-ink mb-2">vs. Consumer-grade systems</h3>
+          <p class="text-sm text-ink-3 leading-relaxed">
+            Consumer-grade controls are fine for small grows. At commercial scale, you need
+            hardware that meets industrial certification standards, predictive algorithms, and
+            the kind of support that comes with operational accountability. Unity is UL-certified.
+            That's not a marketing checkbox — it's the difference between insurance coverage and not.
+          </p>
+        </div>
+        <div class="card p-6" style="border-left: 3px solid var(--gold)">
+          <h3 class="font-display font-semibold text-ink mb-2">vs. Legacy enterprise systems</h3>
+          <p class="text-sm text-ink-3 leading-relaxed">
+            Legacy systems built for greenhouse operations deliver comparable capability —
+            but for cannabis-native operations, Unity delivers faster implementation, lower
+            cost of ownership, and a direct integration path into the full Grownetics
+            monitoring and analytics stack.
+          </p>
+        </div>
+      </div>
+
+      <div class="card p-8 reveal" style="border: 1.5px solid rgba(77,180,5,0.25); background: rgba(77,180,5,0.03);">
+        <div class="font-mono text-xs text-green uppercase tracking-widest mb-3">The CropVision Integration Advantage</div>
+        <p class="text-ink-3 leading-relaxed">
+          When Unity and CropVision run together, the control algorithms feed on 10x the environmental
+          data of standalone systems. The result: setpoints that actually reflect plant reality, not
+          approximations of it.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       § 004 — UL CERTIFICATION + STATS
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="section">
+    <div class="container">
+
       <div class="section-ref">
         <div class="section-ref-bar" style="background: var(--green)"></div>
         <span class="ref-label">§ 004 · Engineering Standards</span>
@@ -179,8 +277,7 @@ import CTASection from '../components/CTASection.astro';
         <div class="reveal">
           <span class="badge badge-green mb-4">UL Certified</span>
           <h2 class="display-md mb-4">
-            Built to the standard<br />
-            inspectors actually require.
+            Built to the standard<br />inspectors actually require.
           </h2>
           <p class="text-ink-3 leading-relaxed mb-5">
             Every Unity control panel ships UL-certified. Not "UL compliant." Not
@@ -188,9 +285,9 @@ import CTASection from '../components/CTASection.astro';
             inspections, and the fact that your facility needs to keep running.
           </p>
           <p class="text-ink-3 leading-relaxed mb-6">
-            Total redundancy means every critical component has a failover path.
-            Sensor failure? The system falls back on adjacent sensor data. Communication
-            failure? Local control logic continues without the cloud.
+            Total redundancy means every critical component has a failover path. Sensor
+            failure? The system falls back on adjacent sensor data. Communication failure?
+            Local control logic continues without the cloud.
           </p>
           <ul class="space-y-3">
             {[
@@ -211,7 +308,6 @@ import CTASection from '../components/CTASection.astro';
           </ul>
         </div>
 
-        <!-- Stats -->
         <div class="reveal grid grid-cols-2 gap-4">
           {[
             { value: "40%", label: "Cost reduction", detail: "vs. traditional LED + thermostat systems" },
@@ -231,12 +327,60 @@ import CTASection from '../components/CTASection.astro';
   </section>
 
 
-  <!-- § 005 — INTEGRATION WITH CROPVISION -->
+  <!-- ═══════════════════════════════════════════════════════
+       § 005 — PROOF
+  ═══════════════════════════════════════════════════════════ -->
   <section class="section section-alt">
     <div class="container">
+
       <div class="section-ref">
         <div class="section-ref-bar"></div>
-        <span class="ref-label">§ 005 · Integration</span>
+        <span class="ref-label">§ 005 · Running in Commercial Facilities</span>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="reveal">
+          <h2 class="display-md mb-5">
+            Precision control,<br />proven at scale.
+          </h2>
+
+          <blockquote class="card p-6" style="border-left: 3px solid var(--gold)">
+            <p class="font-display italic text-ink-2 mb-4 text-base leading-relaxed">
+              "We were running consumer-grade controls before. Good enough for where we were.
+              When we scaled to three rooms, 'good enough' stopped being good enough. Unity
+              gave us control that actually holds — and our energy bill went down when I
+              expected it to go up."
+            </p>
+            <div class="font-mono text-xs text-ink-3 uppercase tracking-widest">
+              Operations Manager — Multi-room facility, Colorado
+            </div>
+          </blockquote>
+        </div>
+
+        <div class="reveal">
+          <img
+            src="/images/grow-room-illustration.png"
+            alt="Commercial grow room with Unity automation controls"
+            width="600"
+            height="400"
+            class="rounded-lg w-full object-cover"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       § 006 — CROPVISION INTEGRATION
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="section section-surface">
+    <div class="container">
+
+      <div class="section-ref">
+        <div class="section-ref-bar"></div>
+        <span class="ref-label">§ 006 · Integration</span>
       </div>
 
       <div class="max-w-3xl mx-auto text-center reveal">
@@ -250,7 +394,7 @@ import CTASection from '../components/CTASection.astro';
           cultivation system that top producers run.
         </p>
         <div class="flex flex-wrap gap-4 justify-center">
-          <a href="/cropvision" class="btn btn-outline">Explore CropVision</a>
+          <a href="/cropvision" class="btn btn-outline">Explore CropVision →</a>
           <a href="/contact" class="btn btn-primary">Book a Demo →</a>
         </div>
       </div>
@@ -259,7 +403,7 @@ import CTASection from '../components/CTASection.astro';
 
 
   <CTASection
-    ref="005"
+    sectionRef="007"
     eyebrow="Get a Quote"
     headline="Stop reacting to your climate. Start controlling it."
     body="Every facility is different. We'll scope a Unity system for your actual square footage, equipment, and yield targets — then show you the ROI math."
