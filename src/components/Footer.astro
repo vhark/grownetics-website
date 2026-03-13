@@ -16,7 +16,23 @@ const company = [
 ];
 ---
 
-<footer class="bg-ink text-parchment/80 pt-16 pb-8">
+<div class="bg-ink border-t border-parchment/10" style="background: #111110;">
+  <div class="container py-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+    <div>
+      <p class="font-display text-xl font-semibold text-parchment/90 mb-1">
+        Ready to see what your operation is actually capable of?
+      </p>
+      <p class="text-sm text-parchment/40">
+        Free one-hour discovery call. No pitch deck. Just your operation and ours.
+      </p>
+    </div>
+    <a href="/contact" class="btn btn-primary flex-shrink-0">
+      Book a Discovery Call →
+    </a>
+  </div>
+</div>
+
+<footer class="bg-ink text-parchment/80 pt-12 pb-8">
   <div class="container">
 
     <!-- Top grid -->
@@ -76,25 +92,29 @@ const company = [
         </ul>
       </div>
 
-      <!-- Contact -->
+      <!-- Newsletter -->
       <div>
-        <h3 class="font-mono text-xs tracking-widest uppercase text-parchment/40 mb-4">Contact</h3>
-        <ul class="space-y-2.5">
-          <li>
-            <a
-              href="mailto:hello@grownetics.com"
-              class="text-sm text-parchment/60 hover:text-parchment transition-colors"
-            >
-              hello@grownetics.com
-            </a>
-          </li>
-          <li>
-            <span class="text-sm text-parchment/40">Boulder, CO 80302</span>
-          </li>
-        </ul>
-        <div class="mt-6">
-          <a href="/contact" class="btn btn-outline text-parchment border-parchment/30 hover:border-parchment/60 text-xs py-2.5 px-4">
-            Book a Demo
+        <h3 class="font-mono text-xs tracking-widest uppercase text-parchment/40 mb-4">Stay Current</h3>
+        <p class="text-xs text-parchment/40 leading-relaxed mb-4">
+          No vendor theater. Grower-relevant content — data, techniques, facility case studies, and early access to what we're building.
+        </p>
+        <form action="https://grownetics.com/forms/newsletter" method="POST" class="space-y-2">
+          <input type="hidden" name="form" value="footer-newsletter" />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your work email"
+            required
+            class="w-full px-3 py-2 rounded text-xs font-mono outline-none"
+            style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #E8DDD0;"
+          />
+          <button type="submit" class="btn w-full justify-center text-xs py-2.5" style="background: var(--green); color: #fff;">
+            Subscribe →
+          </button>
+        </form>
+        <div class="mt-4">
+          <a href="mailto:hello@grownetics.com" class="text-xs text-parchment/40 hover:text-parchment/70 transition-colors">
+            hello@grownetics.com
           </a>
         </div>
       </div>

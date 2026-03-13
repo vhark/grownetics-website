@@ -3,8 +3,8 @@ import Base from '../layouts/Base.astro';
 ---
 
 <Base
-  title="Contact Grownetics — Book a Demo or Discovery Call"
-  description="Book a free 1-hour discovery call or demo with Grownetics. We'll evaluate your facility, identify your top constraints, and show you what the platform can do. Boulder, CO."
+  title="Contact Grownetics — Book a Discovery Call"
+  description="Free one-hour discovery call — no pitch, no agenda. Tell us what's holding your operation back. Email hello@grownetics.com or use the form. Boulder, CO."
   canonical="/contact"
 >
 
@@ -21,16 +21,19 @@ import Base from '../layouts/Base.astro';
           </div>
 
           <h1 id="contact-headline" class="display-xl mb-5">
-            Let's look at<br />
-            <span style="color: var(--green)">your operation.</span>
+            Tell us what's holding<br />
+            <span style="color: var(--green)">your operation back.</span>
           </h1>
           <p class="text-xl font-display italic text-ink-2 mb-4">
-            One free hour. No pitch deck. Just your facility data and ours.
+            A free one-hour discovery call. No agenda except understanding your facility.
           </p>
-          <p class="text-lg text-ink-3 leading-relaxed mb-10 max-w-xl">
-            The Discovery Call is a working session — we review your current setup,
-            identify your top three constraints, and show you what a Grownetics
-            deployment would actually look like in your specific facility.
+          <p class="text-lg text-ink-3 leading-relaxed mb-6 max-w-xl">
+            We talk to a lot of operators. The most productive first conversations are the
+            ones where you show up with a specific problem — a room that's been inconsistent,
+            a facility you're designing, a scale-up you're trying to get right.
+          </p>
+          <p class="text-ink-3 leading-relaxed mb-10 max-w-xl">
+            Come with the problem. We'll come with the questions.
           </p>
 
           <!-- What to expect -->
@@ -79,7 +82,7 @@ import Base from '../layouts/Base.astro';
         <div>
           <div class="card p-8">
             <h2 class="font-mono text-xs tracking-widest uppercase text-ink-3 mb-6">
-              Book a Discovery Call
+              § 001 · Let's Talk
             </h2>
 
             <form
@@ -179,27 +182,39 @@ import Base from '../layouts/Base.astro';
               </div>
 
               <div>
-                <label for="message" class="form-label">Tell us about your operation</label>
+                <label for="message" class="form-label">What are you working on?</label>
                 <textarea
                   id="message"
                   name="message"
                   class="form-input"
-                  placeholder="What are you growing? What's your biggest current challenge? Anything that gives us context before the call."
+                  placeholder="Tell us the one thing you most want to fix or build. The more specific, the better."
                   rows="4"
                 ></textarea>
+              </div>
+
+              <div>
+                <label for="source" class="form-label">How did you hear about Grownetics?</label>
+                <select id="source" name="source" class="form-input">
+                  <option value="">Select one</option>
+                  <option value="referral">Referral from another grower</option>
+                  <option value="search">Search engine</option>
+                  <option value="social">Social media / LinkedIn</option>
+                  <option value="event">Industry event / trade show</option>
+                  <option value="distributor">Distributor or partner</option>
+                  <option value="other">Other</option>
+                </select>
               </div>
 
               <button
                 type="submit"
                 class="btn btn-primary w-full justify-center text-sm py-4"
               >
-                Request Discovery Call
-                <span aria-hidden="true">→</span>
+                Send It →
               </button>
 
               <p class="text-xs text-ink-3 text-center">
-                We'll respond within 1 business day to schedule.
-                <br />No spam. No pressure.
+                Typically respond within 1 business day.
+                Based in Boulder, CO — serving operations across North America.
               </p>
             </form>
           </div>
