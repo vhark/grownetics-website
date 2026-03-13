@@ -23,32 +23,38 @@ const {
 <section
   class:list={[
     'section relative overflow-hidden',
-    variant === 'dark' ? 'bg-ink text-parchment' : '',
+    variant === 'dark' ? 'text-parchment' : '',
     variant === 'green' ? 'bg-green text-white' : '',
     variant === 'default' ? 'bg-parchment-dark' : '',
   ]}
+  style={variant === 'dark' ? 'background: #2B2C2E;' : ''}
 >
-  <!-- Subtle background texture for dark variant -->
+  <!-- Subtle graph grid for dark variant — Archival texture -->
   {variant === 'dark' && (
-    <div class="absolute inset-0 graph-grid opacity-10"></div>
+    <div
+      class="absolute inset-0"
+      style="background-image: linear-gradient(rgba(154,136,96,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(154,136,96,0.035) 1px, transparent 1px); background-size: 72px 72px; opacity: 1;"
+    ></div>
   )}
 
   <div class="container relative z-10">
     <div class="max-w-2xl mx-auto text-center">
 
-      <!-- Section ref -->
+      <!-- § Section ref — Archival DNA -->
       <div class="flex items-center justify-center gap-3 mb-8">
         <div
           class:list={[
             'w-0.5 h-3.5 rounded',
-            variant === 'default' ? 'bg-gold' : 'bg-white/40',
+            variant === 'default' ? 'bg-gold' : 'opacity-40',
           ]}
+          style={variant !== 'default' ? 'background: rgba(154,136,96,0.6)' : ''}
         ></div>
         <span
           class:list={[
             'font-mono text-xs tracking-widest uppercase',
-            variant === 'default' ? 'text-gold' : 'text-white/50',
+            variant === 'default' ? 'text-gold' : '',
           ]}
+          style={variant !== 'default' ? 'color: rgba(154,136,96,0.6)' : ''}
         >
           § {refNum} · {eyebrow}
         </span>
@@ -56,16 +62,20 @@ const {
 
       <h2 class:list={[
         'display-lg mb-6',
-        variant !== 'default' ? 'text-white' : '',
-      ]}>
+        variant !== 'default' ? '' : '',
+      ]}
+        style={variant !== 'default' ? 'color: #E9E8EE;' : ''}
+      >
         {headline}
       </h2>
 
       {body && (
         <p class:list={[
           'text-lg leading-relaxed mb-10 max-w-xl mx-auto',
-          variant !== 'default' ? 'text-white/70' : 'text-ink-3',
-        ]}>
+          variant !== 'default' ? '' : 'text-ink-3',
+        ]}
+          style={variant !== 'default' ? 'color: rgba(151,153,166,0.85);' : ''}
+        >
           {body}
         </p>
       )}
@@ -75,10 +85,9 @@ const {
           href={cta.href}
           class:list={[
             'btn',
-            variant === 'dark' ? 'btn-primary' : '',
-            variant === 'green' ? 'bg-white text-green hover:bg-white/90' : '',
-            variant === 'default' ? 'btn-primary' : '',
+            variant === 'green' ? '' : 'btn-primary',
           ]}
+          style={variant === 'green' ? 'background: #fff; color: var(--green);' : ''}
         >
           {cta.label}
           <span aria-hidden="true">→</span>
@@ -88,8 +97,9 @@ const {
             href={ctaSecondary.href}
             class:list={[
               'btn',
-              variant !== 'default' ? 'border border-white/30 text-white hover:bg-white/10' : 'btn-ghost',
+              variant === 'default' ? 'btn-ghost' : '',
             ]}
+            style={variant !== 'default' ? 'border: 1px solid rgba(255,255,255,0.2); color: rgba(233,232,238,0.65);' : ''}
           >
             {ctaSecondary.label}
           </a>
