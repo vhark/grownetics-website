@@ -1,0 +1,265 @@
+---
+import Base from '../layouts/Base.astro';
+import CTASection from '../components/CTASection.astro';
+---
+
+<Base
+  title="Unity — Predictive Climate Automation & Intelligent Controls"
+  description="Unity delivers predictive climate and CO2 automation with hybrid lighting integration. UL-certified controls engineered for total redundancy and 40% cost reduction vs. traditional approaches."
+  canonical="/unity"
+>
+
+  <!-- HERO -->
+  <section class="relative min-h-[65vh] flex items-center graph-grid pt-16" aria-labelledby="unity-headline">
+    <div class="absolute inset-0 overflow-hidden">
+      <img src="/images/greenhouse.jpg" alt="" role="presentation"
+           class="w-full h-full object-cover opacity-25" loading="eager" width="1920" height="1080" />
+      <div class="absolute inset-0" style="background: linear-gradient(135deg, var(--bg) 55%, transparent)"></div>
+    </div>
+
+    <div class="container relative z-10 py-20">
+      <div class="max-w-2xl">
+        <div class="section-ref mb-6">
+          <div class="section-ref-bar" style="background: var(--gold)"></div>
+          <span class="ref-label" style="color: var(--gold)">§ 001 · Product — Unity</span>
+        </div>
+
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span class="badge badge-gold">Predictive Automation</span>
+          <span class="badge badge-green">UL Certified</span>
+        </div>
+
+        <h1 id="unity-headline" class="display-xl mb-5">
+          Control that predicts.<br />
+          <span style="color: var(--gold)">Not just reacts.</span>
+        </h1>
+        <p class="text-xl font-display italic text-ink-2 mb-4">
+          Climate automation designed for precision, not approximation.
+        </p>
+        <p class="text-lg text-ink-3 leading-relaxed mb-8 max-w-xl">
+          Unity replaces thermostat-logic control with predictive climate algorithms,
+          hybrid lighting integration, and UL-certified panels built for total redundancy.
+          40% cost reduction. 20% energy savings. Zero compromises on yield.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/contact" class="btn btn-primary">Get a Quote →</a>
+          <a href="#how-it-works" class="btn btn-ghost">See How It Works</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- § 002 — THE PROBLEM -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-ref">
+        <div class="section-ref-bar" style="background: var(--terracotta)"></div>
+        <span class="ref-label" style="color: var(--terracotta)">§ 002 · The Control Problem</span>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="reveal">
+          <h2 class="display-md mb-6">
+            Thermostats are<br />
+            <span style="color: var(--terracotta)">ruins dressed as controls.</span>
+          </h2>
+          <p class="text-ink-3 leading-relaxed mb-4">
+            Traditional HVAC controls react to temperature after it's already wrong.
+            By the time your thermostat kicks on, your VPD has already drifted. Your
+            CO₂ enrichment fired five minutes too late. Your lights ramped up while
+            your dehumidifier was working overtime.
+          </p>
+          <p class="text-ink-3 leading-relaxed">
+            Unity's predictive algorithms understand your facility's thermal dynamics —
+            ramp times, lag times, thermal mass — and act before conditions drift. The
+            result is tighter setpoints, less energy waste, and more consistent yield.
+          </p>
+        </div>
+
+        <div class="reveal grid grid-cols-1 gap-4">
+          {[
+            { before: "Reactive thermostats", after: "Predictive climate algorithms with 15-minute foresight" },
+            { before: "Separate HVAC + lighting + CO₂ controls", after: "Unified control loop — everything speaks to everything" },
+            { before: "Generic panels with minimal redundancy", after: "UL-certified controls, redundant components, zero single points of failure" },
+            { before: "Energy waste from simultaneous heating + cooling", after: "Load sequencing that prevents conflict and cuts energy 20%" },
+          ].map((item) => (
+            <div class="flex gap-4 p-4 card">
+              <div class="flex-shrink-0 text-xs">
+                <div class="font-mono text-terracotta uppercase tracking-wider mb-1">Before</div>
+                <div class="text-sm text-ink-3">{item.before}</div>
+              </div>
+              <div class="text-green/40 self-center flex-shrink-0">→</div>
+              <div class="flex-shrink-0 text-xs">
+                <div class="font-mono text-green uppercase tracking-wider mb-1">After</div>
+                <div class="text-sm text-ink">{item.after}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- § 003 — HOW IT WORKS -->
+  <section class="section" id="how-it-works" aria-labelledby="unity-how-headline">
+    <div class="container">
+      <div class="section-ref">
+        <div class="section-ref-bar"></div>
+        <span class="ref-label">§ 003 · System Architecture</span>
+      </div>
+
+      <div class="max-w-xl mb-12">
+        <h2 id="unity-how-headline" class="display-lg mb-4">
+          Three integrated layers.
+        </h2>
+        <p class="text-ink-3 leading-relaxed">
+          Unity operates as three coordinated layers — climate, lighting, and CO₂ —
+          unified by a single control logic that reads your CropVision sensor data
+          in real time.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 reveal">
+        {[
+          {
+            num: "01",
+            name: "Climate Control",
+            desc: "Predictive HVAC management with thermal mass modeling. Temperature, humidity, and VPD setpoints maintained within ±0.5° and ±2% RH through every stage.",
+            features: ["Predictive setpoint algorithms", "Zone-level control", "VPD-driven humidity management", "Total redundancy failsafe"],
+          },
+          {
+            num: "02",
+            name: "Hybrid Lighting",
+            desc: "Seamless integration of HPS, LED, and mixed-technology fixtures. Dynamic intensity scheduling based on DLI targets from your CropVision data.",
+            features: ["HPS + LED hybrid support", "DLI-driven scheduling", "Sunrise/sunset simulation", "Spectrum optimization"],
+          },
+          {
+            num: "03",
+            name: "CO₂ Enrichment",
+            desc: "Canopy-level CO₂ enrichment tied directly to light intensity and stomatal conductance. Enrich when it counts, shut off when it's wasted.",
+            features: ["Photosynthesis-coupled enrichment", "Zone-level CO₂ targeting", "Leak detection + safety interlocks", "Efficiency tracking"],
+          },
+        ].map((layer) => (
+          <div class="card p-7">
+            <div class="font-mono text-xs text-gold tracking-widest mb-4">{layer.num}</div>
+            <h3 class="font-display text-xl font-semibold text-ink mb-3">{layer.name}</h3>
+            <p class="text-sm text-ink-3 leading-relaxed mb-5">{layer.desc}</p>
+            <ul class="space-y-2">
+              {layer.features.map((f) => (
+                <li class="flex items-center gap-2 text-xs text-ink-3">
+                  <span class="w-1 h-1 rounded-full bg-green flex-shrink-0"></span>
+                  {f}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- § 004 — UL CERTIFICATION + REDUNDANCY -->
+  <section class="section section-surface">
+    <div class="container">
+      <div class="section-ref">
+        <div class="section-ref-bar" style="background: var(--green)"></div>
+        <span class="ref-label">§ 004 · Engineering Standards</span>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="reveal">
+          <span class="badge badge-green mb-4">UL Certified</span>
+          <h2 class="display-md mb-4">
+            Built to the standard<br />
+            inspectors actually require.
+          </h2>
+          <p class="text-ink-3 leading-relaxed mb-5">
+            Every Unity control panel ships UL-certified. Not "UL compliant." Not
+            "designed to UL spec." Certified. The distinction matters for insurance,
+            inspections, and the fact that your facility needs to keep running.
+          </p>
+          <p class="text-ink-3 leading-relaxed mb-6">
+            Total redundancy means every critical component has a failover path.
+            Sensor failure? The system falls back on adjacent sensor data. Communication
+            failure? Local control logic continues without the cloud.
+          </p>
+          <ul class="space-y-3">
+            {[
+              "UL 508A listed control panels",
+              "N+1 redundancy on critical components",
+              "Local failover — continues operating offline",
+              "Full documentation package for inspections and insurance",
+            ].map((point) => (
+              <li class="feature-check">
+                <div class="check-icon">
+                  <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                    <path d="M1 4l3 3 5-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <span class="text-sm text-ink-3">{point}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Stats -->
+        <div class="reveal grid grid-cols-2 gap-4">
+          {[
+            { value: "40%", label: "Cost reduction", detail: "vs. traditional LED + thermostat systems" },
+            { value: "20%", label: "Energy savings", detail: "Through load sequencing and predictive control" },
+            { value: "±0.5°", label: "Temperature precision", detail: "VPD-aware climate maintenance" },
+            { value: "100%", label: "UL Certified", detail: "Every panel, every install" },
+          ].map((stat) => (
+            <div class="card p-5 text-center">
+              <div class="stat-number text-2xl mb-1">{stat.value}</div>
+              <div class="font-semibold text-sm text-ink mb-1">{stat.label}</div>
+              <div class="font-mono text-xs text-ink-3 leading-snug">{stat.detail}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- § 005 — INTEGRATION WITH CROPVISION -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-ref">
+        <div class="section-ref-bar"></div>
+        <span class="ref-label">§ 005 · Integration</span>
+      </div>
+
+      <div class="max-w-3xl mx-auto text-center reveal">
+        <h2 class="display-lg mb-6">
+          Better together with CropVision.
+        </h2>
+        <p class="text-lg text-ink-3 leading-relaxed mb-10 max-w-2xl mx-auto">
+          Unity is designed to operate with CropVision sensor data — closing the loop
+          between what you see and what you control. CropVision feeds real-time
+          microclimate data; Unity acts on it. Together, they create the tight-loop
+          cultivation system that top producers run.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href="/cropvision" class="btn btn-outline">Explore CropVision</a>
+          <a href="/contact" class="btn btn-primary">Book a Demo →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <CTASection
+    ref="006"
+    eyebrow="Get a Quote"
+    headline="What would 20% less energy cost mean for your operation?"
+    body="Every facility is different. We'll scope a Unity system for your actual square footage, equipment, and yield targets — then show you the ROI math."
+    cta={{ label: "Get a Custom Quote", href: "/contact" }}
+    ctaSecondary={{ label: "Explore Foundation →", href: "/foundation" }}
+    variant="dark"
+  />
+
+</Base>

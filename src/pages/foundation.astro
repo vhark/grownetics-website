@@ -1,0 +1,231 @@
+---
+import Base from '../layouts/Base.astro';
+import CTASection from '../components/CTASection.astro';
+---
+
+<Base
+  title="Foundation — Smart Facility Design & CEA Engineering"
+  description="Grownetics Foundation delivers precision facility design from greenfield to retrofit. Four pillars: Hyper Efficient, Bio-Secure, Compliant, Precise. CAD/engineering built around your operation."
+  canonical="/foundation"
+>
+
+  <!-- HERO -->
+  <section class="relative min-h-[65vh] flex items-center graph-grid pt-16" aria-labelledby="fd-headline">
+    <div class="absolute inset-0 overflow-hidden">
+      <img src="/images/service-cad.jpg" alt="" role="presentation"
+           class="w-full h-full object-cover opacity-20" loading="eager" width="1200" height="800" />
+      <div class="absolute inset-0" style="background: linear-gradient(120deg, var(--bg) 60%, transparent)"></div>
+    </div>
+
+    <div class="container relative z-10 py-20">
+      <div class="max-w-2xl">
+        <div class="section-ref mb-6">
+          <div class="section-ref-bar" style="background: var(--terracotta)"></div>
+          <span class="ref-label" style="color: var(--terracotta)">§ 001 · Product — Foundation</span>
+        </div>
+
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span class="badge badge-terracotta">Facility Design</span>
+          <span class="badge badge-gold">Greenfield to Retrofit</span>
+        </div>
+
+        <h1 id="fd-headline" class="display-xl mb-5">
+          Design out the<br />
+          <span style="color: var(--terracotta)">inefficiency first.</span>
+        </h1>
+        <p class="text-xl font-display italic text-ink-2 mb-4">
+          The facility you build determines the yields you'll ever reach.
+        </p>
+        <p class="text-lg text-ink-3 leading-relaxed mb-8 max-w-xl">
+          As CEA markets mature, inefficient grows disappear. Foundation designs
+          commercial facilities that are hyper-efficient, bio-secure, compliant,
+          and precisely engineered — from the very first line on the drawing.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/contact" class="btn btn-primary">Free Discovery Call →</a>
+          <a href="#pillars" class="btn btn-ghost">See the Four Pillars</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- § 002 — MARKET REALITY -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-ref">
+        <div class="section-ref-bar" style="background: var(--terracotta)"></div>
+        <span class="ref-label" style="color: var(--terracotta)">§ 002 · Market Reality</span>
+      </div>
+
+      <div class="max-w-3xl reveal">
+        <h2 class="display-md mb-6">
+          The market culls the inefficient.<br />
+          <span style="color: var(--terracotta)">It always has.</span>
+        </h2>
+        <p class="text-lg text-ink-3 leading-relaxed mb-5">
+          Cannabis and CEA markets are compressing margins every year. Operators who
+          built for convenience — or who inherited facilities designed for a different
+          era — are finding they can't compete on price or quality simultaneously.
+        </p>
+        <p class="text-ink-3 leading-relaxed">
+          Foundation is the difference between a facility that can hit $200/lb all-in
+          and one that's stuck at $350/lb indefinitely. The design decisions made on
+          Day 1 compound for the next decade. Get them right the first time.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- § 003 — FOUR PILLARS -->
+  <section class="section" id="pillars" aria-labelledby="pillars-headline">
+    <div class="container">
+      <div class="section-ref">
+        <div class="section-ref-bar"></div>
+        <span class="ref-label">§ 003 · The Four Pillars</span>
+      </div>
+
+      <div class="max-w-xl mb-12">
+        <h2 id="pillars-headline" class="display-lg mb-4">
+          Every Foundation design<br />is built on four commitments.
+        </h2>
+        <p class="text-ink-3 leading-relaxed">
+          Not aspirations. Engineering requirements. Each pillar is a measurable
+          design standard that every facility must meet before we sign off on it.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-6 reveal">
+        {[
+          {
+            number: "01",
+            pillar: "Hyper Efficient",
+            color: "var(--green)",
+            headline: "Every watt. Every gallon. Every square foot.",
+            desc: "Energy load calculations, HVAC sizing, lighting density, and water/nutrient system design — all optimized before a single permit is filed. Our facilities don't become efficient over time. They're engineered that way from day one.",
+            specs: [
+              "HVAC load calculations with safety margins",
+              "Lighting density mapping vs. DLI targets",
+              "Water + nutrient system sizing",
+              "Energy ROI projections pre-build",
+            ],
+          },
+          {
+            number: "02",
+            pillar: "Bio-Secure",
+            color: "var(--terracotta)",
+            headline: "Contamination stops at the design stage.",
+            desc: "Airflow pressurization, traffic pattern engineering, and HVAC filtration design that prevents cross-contamination between zones. Pest and pathogen entry points eliminated architecturally, not managed with protocols alone.",
+            specs: [
+              "Positive/negative pressure zone design",
+              "HEPA + UV filtration specifications",
+              "Personnel traffic flow modeling",
+              "Quarantine zone integration",
+            ],
+          },
+          {
+            number: "03",
+            pillar: "Compliant",
+            color: "var(--gold)",
+            headline: "Designed to pass — every inspection, every time.",
+            desc: "Cannabis and CEA compliance requirements vary by state and municipality. Foundation designs are built to regulatory requirements from the start. Not retrofitted to comply — designed to exceed.",
+            specs: [
+              "State-specific regulatory mapping",
+              "UL electrical specifications",
+              "Security system integration planning",
+              "Track & trace infrastructure support",
+            ],
+          },
+          {
+            number: "04",
+            pillar: "Precise",
+            color: "var(--green-light)",
+            headline: "CAD-level detail on every system.",
+            desc: "We don't hand you a concept drawing. Every Foundation project delivers construction-ready CAD documentation — HVAC schematics, electrical one-lines, plumbing layouts, and sensor placement guides tied to your CropVision deployment.",
+            specs: [
+              "Full CAD/BIM documentation package",
+              "HVAC and electrical schematics",
+              "Sensor placement design for CropVision",
+              "Contractor handoff documentation",
+            ],
+          },
+        ].map((pillar) => (
+          <div class="card p-7 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-1 h-full rounded-l-lg" style={`background: ${pillar.color}`}></div>
+            <div class="pl-2">
+              <div class="font-mono text-xs tracking-widest mb-3" style={`color: ${pillar.color}`}>{pillar.number}</div>
+              <h3 class="font-display text-2xl font-semibold text-ink mb-1">{pillar.pillar}</h3>
+              <p class="font-display italic text-ink-2 mb-4">{pillar.headline}</p>
+              <p class="text-sm text-ink-3 leading-relaxed mb-5">{pillar.desc}</p>
+              <ul class="space-y-2">
+                {pillar.specs.map((spec) => (
+                  <li class="flex items-center gap-2 text-xs text-ink-3">
+                    <span class="w-1 h-1 rounded-full flex-shrink-0" style={`background: ${pillar.color}`}></span>
+                    {spec}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- § 004 — GREENFIELD TO RETROFIT -->
+  <section class="section section-surface">
+    <div class="container">
+      <div class="section-ref">
+        <div class="section-ref-bar" style="background: var(--gold)"></div>
+        <span class="ref-label">§ 004 · Project Types</span>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 reveal">
+        {[
+          {
+            type: "Greenfield",
+            desc: "New construction from site selection through construction documentation. Full design authority from Day 1.",
+            services: ["Site evaluation + selection", "Facility concept design", "Full CAD documentation package", "Contractor bid support"],
+          },
+          {
+            type: "Retrofit",
+            desc: "Existing facility optimization. We find the constraints and redesign around them — HVAC, lighting, environmental controls.",
+            services: ["Existing conditions assessment", "Constraint identification + ranking", "Phased retrofit planning", "Priority ROI analysis"],
+          },
+          {
+            type: "Expansion",
+            desc: "Scaling an existing operation without sacrificing the efficiency of what you already built. We make new spaces perform like your best rooms.",
+            services: ["Capacity modeling", "Infrastructure integration planning", "Systems uniformity review", "Build-out documentation"],
+          },
+        ].map((project) => (
+          <div class="card p-6">
+            <h3 class="font-display text-xl font-semibold text-ink mb-3">{project.type}</h3>
+            <p class="text-sm text-ink-3 leading-relaxed mb-5">{project.desc}</p>
+            <ul class="space-y-2">
+              {project.services.map((svc) => (
+                <li class="flex items-center gap-2 text-xs text-ink-3">
+                  <span class="w-1 h-1 rounded-full bg-green flex-shrink-0"></span>
+                  {svc}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <CTASection
+    ref="005"
+    eyebrow="Start Here"
+    headline="One free hour to map your facility's constraints."
+    body="Whether you're breaking ground or fixing an underperforming room — our Discovery Call is where we identify what's costing you yield before we talk about anything else."
+    cta={{ label: "Book Your Free Discovery Call", href: "/contact" }}
+    ctaSecondary={{ label: "Explore Consulting →", href: "/consulting" }}
+    variant="dark"
+  />
+
+</Base>

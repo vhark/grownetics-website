@@ -1,0 +1,125 @@
+---
+const navLinks = [
+  { label: 'CropVision', href: '/cropvision' },
+  { label: 'Unity', href: '/unity' },
+  { label: 'Foundation', href: '/foundation' },
+  { label: 'Consulting', href: '/consulting' },
+  { label: 'OS', href: '/os', highlight: true },
+  { label: 'About', href: '/about' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<nav
+  id="main-nav"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+  aria-label="Main navigation"
+>
+  <div class="container">
+    <div class="flex items-center justify-between h-16 md:h-18">
+
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2 flex-shrink-0" aria-label="Grownetics home">
+        <img
+          src="/images/logo-black.png"
+          alt="Grownetics"
+          width="140"
+          height="28"
+          class="h-7 w-auto"
+          loading="eager"
+        />
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center gap-1">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class:list={[
+              'px-3 py-1.5 rounded font-mono text-xs tracking-widest uppercase transition-colors duration-150',
+              link.highlight
+                ? 'text-green border border-green/30 hover:bg-green/8 px-4'
+                : 'text-ink-3 hover:text-ink hover:bg-black/5',
+              currentPath === link.href || currentPath.startsWith(link.href + '/')
+                ? 'text-ink font-medium'
+                : '',
+            ]}
+            aria-current={currentPath === link.href ? 'page' : undefined}
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+
+      <!-- CTA + Hamburger -->
+      <div class="flex items-center gap-3">
+        <a
+          href="/contact"
+          class="hidden md:inline-flex btn btn-primary text-xs py-2.5 px-5"
+        >
+          Book a Demo
+        </a>
+
+        <!-- Mobile hamburger -->
+        <button
+          id="menu-toggle"
+          class="md:hidden flex flex-col gap-1.5 p-2 rounded"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <span class="menu-bar block w-5 h-0.5 bg-ink-2 transition-all duration-200"></span>
+          <span class="menu-bar block w-5 h-0.5 bg-ink-2 transition-all duration-200"></span>
+          <span class="menu-bar block w-5 h-0.5 bg-ink-2 transition-all duration-200"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden border-t border-border-light bg-parchment/98 backdrop-blur-sm"
+  >
+    <div class="container py-4 flex flex-col gap-1">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class:list={[
+            'py-3 px-3 rounded font-mono text-xs tracking-widest uppercase transition-colors',
+            link.highlight
+              ? 'text-green'
+              : 'text-ink-3',
+            currentPath === link.href ? 'font-medium text-ink' : '',
+          ]}
+        >
+          {link.label}
+        </a>
+      ))}
+      <div class="mt-3 pt-3 border-t border-border-light">
+        <a href="/contact" class="btn btn-primary w-full justify-center text-xs py-3">
+          Book a Demo
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+
+  if (toggle && menu) {
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('hidden');
+      toggle.setAttribute('aria-expanded', String(!open));
+    });
+  }
+</script>
+
+<style>
+  nav {
+    background: transparent;
+  }
+</style>

@@ -1,0 +1,267 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="Contact Grownetics — Book a Demo or Discovery Call"
+  description="Book a free 1-hour discovery call or demo with Grownetics. We'll evaluate your facility, identify your top constraints, and show you what the platform can do. Boulder, CO."
+  canonical="/contact"
+>
+
+  <!-- HERO -->
+  <section class="relative pt-32 pb-16 graph-grid" aria-labelledby="contact-headline">
+    <div class="container">
+      <div class="grid md:grid-cols-2 gap-16">
+
+        <!-- Left: info -->
+        <div>
+          <div class="section-ref mb-6">
+            <div class="section-ref-bar"></div>
+            <span class="ref-label">§ 001 · Get in Touch</span>
+          </div>
+
+          <h1 id="contact-headline" class="display-xl mb-5">
+            Let's look at<br />
+            <span style="color: var(--green)">your operation.</span>
+          </h1>
+          <p class="text-xl font-display italic text-ink-2 mb-4">
+            One free hour. No pitch deck. Just your facility data and ours.
+          </p>
+          <p class="text-lg text-ink-3 leading-relaxed mb-10 max-w-xl">
+            The Discovery Call is a working session — we review your current setup,
+            identify your top three constraints, and show you what a Grownetics
+            deployment would actually look like in your specific facility.
+          </p>
+
+          <!-- What to expect -->
+          <div class="space-y-4 mb-10">
+            <h2 class="font-mono text-xs text-gold tracking-widest uppercase mb-4">What happens on the call</h2>
+            {[
+              { step: "01", desc: "Review your current monitoring + control setup (15 min)" },
+              { step: "02", desc: "Identify your top 3 yield or efficiency constraints (20 min)" },
+              { step: "03", desc: "Live CropVision / Unity demo relevant to your facility type (15 min)" },
+              { step: "04", desc: "Q&A + next steps — on your timeline, not ours (10 min)" },
+            ].map((item) => (
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-7 h-7 rounded-full flex-shrink-0 flex items-center justify-center font-mono text-xs font-medium"
+                  style="background: rgba(1, 124, 50, 0.1); color: var(--green)"
+                >
+                  {item.step}
+                </div>
+                <p class="text-sm text-ink-3 pt-1">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <!-- Contact info -->
+          <div class="border-t pt-6" style="border-color: var(--border-light)">
+            <div class="space-y-3">
+              <div class="flex items-center gap-3">
+                <span class="font-mono text-xs text-gold uppercase tracking-widest w-20">Email</span>
+                <a href="mailto:hello@grownetics.com" class="text-sm text-green hover:underline">
+                  hello@grownetics.com
+                </a>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="font-mono text-xs text-gold uppercase tracking-widest w-20">Location</span>
+                <span class="text-sm text-ink-3">Boulder, CO 80302</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="font-mono text-xs text-gold uppercase tracking-widest w-20">Response</span>
+                <span class="text-sm text-ink-3">Within 1 business day</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: form -->
+        <div>
+          <div class="card p-8">
+            <h2 class="font-mono text-xs tracking-widest uppercase text-ink-3 mb-6">
+              Book a Discovery Call
+            </h2>
+
+            <form
+              action="https://grownetics.com/forms/discovery-call"
+              method="POST"
+              class="space-y-5"
+              aria-label="Book a discovery call"
+            >
+              <input type="hidden" name="form" value="discovery-call" />
+
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="fname" class="form-label">First Name</label>
+                  <input
+                    type="text"
+                    id="fname"
+                    name="first_name"
+                    class="form-input"
+                    placeholder="First"
+                    required
+                    autocomplete="given-name"
+                  />
+                </div>
+                <div>
+                  <label for="lname" class="form-label">Last Name</label>
+                  <input
+                    type="text"
+                    id="lname"
+                    name="last_name"
+                    class="form-input"
+                    placeholder="Last"
+                    required
+                    autocomplete="family-name"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label for="email" class="form-label">Work Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-input"
+                  placeholder="you@company.com"
+                  required
+                  autocomplete="email"
+                />
+              </div>
+
+              <div>
+                <label for="company" class="form-label">Company / Facility Name</label>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  class="form-input"
+                  placeholder="Your operation"
+                  autocomplete="organization"
+                />
+              </div>
+
+              <div>
+                <label for="sqft" class="form-label">Canopy Square Footage (approx.)</label>
+                <select id="sqft" name="canopy_sqft" class="form-input">
+                  <option value="">Select a range</option>
+                  <option value="under-5k">Under 5,000 sq ft</option>
+                  <option value="5k-25k">5,000 – 25,000 sq ft</option>
+                  <option value="25k-100k">25,000 – 100,000 sq ft</option>
+                  <option value="100k-plus">100,000+ sq ft</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="form-label">What interests you most?</label>
+                <div class="space-y-2 mt-1">
+                  {[
+                    { value: "cropvision", label: "CropVision — Monitoring & Analytics" },
+                    { value: "unity", label: "Unity — Automation & Controls" },
+                    { value: "foundation", label: "Foundation — Facility Design" },
+                    { value: "consulting", label: "Optima — Cultivation Consulting" },
+                    { value: "full-stack", label: "Full platform evaluation" },
+                  ].map((opt) => (
+                    <label class="flex items-center gap-3 cursor-pointer group">
+                      <input
+                        type="checkbox"
+                        name="interests"
+                        value={opt.value}
+                        class="w-4 h-4 accent-green rounded flex-shrink-0"
+                      />
+                      <span class="text-sm text-ink-3 group-hover:text-ink transition-colors">
+                        {opt.label}
+                      </span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <label for="message" class="form-label">Tell us about your operation</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  class="form-input"
+                  placeholder="What are you growing? What's your biggest current challenge? Anything that gives us context before the call."
+                  rows="4"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="btn btn-primary w-full justify-center text-sm py-4"
+              >
+                Request Discovery Call
+                <span aria-hidden="true">→</span>
+              </button>
+
+              <p class="text-xs text-ink-3 text-center">
+                We'll respond within 1 business day to schedule.
+                <br />No spam. No pressure.
+              </p>
+            </form>
+          </div>
+
+          <!-- Alternative: email directly -->
+          <div class="mt-4 text-center">
+            <p class="text-sm text-ink-3">
+              Prefer email?{' '}
+              <a href="mailto:hello@grownetics.com" class="text-green hover:underline">
+                hello@grownetics.com
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- § 002 — Not sure where to start? -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-ref">
+        <div class="section-ref-bar"></div>
+        <span class="ref-label">§ 002 · Other Inquiries</span>
+      </div>
+
+      <div class="grid sm:grid-cols-3 gap-5 reveal">
+        {[
+          {
+            type: "Product Demo",
+            desc: "See CropVision or Unity in a live facility scenario. 30 minutes, tailored to your grow type.",
+            cta: "Request a Demo",
+            href: "#",
+            icon: "📺",
+          },
+          {
+            type: "RFQ / Proposal",
+            desc: "Need a formal quote? Send us your facility specs and we'll put together a detailed proposal within 5 business days.",
+            cta: "Send an RFQ",
+            href: "mailto:hello@grownetics.com?subject=RFQ",
+            icon: "📄",
+          },
+          {
+            type: "Partnership",
+            desc: "Integrators, distributors, and design/build firms — let's talk about how Grownetics technology fits your offer.",
+            cta: "Reach Out",
+            href: "mailto:hello@grownetics.com?subject=Partnership",
+            icon: "🤝",
+          },
+        ].map((item) => (
+          <div class="card p-6">
+            <div class="text-2xl mb-3">{item.icon}</div>
+            <h3 class="font-semibold text-ink mb-2">{item.type}</h3>
+            <p class="text-sm text-ink-3 leading-relaxed mb-4">{item.desc}</p>
+            <a href={item.href} class="font-mono text-xs text-green tracking-widest uppercase hover:underline">
+              {item.cta} →
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</Base>

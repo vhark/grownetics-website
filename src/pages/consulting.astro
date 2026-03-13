@@ -1,0 +1,272 @@
+---
+import Base from '../layouts/Base.astro';
+import CTASection from '../components/CTASection.astro';
+---
+
+<Base
+  title="Optima Consulting — Cultivation & Operations Support"
+  description="Grownetics Optima consulting delivers site evaluations, supplier audits, and cultivation support from experts who've managed 1M+ sqft. Consistently grow 2.5–3.2 lbs per light."
+  canonical="/consulting"
+>
+
+  <!-- HERO -->
+  <section class="relative min-h-[65vh] flex items-center graph-grid pt-16" aria-labelledby="consulting-headline">
+    <div class="absolute inset-0 overflow-hidden">
+      <img src="/images/service-cultivation.jpg" alt="" role="presentation"
+           class="w-full h-full object-cover opacity-20" loading="eager" width="1200" height="800" />
+      <div class="absolute inset-0" style="background: linear-gradient(120deg, var(--bg) 60%, transparent)"></div>
+    </div>
+
+    <div class="container relative z-10 py-20">
+      <div class="max-w-2xl">
+        <div class="section-ref mb-6">
+          <div class="section-ref-bar" style="background: var(--gold)"></div>
+          <span class="ref-label" style="color: var(--gold)">§ 001 · Service — Optima</span>
+        </div>
+
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span class="badge badge-gold">Cultivation Consulting</span>
+          <span class="badge badge-green">Operational Support</span>
+        </div>
+
+        <h1 id="consulting-headline" class="display-xl mb-5">
+          Expert eyes.<br />
+          <span style="color: var(--gold)">Field-tested answers.</span>
+        </h1>
+        <p class="text-xl font-display italic text-ink-2 mb-4">
+          Data tells you what happened. Our consultants tell you what to do next.
+        </p>
+        <p class="text-lg text-ink-3 leading-relaxed mb-8 max-w-xl">
+          Grownetics Optima puts operators who've managed 1M+ sqft of commercial
+          production into your facility. Site evaluations, supplier audits, cultivation
+          protocols — all targeted at one number: 2.5–3.2 lbs per light, consistently.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/contact" class="btn btn-primary">Book a Consultation →</a>
+          <a href="#services" class="btn btn-ghost">See All Services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- § 002 — THE PROBLEM -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-ref">
+        <div class="section-ref-bar" style="background: var(--terracotta)"></div>
+        <span class="ref-label" style="color: var(--terracotta)">§ 002 · The Expertise Gap</span>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="reveal">
+          <h2 class="display-md mb-6">
+            Tribal knowledge<br />
+            <span style="color: var(--terracotta)">walks out the door with your grower.</span>
+          </h2>
+          <p class="text-ink-3 leading-relaxed mb-4">
+            Most commercial grows run on undocumented institutional knowledge.
+            One head grower who knows the quirks of Room 3. One cultivation director
+            who's memorized 40 recipes that aren't written down anywhere.
+          </p>
+          <p class="text-ink-3 leading-relaxed">
+            When they leave, so does your consistency. Optima converts institutional
+            knowledge into documented systems — and fills the gaps with evidence-based
+            cultivation protocols grounded in real-world production data.
+          </p>
+        </div>
+
+        <div class="reveal">
+          <img
+            src="/images/service-audit.jpg"
+            alt="Site evaluation and operational audit in progress"
+            width="600"
+            height="400"
+            class="rounded-lg shadow-warm-lg w-full object-cover"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- § 003 — SERVICES -->
+  <section class="section" id="services" aria-labelledby="services-headline">
+    <div class="container">
+      <div class="section-ref">
+        <div class="section-ref-bar"></div>
+        <span class="ref-label">§ 003 · Service Catalog</span>
+      </div>
+
+      <div class="max-w-xl mb-12">
+        <h2 id="services-headline" class="display-lg mb-4">
+          What Optima delivers.
+        </h2>
+        <p class="text-ink-3 leading-relaxed">
+          From a one-day site evaluation to multi-month cultivation support engagements —
+          scaled to what your operation actually needs.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-5 reveal">
+        {[
+          {
+            name: "Site Evaluation",
+            badge: "Diagnostic",
+            badgeColor: "terracotta",
+            icon: "🔍",
+            desc: "A thorough operational audit of your facility — environmental systems, cultivation protocols, team workflows, and data quality. We come in, document what we find, and deliver a prioritized constraint map within five days.",
+            deliverables: ["Full environmental systems audit", "Cultivation protocol review", "Top 5 constraint identification", "Prioritized ROI improvement plan"],
+          },
+          {
+            name: "Supplier Audits",
+            badge: "Vendor Due Diligence",
+            badgeColor: "gold",
+            icon: "📋",
+            desc: "We evaluate your current input suppliers — nutrients, lighting, HVAC, controls — against best-in-class alternatives. No kickbacks. No affiliate deals. Just an honest assessment of where you're overpaying or underspecified.",
+            deliverables: ["Current vendor performance scorecard", "Competitor capability comparison", "Switch cost analysis", "Recommended vendor shortlist"],
+          },
+          {
+            name: "Cultivation Support",
+            badge: "Ongoing",
+            badgeColor: "green",
+            icon: "🌿",
+            desc: "From tissue culture to harvest — ongoing cultivation support from growers who've done it at scale. Protocol development, crop steering support, weekly data reviews, and access to our expert team when you need it.",
+            deliverables: ["Stage-by-stage cultivation protocols", "Weekly data review cadence", "Total Crop Steering™ implementation", "Harvest forecasting + post-harvest analysis"],
+          },
+          {
+            name: "Manufacturing Support",
+            badge: "Post-Harvest",
+            badgeColor: "gold",
+            icon: "⚙️",
+            desc: "Extraction, processing, and post-harvest workflows optimized for throughput, consistency, and compliance. We close the loop from grow room to finished product.",
+            deliverables: ["Processing workflow audit", "Throughput optimization", "Compliance documentation support", "QA protocol development"],
+          },
+        ].map((svc) => (
+          <div class="card p-7">
+            <div class="flex items-start gap-3 mb-4">
+              <div class="text-2xl">{svc.icon}</div>
+              <div>
+                <span class:list={['badge mb-2', `badge-${svc.badgeColor}`]}>{svc.badge}</span>
+                <h3 class="font-display text-xl font-semibold text-ink">{svc.name}</h3>
+              </div>
+            </div>
+            <p class="text-sm text-ink-3 leading-relaxed mb-5">{svc.desc}</p>
+            <div class="border-t border-border-light pt-4">
+              <div class="font-mono text-xs text-ink-3 uppercase tracking-widest mb-3">Deliverables</div>
+              <ul class="space-y-2">
+                {svc.deliverables.map((d) => (
+                  <li class="flex items-center gap-2 text-xs text-ink-3">
+                    <span class="w-1 h-1 rounded-full bg-green flex-shrink-0"></span>
+                    {d}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- § 004 — THE NUMBER -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-ref">
+        <div class="section-ref-bar" style="background: var(--green)"></div>
+        <span class="ref-label">§ 004 · The Benchmark</span>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="card p-10 text-center reveal">
+          <div class="font-mono text-xs text-gold tracking-widest uppercase mb-4">
+            Consistent Production Target
+          </div>
+          <div class="font-display font-bold text-green mb-3" style="font-size: clamp(3rem, 8vw, 5rem)">
+            2.5–3.2
+          </div>
+          <div class="font-mono text-xs text-ink-3 uppercase tracking-widest mb-6">
+            lbs per light, per cycle
+          </div>
+          <p class="text-sm text-ink-3 leading-relaxed">
+            This isn't a best-case number. It's a repeatable, sustainable target
+            that Optima clients achieve when protocols, environment, and execution
+            are aligned.
+          </p>
+        </div>
+
+        <div class="reveal">
+          <h2 class="display-md mb-4">
+            The number is<br />a system outcome —<br />
+            <span style="color: var(--green)">not a genetic lottery.</span>
+          </h2>
+          <p class="text-ink-3 leading-relaxed mb-4">
+            Most variation in commercial yields isn't genetic or strain-driven. It's
+            systems-driven. Environmental drift. Inconsistent irrigation timing. VPD
+            targets that look right on paper but miss at canopy level.
+          </p>
+          <p class="text-ink-3 leading-relaxed mb-6">
+            Optima engagements systematically address every variable that stands between
+            your current average and the 2.5–3.2 target — then builds the protocols and
+            monitoring systems to hold it there.
+          </p>
+          <a href="/contact" class="btn btn-primary">
+            Start with a Site Evaluation →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- § 005 — CREDENTIALS -->
+  <section class="section section-surface">
+    <div class="container">
+      <div class="section-ref">
+        <div class="section-ref-bar"></div>
+        <span class="ref-label">§ 005 · Team Credentials</span>
+      </div>
+
+      <div class="max-w-3xl reveal">
+        <h2 class="display-md mb-6">
+          Operators who've been there.
+        </h2>
+
+        <div class="grid sm:grid-cols-3 gap-6 mb-10">
+          {[
+            { value: "1M+", label: "sq ft managed", detail: "CO, CA, Canada, International" },
+            { value: "60+", label: "Years combined", detail: "Engineering + cultivation expertise" },
+            { value: "4", label: "States + countries", detail: "Diverse regulatory experience" },
+          ].map((c) => (
+            <div class="card p-5 text-center">
+              <div class="stat-number text-2xl mb-1">{c.value}</div>
+              <div class="font-semibold text-sm text-ink mb-1">{c.label}</div>
+              <div class="font-mono text-xs text-ink-3">{c.detail}</div>
+            </div>
+          ))}
+        </div>
+
+        <p class="text-ink-3 leading-relaxed">
+          Grownetics consultants include licensed master growers, controls engineers,
+          facility designers, and compliance specialists with hands-on track records
+          across boutique craft operations and large-scale MSOs. We've built and operated
+          the facilities we now help you optimize.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <CTASection
+    ref="006"
+    eyebrow="Book a Consultation"
+    headline="What's your current lbs per light?"
+    body="If you know the number, great — let's improve it. If you don't, that's the first thing we fix. A Site Evaluation starts the process."
+    cta={{ label: "Book a Site Evaluation", href: "/contact" }}
+    ctaSecondary={{ label: "Explore Foundation →", href: "/foundation" }}
+    variant="dark"
+  />
+
+</Base>

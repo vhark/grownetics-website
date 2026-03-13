@@ -1,0 +1,353 @@
+---
+import Base from '../layouts/Base.astro';
+import CTASection from '../components/CTASection.astro';
+---
+
+<Base
+  title="CropVision — Wireless Monitoring & 3D Microclimate Mapping"
+  description="CropVision delivers wireless 3D microclimate mapping with substrate-level monitoring. VPD, DLI, CO2, PAR, EC, VWC, pH — real-time dashboards with no hardware lock-in. 60% cost reduction vs. Argus/Priva."
+  canonical="/cropvision"
+>
+
+  <!-- ═══════════════════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="relative min-h-[65vh] flex items-center graph-grid pt-16" aria-labelledby="cv-headline">
+    <div class="absolute inset-0 overflow-hidden">
+      <img src="/images/platform-mockup.jpg" alt="" role="presentation"
+           class="w-full h-full object-cover opacity-20" loading="eager" width="1920" height="1080" />
+      <div class="absolute inset-0" style="background: linear-gradient(135deg, var(--bg) 50%, transparent)"></div>
+    </div>
+
+    <div class="container relative z-10 py-20">
+      <div class="max-w-2xl">
+        <div class="section-ref mb-6">
+          <div class="section-ref-bar"></div>
+          <span class="ref-label">§ 001 · Product — CropVision</span>
+        </div>
+
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span class="badge badge-green">Wireless Monitoring</span>
+          <span class="badge badge-gold">Open Sensor Ecosystem</span>
+        </div>
+
+        <h1 id="cv-headline" class="display-xl mb-5">
+          See every corner<br />
+          of every room.
+        </h1>
+        <p class="text-xl font-display italic text-ink-2 mb-4">
+          3D microclimate visibility your current sensors can't provide.
+        </p>
+        <p class="text-lg text-ink-3 leading-relaxed mb-8 max-w-xl">
+          CropVision maps your facility in three dimensions — substrate to canopy,
+          every zone, every bench. Real-time VPD, DLI, CO2, PAR, EC, VWC, and pH.
+          No proprietary hardware. No vendor dependency.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/contact" class="btn btn-primary">Book a Demo →</a>
+          <a href="#features" class="btn btn-ghost">See All Features</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       § 002 — THE PROBLEM (CropVision angle)
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-ref">
+        <div class="section-ref-bar" style="background: var(--terracotta)"></div>
+        <span class="ref-label" style="color: var(--terracotta)">§ 002 · The Visibility Gap</span>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="reveal">
+          <h2 class="display-md mb-6">
+            One sensor per room isn't monitoring.<br />
+            <span style="color: var(--terracotta)">It's guessing.</span>
+          </h2>
+          <p class="text-ink-3 leading-relaxed mb-4">
+            Traditional grows rely on a handful of sensors positioned by habit, not science.
+            The corner of the room might read 68°F and 72% RH. Three rows in, it's
+            6 degrees hotter and 12 points drier. Your plants know the difference.
+            Your thermostat doesn't.
+          </p>
+          <p class="text-ink-3 leading-relaxed">
+            Without true 3D visibility, you're making cultivation decisions based on
+            incomplete data. CropVision closes that gap with granular microclimate
+            mapping across every horizontal and vertical zone.
+          </p>
+        </div>
+
+        <div class="reveal">
+          <img
+            src="/images/chart-detail.jpg"
+            alt="Analytics dashboard showing microclimate data"
+            width="600"
+            height="400"
+            class="rounded-lg shadow-warm-lg w-full object-cover"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       § 003 — FEATURES
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="section" id="features" aria-labelledby="cv-features-headline">
+    <div class="container">
+      <div class="section-ref">
+        <div class="section-ref-bar"></div>
+        <span class="ref-label">§ 003 · Capabilities</span>
+      </div>
+
+      <div class="max-w-xl mb-12">
+        <h2 id="cv-features-headline" class="display-lg mb-4">
+          What CropVision monitors.
+        </h2>
+        <p class="text-ink-3 leading-relaxed">
+          Every parameter your cultivation team needs to make confident decisions —
+          from transplant to harvest.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 reveal">
+        {[
+          {
+            label: "VPD",
+            name: "Vapor Pressure Deficit",
+            desc: "Zone-level VPD monitoring for precise transpiration control across every growth stage.",
+            icon: "💧",
+          },
+          {
+            label: "DLI",
+            name: "Daily Light Integral",
+            desc: "Cumulative light dose tracking to optimize photoperiod scheduling and light intensity.",
+            icon: "☀️",
+          },
+          {
+            label: "CO₂",
+            name: "Carbon Dioxide",
+            desc: "Canopy-level CO₂ concentration mapped in 3D to identify enrichment dead zones.",
+            icon: "🌿",
+          },
+          {
+            label: "PAR",
+            name: "Photosynthetically Active Radiation",
+            desc: "PPFD mapping at canopy level to identify hot spots, shadowing, and fixture efficiency.",
+            icon: "🔆",
+          },
+          {
+            label: "EC + VWC",
+            name: "Substrate Analytics",
+            desc: "Electrical conductivity and volumetric water content for Total Crop Steering™ precision.",
+            icon: "🌱",
+          },
+          {
+            label: "pH",
+            name: "Substrate pH",
+            desc: "Real-time pH monitoring at the root zone to catch nutrient lockout before yield loss.",
+            icon: "⚗️",
+          },
+        ].map((feature) => (
+          <div class="card p-6">
+            <div class="text-2xl mb-3">{feature.icon}</div>
+            <div class="badge badge-green mb-3">{feature.label}</div>
+            <h3 class="font-semibold text-ink mb-2">{feature.name}</h3>
+            <p class="text-sm text-ink-3 leading-relaxed">{feature.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       § 004 — TOTAL CROP STEERING™
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="section section-surface">
+    <div class="container">
+      <div class="section-ref">
+        <div class="section-ref-bar" style="background: var(--gold)"></div>
+        <span class="ref-label">§ 004 · Proprietary IP</span>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="reveal">
+          <img
+            src="/images/flower-detail.jpg"
+            alt="Cannabis flower detail showing precision cultivation"
+            width="600"
+            height="500"
+            class="rounded-lg shadow-warm-lg w-full object-cover"
+            loading="lazy"
+          />
+        </div>
+        <div class="reveal">
+          <span class="badge badge-gold mb-4">Proprietary Framework</span>
+          <h2 class="display-md mb-4">
+            Total Crop Steering™
+          </h2>
+          <p class="text-ink-3 leading-relaxed mb-5">
+            Total Crop Steering™ is Grownetics' integrated approach to substrate-driven
+            cultivation decisions. By combining EC, VWC, and pH data with canopy-level
+            environmental metrics, it creates a closed-loop feedback system that guides
+            every irrigation, CO₂, and lighting decision.
+          </p>
+          <p class="text-ink-3 leading-relaxed mb-6">
+            Not a generic protocol. A data-driven methodology developed and refined across
+            1M+ square feet of commercial production.
+          </p>
+          <ul class="space-y-3">
+            {[
+              "Stage-by-stage substrate targets, not one-size-fits-all recipes",
+              "Integrated with your Unity automation for closed-loop control",
+              "Exportable to any cultivation consultant or compliance audit",
+              "University of Colorado affiliated validation studies",
+            ].map((point) => (
+              <li class="feature-check">
+                <div class="check-icon">
+                  <svg width="10" height="8" viewBox="0 0 10 8" fill="currentColor">
+                    <path d="M1 4l3 3 5-6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <span class="text-sm text-ink-3">{point}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       § 005 — NO HARDWARE LOCK-IN
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-ref">
+        <div class="section-ref-bar" style="background: var(--green)"></div>
+        <span class="ref-label">§ 005 · Open Ecosystem</span>
+      </div>
+
+      <div class="max-w-3xl mx-auto text-center reveal">
+        <h2 class="display-lg mb-6">
+          No lock-in.<br />
+          <span style="color: var(--green)">Ever.</span>
+        </h2>
+        <p class="text-lg text-ink-3 leading-relaxed mb-12 max-w-2xl mx-auto">
+          CropVision integrates with Aranet, Monnit, SensorPush, and other leading
+          wireless sensor hardware. Add sensors. Swap vendors. Keep your data.
+          Your monitoring platform shouldn't force you to rent your infrastructure.
+        </p>
+
+        <div class="grid sm:grid-cols-3 gap-6 text-left">
+          {[
+            {
+              heading: "Your sensors",
+              detail: "Works with market-leading wireless hardware. Mix and match as your facility scales.",
+            },
+            {
+              heading: "Your data",
+              detail: "Export everything. CSV, API, or direct integration. No data held hostage.",
+            },
+            {
+              heading: "Your workflow",
+              detail: "Integrates with your existing compliance, ERP, and cultivation management tools.",
+            },
+          ].map((item) => (
+            <div class="card p-6">
+              <div class="w-8 h-0.5 bg-green mb-4"></div>
+              <h3 class="font-semibold text-ink mb-2">{item.heading}</h3>
+              <p class="text-sm text-ink-3 leading-relaxed">{item.detail}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       § 006 — COST COMPARISON
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-ref">
+        <div class="section-ref-bar"></div>
+        <span class="ref-label">§ 006 · Cost Analysis</span>
+      </div>
+
+      <div class="max-w-xl mb-12 reveal">
+        <h2 class="display-lg mb-4">
+          60% less than Argus or Priva.<br />
+          <span style="color: var(--green)">More capability included.</span>
+        </h2>
+        <p class="text-ink-3 leading-relaxed">
+          Legacy enterprise monitoring platforms charge for sensors, servers, licensing,
+          support contracts, and annual calibration. CropVision's pricing is transparent,
+          hardware-agnostic, and scales with your operation — not against it.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-3 gap-5 reveal">
+        {[
+          {
+            tier: "Legacy Platforms",
+            desc: "Argus, Priva, similar",
+            cost: "High",
+            note: "Proprietary hardware + licensing + annual service contracts",
+            color: "var(--terracotta)",
+            highlight: false,
+          },
+          {
+            tier: "CropVision",
+            desc: "Grownetics",
+            cost: "60% less",
+            note: "Open sensor ecosystem, transparent pricing, included support",
+            color: "var(--green)",
+            highlight: true,
+          },
+          {
+            tier: "DIY / Ad Hoc",
+            desc: "Hobbyist solutions",
+            cost: "Low upfront",
+            note: "Missing critical data, no calibration, no support pathway",
+            color: "var(--gold-muted)",
+            highlight: false,
+          },
+        ].map((tier) => (
+          <div
+            class:list={['card p-6', tier.highlight ? 'ring-2' : '']}
+            style={tier.highlight ? 'ring-color: var(--green); border-color: var(--green)/30' : ''}
+          >
+            {tier.highlight && <div class="absolute top-0 left-0 right-0 h-0.5 rounded-t-lg" style="background: var(--green)"></div>}
+            <div class="mono-label mb-2">{tier.desc}</div>
+            <h3 class="font-display text-xl font-semibold text-ink mb-2">{tier.tier}</h3>
+            <div class="font-display text-2xl font-bold mb-3" style={`color: ${tier.color}`}>{tier.cost}</div>
+            <p class="text-sm text-ink-3 leading-relaxed">{tier.note}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CTA -->
+  <CTASection
+    ref="007"
+    eyebrow="Next Steps"
+    headline="See your facility the way it actually is."
+    body="Book a 30-minute demo. We'll walk through CropVision in a facility similar to yours and show you exactly what you're missing."
+    cta={{ label: "Book a Demo", href: "/contact" }}
+    ctaSecondary={{ label: "Explore Unity →", href: "/unity" }}
+    variant="dark"
+  />
+
+</Base>

@@ -1,0 +1,114 @@
+---
+interface Props {
+  ref?: string;
+  eyebrow?: string;
+  headline: string;
+  subheadline?: string;
+  body?: string;
+  cta?: { label: string; href: string };
+  ctaSecondary?: { label: string; href: string };
+  imageSrc?: string;
+  imageAlt?: string;
+  badges?: string[];
+  variant?: 'default' | 'centered' | 'split';
+  minHeight?: string;
+}
+
+const {
+  ref: refNum = '001',
+  eyebrow,
+  headline,
+  subheadline,
+  body,
+  cta,
+  ctaSecondary,
+  imageSrc,
+  imageAlt = '',
+  badges = [],
+  variant = 'default',
+  minHeight = '60vh',
+} = Astro.props;
+---
+
+<section
+  class="hero-section relative flex items-center graph-grid"
+  style={`min-height: ${minHeight};`}
+>
+  <!-- Background image if provided -->
+  {imageSrc && (
+    <div class="absolute inset-0 overflow-hidden">
+      <img
+        src={imageSrc}
+        alt=""
+        role="presentation"
+        class="w-full h-full object-cover"
+        loading="eager"
+        width="1920"
+        height="1080"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-parchment/95 via-parchment/80 to-parchment/30"></div>
+    </div>
+  )}
+
+  <div class="container relative z-10">
+    <div class:list={[
+      'max-w-2xl',
+      variant === 'centered' ? 'mx-auto text-center' : '',
+    ]}>
+
+      <!-- Section reference -->
+      <div class="section-ref mb-6">
+        <div class="section-ref-bar"></div>
+        <span class="ref-label">§ {refNum} · {eyebrow || 'Field Operations'}</span>
+      </div>
+
+      <!-- Badges -->
+      {badges.length > 0 && (
+        <div class:list={[
+          'flex flex-wrap gap-2 mb-6',
+          variant === 'centered' ? 'justify-center' : '',
+        ]}>
+          {badges.map((badge) => (
+            <span class="badge badge-green">{badge}</span>
+          ))}
+        </div>
+      )}
+
+      <!-- Headline -->
+      <h1 class="display-xl mb-6">
+        {headline}
+      </h1>
+
+      {subheadline && (
+        <p class="text-xl font-display text-ink-2 italic mb-4">{subheadline}</p>
+      )}
+
+      {body && (
+        <p class="text-lg text-ink-3 leading-relaxed mb-8 max-w-xl">{body}</p>
+      )}
+
+      <!-- CTAs -->
+      {(cta || ctaSecondary) && (
+        <div class:list={[
+          'flex flex-wrap gap-4',
+          variant === 'centered' ? 'justify-center' : '',
+        ]}>
+          {cta && (
+            <a href={cta.href} class="btn btn-primary">
+              {cta.label}
+              <span aria-hidden="true">→</span>
+            </a>
+          )}
+          {ctaSecondary && (
+            <a href={ctaSecondary.href} class="btn btn-ghost">
+              {ctaSecondary.label}
+            </a>
+          )}
+        </div>
+      )}
+
+      <!-- Slot for additional content -->
+      <slot />
+    </div>
+  </div>
+</section>

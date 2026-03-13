@@ -1,0 +1,274 @@
+---
+import Base from '../layouts/Base.astro';
+import CTASection from '../components/CTASection.astro';
+---
+
+<Base
+  title="About Grownetics — Team, Story & Track Record"
+  description="Grownetics is a Boulder, CO CEA technology company built by operators. 60+ years combined expertise, 1M+ sqft managed across CO, CA, Canada, and internationally."
+  canonical="/about"
+>
+
+  <!-- HERO -->
+  <section class="relative min-h-[55vh] flex items-center graph-grid pt-16" aria-labelledby="about-headline">
+    <div class="absolute inset-0 overflow-hidden">
+      <img src="/images/bg-about.png" alt="" role="presentation"
+           class="w-full h-full object-cover opacity-15" loading="eager" width="1200" height="800" />
+      <div class="absolute inset-0" style="background: linear-gradient(to right, var(--bg) 60%, transparent)"></div>
+    </div>
+
+    <div class="container relative z-10 py-20">
+      <div class="max-w-2xl">
+        <div class="section-ref mb-6">
+          <div class="section-ref-bar"></div>
+          <span class="ref-label">§ 001 · Our Story</span>
+        </div>
+
+        <h1 id="about-headline" class="display-xl mb-5">
+          Built in the field.<br />
+          <span style="color: var(--green)">Not the boardroom.</span>
+        </h1>
+        <p class="text-xl font-display italic text-ink-2 mb-4">
+          Grownetics exists because the technology CEA growers needed didn't.
+        </p>
+        <p class="text-lg text-ink-3 leading-relaxed max-w-xl">
+          We started in Colorado's early cannabis market — helping craft operators
+          get consistent yields from facilities that were never designed for consistency.
+          The tools we needed didn't exist, so we built them.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- § 002 — ORIGIN STORY -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-ref">
+        <div class="section-ref-bar"></div>
+        <span class="ref-label">§ 002 · Origin</span>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="reveal">
+          <h2 class="display-md mb-6">
+            The growers we worked with<br />
+            didn't have a data problem.<br />
+            <span style="color: var(--terracotta)">They had a tools problem.</span>
+          </h2>
+          <p class="text-ink-3 leading-relaxed mb-4">
+            Colorado's commercial cannabis industry was scaling fast in the early 2010s,
+            but the technology layer was stuck in 1990s greenhouse automation. Enterprise
+            systems cost six figures and required proprietary hardware. DIY solutions
+            were unreliable. Nothing was built for the operational reality of a
+            commercial cannabis facility.
+          </p>
+          <p class="text-ink-3 leading-relaxed mb-4">
+            Grownetics was founded on the premise that growers shouldn't have to choose
+            between affordability and precision. We built the first version for a
+            handful of Colorado operators. It worked. They told their friends.
+          </p>
+          <p class="text-ink-3 leading-relaxed">
+            A decade later, we're still building the same way — in the grow room,
+            not the conference room. Our technology is built by people who've debugged
+            climate drift at 2am and redesigned facility layouts to fix airflow problems
+            that didn't show up on any blueprint.
+          </p>
+        </div>
+
+        <div class="reveal grid grid-cols-2 gap-4">
+          {[
+            { year: "2015", event: "Founded in Boulder, CO" },
+            { year: "2016", event: "First commercial deployment — Colorado" },
+            { year: "2018", event: "Expanded to California and Canada" },
+            { year: "2020", event: "1M+ sqft milestone crossed" },
+            { year: "2022", event: "UL Certification achieved for Unity" },
+            { year: "2025", event: "Grownetics OS development begins" },
+          ].map((item) => (
+            <div class="card p-4">
+              <div class="font-mono text-xs text-gold tracking-widest mb-1">{item.year}</div>
+              <div class="text-sm font-medium text-ink">{item.event}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- § 003 — WHAT WE BELIEVE -->
+  <section class="section">
+    <div class="container">
+      <div class="section-ref">
+        <div class="section-ref-bar" style="background: var(--green)"></div>
+        <span class="ref-label">§ 003 · Principles</span>
+      </div>
+
+      <div class="max-w-xl mb-12">
+        <h2 class="display-lg mb-4">
+          What we believe.
+        </h2>
+        <p class="text-ink-3 leading-relaxed">
+          Not marketing copy. The actual operating principles behind every product
+          decision and every client engagement.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 reveal">
+        {[
+          {
+            principle: "The grower isn't broken — the system is.",
+            detail: "Yield variation is almost always a systems problem. Environmental, equipment, or protocol. Not genetics. Not the grower.",
+          },
+          {
+            principle: "Evidence first. Philosophy second.",
+            detail: "We lead with specs, data, and concrete claims — not narratives about what cannabis cultivation should be.",
+          },
+          {
+            principle: "Vendor lock-in is a design choice, not a requirement.",
+            detail: "Open sensor ecosystems, exportable data, and transparent pricing aren't optional. They're how we'd want to buy technology.",
+          },
+          {
+            principle: "Precision at scale isn't a feature — it's survival.",
+            detail: "As CEA markets mature, the gap between efficient and inefficient operations determines who operates in five years.",
+          },
+          {
+            principle: "Technology amplifies expertise. It doesn't replace it.",
+            detail: "CropVision and Unity make good growers better. They don't turn untrained staff into cultivators.",
+          },
+          {
+            principle: "If we can't explain the ROI, we don't deserve the sale.",
+            detail: "Every Grownetics engagement starts with a clear statement of what it costs, what it returns, and how you'll know it worked.",
+          },
+        ].map((item) => (
+          <div class="card p-6">
+            <div class="w-6 h-0.5 mb-4" style="background: var(--green)"></div>
+            <h3 class="font-display text-base font-semibold text-ink mb-2 leading-snug">{item.principle}</h3>
+            <p class="text-sm text-ink-3 leading-relaxed">{item.detail}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- § 004 — TEAM CREDENTIALS -->
+  <section class="section section-surface">
+    <div class="container">
+      <div class="section-ref">
+        <div class="section-ref-bar" style="background: var(--gold)"></div>
+        <span class="ref-label">§ 004 · The Team</span>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <div class="reveal">
+          <h2 class="display-md mb-6">
+            60+ years of combined experience<br />
+            in the rooms that matter.
+          </h2>
+          <p class="text-ink-3 leading-relaxed mb-5">
+            The Grownetics team is a mix of licensed master growers, controls engineers,
+            facility designers, compliance specialists, and systems architects.
+            Not one or the other — all of the above.
+          </p>
+          <p class="text-ink-3 leading-relaxed mb-5">
+            Our controls engineers hold UL certifications and have designed panels for
+            commercial agricultural, pharmaceutical, and industrial applications.
+            Our cultivation consultants have run head grower and director roles
+            across CO, CA, and Canadian markets.
+          </p>
+          <p class="text-ink-3 leading-relaxed">
+            Combined, the team has deployed, operated, and optimized over 1 million
+            square feet of commercial cultivation space — in climates ranging from
+            Colorado's altitude to British Columbia's humidity.
+          </p>
+        </div>
+
+        <div class="reveal">
+          <!-- Expertise areas -->
+          <div class="space-y-3">
+            {[
+              { area: "Controls Engineering", detail: "UL 508A panels, predictive algorithms, industrial automation" },
+              { area: "Cultivation Science", detail: "Licensed MGs, tissue culture to harvest, Total Crop Steering™" },
+              { area: "Facility Design", detail: "Greenfield + retrofit, CAD/BIM, compliance documentation" },
+              { area: "Systems Architecture", detail: "IoT networks, sensor integration, data infrastructure" },
+              { area: "Regulatory Compliance", detail: "CO, CA, Canada — licensing, track & trace, audits" },
+              { area: "Research Partnerships", detail: "University of Colorado affiliated studies and data validation" },
+            ].map((e) => (
+              <div class="flex items-start gap-4 p-4 rounded" style="background: var(--surface-2); border: 1px solid var(--border-light)">
+                <div class="w-1 h-1 rounded-full bg-green flex-shrink-0 mt-2"></div>
+                <div>
+                  <div class="font-semibold text-sm text-ink">{e.area}</div>
+                  <div class="text-xs text-ink-3 mt-0.5">{e.detail}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- § 005 — CLIENTS -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-ref">
+        <div class="section-ref-bar"></div>
+        <span class="ref-label">§ 005 · Clients</span>
+      </div>
+
+      <div class="max-w-2xl mb-12">
+        <h2 class="display-md mb-4">
+          Operations we've helped build.
+        </h2>
+        <p class="text-ink-3 leading-relaxed">
+          From boutique craft cultivators to multi-site operations — our clients
+          share one thing: they take yield seriously.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 reveal">
+        {[
+          {
+            name: "The Work",
+            location: "Colorado",
+            detail: "Full CropVision + Unity deployment. 18% yield increase in first cycle.",
+          },
+          {
+            name: "House of Cultivars",
+            location: "Colorado",
+            detail: "Monitoring and cultivation consulting. Consistent 3.0+ lbs per light.",
+          },
+          {
+            name: "Green Horizons",
+            location: "California",
+            detail: "Facility design + Unity. Caught three critical airflow issues pre-build.",
+          },
+          {
+            name: "Fields of Light",
+            location: "Canada",
+            detail: "Full stack deployment. International market expertise applied.",
+          },
+        ].map((client) => (
+          <div class="card p-5">
+            <div class="font-display text-lg font-semibold text-ink mb-1">{client.name}</div>
+            <div class="font-mono text-xs text-gold uppercase tracking-wide mb-3">{client.location}</div>
+            <p class="text-xs text-ink-3 leading-relaxed">{client.detail}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <CTASection
+    ref="006"
+    eyebrow="Work With Us"
+    headline="Ready to meet the team in your grow room?"
+    body="Discovery calls are one hour, completely free, and genuinely useful whether you work with us or not. We'll identify your top three yield constraints and leave you with something actionable."
+    cta={{ label: "Book a Discovery Call", href: "/contact" }}
+    variant="dark"
+  />
+
+</Base>

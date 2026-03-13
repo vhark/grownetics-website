@@ -1,0 +1,100 @@
+---
+interface Props {
+  ref?: string;
+  eyebrow?: string;
+  headline: string;
+  body?: string;
+  cta: { label: string; href: string };
+  ctaSecondary?: { label: string; href: string };
+  variant?: 'default' | 'dark' | 'green';
+}
+
+const {
+  ref: refNum = '008',
+  eyebrow = 'Next Steps',
+  headline,
+  body,
+  cta,
+  ctaSecondary,
+  variant = 'default',
+} = Astro.props;
+---
+
+<section
+  class:list={[
+    'section relative overflow-hidden',
+    variant === 'dark' ? 'bg-ink text-parchment' : '',
+    variant === 'green' ? 'bg-green text-white' : '',
+    variant === 'default' ? 'bg-parchment-dark' : '',
+  ]}
+>
+  <!-- Subtle background texture for dark variant -->
+  {variant === 'dark' && (
+    <div class="absolute inset-0 graph-grid opacity-10"></div>
+  )}
+
+  <div class="container relative z-10">
+    <div class="max-w-2xl mx-auto text-center">
+
+      <!-- Section ref -->
+      <div class="flex items-center justify-center gap-3 mb-8">
+        <div
+          class:list={[
+            'w-0.5 h-3.5 rounded',
+            variant === 'default' ? 'bg-gold' : 'bg-white/40',
+          ]}
+        ></div>
+        <span
+          class:list={[
+            'font-mono text-xs tracking-widest uppercase',
+            variant === 'default' ? 'text-gold' : 'text-white/50',
+          ]}
+        >
+          § {refNum} · {eyebrow}
+        </span>
+      </div>
+
+      <h2 class:list={[
+        'display-lg mb-6',
+        variant !== 'default' ? 'text-white' : '',
+      ]}>
+        {headline}
+      </h2>
+
+      {body && (
+        <p class:list={[
+          'text-lg leading-relaxed mb-10 max-w-xl mx-auto',
+          variant !== 'default' ? 'text-white/70' : 'text-ink-3',
+        ]}>
+          {body}
+        </p>
+      )}
+
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a
+          href={cta.href}
+          class:list={[
+            'btn',
+            variant === 'dark' ? 'btn-primary' : '',
+            variant === 'green' ? 'bg-white text-green hover:bg-white/90' : '',
+            variant === 'default' ? 'btn-primary' : '',
+          ]}
+        >
+          {cta.label}
+          <span aria-hidden="true">→</span>
+        </a>
+        {ctaSecondary && (
+          <a
+            href={ctaSecondary.href}
+            class:list={[
+              'btn',
+              variant !== 'default' ? 'border border-white/30 text-white hover:bg-white/10' : 'btn-ghost',
+            ]}
+          >
+            {ctaSecondary.label}
+          </a>
+        )}
+      </div>
+    </div>
+  </div>
+</section>

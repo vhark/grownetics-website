@@ -1,0 +1,398 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="Grownetics OS — The AI-Powered Operating System for Commercial Cultivation"
+  description="Grownetics OS is the AI-powered operating system for commercial cultivation. Join the waitlist for early access."
+  canonical="/os"
+  bodyClass="os-page"
+>
+
+  <style>
+    /* Override light styles for this page */
+    .os-page {
+      --bg: #0D0C0A;
+      --bg-alt: #141210;
+      --surface: #1A1816;
+      --surface-2: #0F0E0C;
+      --text: #E8DDD0;
+      --text-2: #C8BDB0;
+      --text-3: #9A9080;
+      --text-muted: #6A6055;
+      --border: #2A2620;
+      --border-light: #242018;
+      --green: #4E9E6A;
+      --green-light: #5AAD78;
+      --gold: #B89254;
+      --gold-muted: #8A6E3C;
+      --terracotta: #8B4E3A;
+    }
+
+    .os-page body,
+    .os-page {
+      background-color: #0D0C0A;
+      color: #E8DDD0;
+    }
+
+    /* Override nav for dark page */
+    .os-page #main-nav {
+      border-bottom-color: rgba(255,255,255,0.04);
+    }
+
+    .os-page #main-nav.nav-scrolled {
+      background: rgba(13, 12, 10, 0.95) !important;
+    }
+
+    /* Force logo white */
+    .os-nav-logo { display: none; }
+    .os-nav-logo-white { display: block !important; }
+
+    /* Terminal cursor blink */
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .cursor-blink {
+      display: inline-block;
+      width: 2px;
+      height: 1.1em;
+      background: #4E9E6A;
+      vertical-align: text-bottom;
+      margin-left: 3px;
+      animation: blink 1.2s ease-in-out infinite;
+    }
+
+    /* Glow effect */
+    .green-glow {
+      position: absolute;
+      width: 800px;
+      height: 800px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(78, 158, 106, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+  </style>
+
+  <!-- NAV LOGO OVERRIDE: swap to white logo on dark page -->
+  <script>
+    // Swap nav logo to white for dark page
+    const blackLogo = document.querySelector('nav img[alt="Grownetics"]');
+    if (blackLogo) {
+      (blackLogo as HTMLImageElement).src = '/images/logo-white.png';
+    }
+  </script>
+
+  <!-- ═══════════════════════════════════════════════════════
+       FULL VIEWPORT HERO — MAXIMUM DRAMA
+  ═══════════════════════════════════════════════════════════ -->
+  <section
+    class="relative min-h-screen flex items-center justify-center overflow-hidden"
+    style="background: #0D0C0A;"
+    aria-labelledby="os-main-headline"
+  >
+    <!-- Background: grid lines -->
+    <div
+      class="absolute inset-0"
+      style="
+        background-image: linear-gradient(rgba(184, 146, 84, 0.035) 1px, transparent 1px),
+                          linear-gradient(90deg, rgba(184, 146, 84, 0.035) 1px, transparent 1px);
+        background-size: 72px 72px;
+      "
+    ></div>
+
+    <!-- Green glow bottom-left -->
+    <div
+      class="green-glow"
+      style="bottom: -200px; left: -200px;"
+    ></div>
+
+    <!-- Gold glow top-right -->
+    <div
+      class="absolute top-0 right-0 w-96 h-96 pointer-events-none"
+      style="background: radial-gradient(circle at top right, rgba(184, 146, 84, 0.06) 0%, transparent 70%);"
+    ></div>
+
+    <!-- Catalog header bar (top) -->
+    <div
+      class="absolute top-16 left-0 right-0 border-b z-10"
+      style="border-color: rgba(184, 146, 84, 0.12); padding: 12px 0;"
+    >
+      <div class="container flex items-center justify-between">
+        <span class="font-mono text-xs tracking-widest" style="color: rgba(184, 146, 84, 0.5)">
+          GROWNETICS FIELD CATALOG · VOL. II · RESTRICTED ACCESS
+        </span>
+        <span class="font-mono text-xs tracking-widest" style="color: rgba(78, 158, 106, 0.5)">
+          STATUS: IN DEVELOPMENT ◉
+        </span>
+      </div>
+    </div>
+
+    <div class="container relative z-10 py-32 text-center">
+      <div class="max-w-3xl mx-auto">
+
+        <!-- Section reference -->
+        <div class="flex items-center justify-center gap-3 mb-10">
+          <div class="w-3 h-px" style="background: rgba(184, 146, 84, 0.5)"></div>
+          <span class="font-mono text-xs tracking-widest uppercase" style="color: rgba(184, 146, 84, 0.6)">
+            § 001 · Platform Announcement
+          </span>
+          <div class="w-3 h-px" style="background: rgba(184, 146, 84, 0.5)"></div>
+        </div>
+
+        <!-- Eyebrow -->
+        <div class="flex flex-wrap justify-center gap-3 mb-8">
+          <span
+            class="font-mono text-xs tracking-widest uppercase px-3 py-1.5 rounded border"
+            style="color: rgba(78, 158, 106, 0.8); border-color: rgba(78, 158, 106, 0.25); background: rgba(78, 158, 106, 0.06);"
+          >
+            ◉ In Development
+          </span>
+          <span
+            class="font-mono text-xs tracking-widest uppercase px-3 py-1.5 rounded border"
+            style="color: rgba(232, 221, 208, 0.35); border-color: rgba(232, 221, 208, 0.12);"
+          >
+            Early Access Opening Soon
+          </span>
+        </div>
+
+        <!-- Main headline -->
+        <h1
+          id="os-main-headline"
+          class="font-display font-bold mb-6"
+          style="
+            font-size: clamp(2.6rem, 6vw, 4.8rem);
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            color: #E8DDD0;
+          "
+        >
+          The AI-Powered<br />
+          Operating System<br />
+          <span style="color: #4E9E6A">for Commercial Cultivation.</span>
+        </h1>
+
+        <!-- Cursor effect -->
+        <div class="mb-8">
+          <span class="cursor-blink" aria-hidden="true"></span>
+        </div>
+
+        <!-- Teaser copy -->
+        <p
+          class="font-display italic mb-4"
+          style="font-size: 1.25rem; color: rgba(232, 221, 208, 0.65); max-width: 52ch; margin-inline: auto;"
+        >
+          Every decision your facility makes — visible, queryable, predictive.
+        </p>
+        <p
+          class="text-base leading-relaxed mb-12"
+          style="color: rgba(154, 144, 128, 0.85); max-width: 50ch; margin-inline: auto;"
+        >
+          Grownetics OS connects every sensor, every control action, and every yield
+          outcome into a single operating intelligence. Not a dashboard. An operating system —
+          built for the grower who refuses to leave yield on the table.
+        </p>
+
+        <!-- Divider -->
+        <div class="flex items-center gap-4 mb-10 justify-center">
+          <div class="h-px flex-1 max-w-32" style="background: linear-gradient(to right, transparent, rgba(184, 146, 84, 0.3))"></div>
+          <span class="font-mono text-xs tracking-widest" style="color: rgba(184, 146, 84, 0.4)">WAITLIST</span>
+          <div class="h-px flex-1 max-w-32" style="background: linear-gradient(to left, transparent, rgba(184, 146, 84, 0.3))"></div>
+        </div>
+
+        <!-- Signup form -->
+        <form
+          action="https://grownetics.com/forms/os-waitlist"
+          method="POST"
+          class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+          aria-label="Join the Grownetics OS waitlist"
+        >
+          <input type="hidden" name="form" value="os-waitlist" />
+          <input
+            type="email"
+            name="email"
+            placeholder="your@email.com"
+            required
+            autocomplete="email"
+            class="flex-1 px-4 py-3 rounded font-mono text-sm outline-none transition-all"
+            style="
+              background: rgba(255,255,255,0.04);
+              border: 1.5px solid rgba(184, 146, 84, 0.2);
+              color: #E8DDD0;
+              caret-color: #4E9E6A;
+            "
+            onfocus="this.style.borderColor='rgba(78,158,106,0.5)'; this.style.boxShadow='0 0 0 3px rgba(78,158,106,0.08)'"
+            onblur="this.style.borderColor='rgba(184,146,84,0.2)'; this.style.boxShadow='none'"
+          />
+          <button
+            type="submit"
+            class="btn font-mono text-xs tracking-widest px-6 py-3"
+            style="background: #4E9E6A; color: #fff; white-space: nowrap; flex-shrink: 0;"
+          >
+            Be First to Know →
+          </button>
+        </form>
+
+        <p class="font-mono text-xs mt-4" style="color: rgba(154, 144, 128, 0.5)">
+          No pitch. No spam. Early access when it's ready.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       § 002 — WHAT'S COMING (3 teaser pillars)
+  ═══════════════════════════════════════════════════════════ -->
+  <section
+    class="section relative overflow-hidden"
+    style="background: #141210;"
+    aria-label="Preview of Grownetics OS capabilities"
+  >
+    <div class="container relative z-10">
+
+      <div class="flex items-center gap-3 mb-12">
+        <div class="w-0.5 h-3.5 rounded" style="background: rgba(184, 146, 84, 0.6)"></div>
+        <span class="font-mono text-xs tracking-widest uppercase" style="color: rgba(184, 146, 84, 0.6)">§ 002 · Platform Preview</span>
+      </div>
+
+      <div class="max-w-2xl mb-12">
+        <h2
+          class="font-display font-semibold mb-4"
+          style="font-size: clamp(1.8rem, 3.5vw, 2.8rem); color: #E8DDD0; line-height: 1.2;"
+        >
+          Three problems. One operating system.
+        </h2>
+        <p style="color: rgba(154, 144, 128, 0.9); line-height: 1.65; font-size: 1.05rem;">
+          Grownetics OS is built on the data infrastructure Grownetics has already
+          deployed — across 1M+ sqft of commercial production. This isn't a
+          speculative AI layer. It's the operating intelligence derived from real cultivation data.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5">
+        {[
+          {
+            ref: "A",
+            name: "Unified Intelligence",
+            hint: "Query your entire facility history in natural language. Ask what your yield looked like six cycles ago when VPD was in range vs. when it wasn't.",
+            icon: "◈",
+          },
+          {
+            ref: "B",
+            name: "Predictive Operations",
+            hint: "Grownetics OS doesn't just report what happened — it anticipates what's about to happen. Catch drift before it costs you a harvest.",
+            icon: "◎",
+          },
+          {
+            ref: "C",
+            name: "Codified Expertise",
+            hint: "Your best cultivation decisions, captured, referenced, and applied at scale. The knowledge that walks out the door with your head grower — stays.",
+            icon: "◇",
+          },
+        ].map((item) => (
+          <div
+            class="p-6 rounded-lg relative overflow-hidden"
+            style="background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.06);"
+          >
+            <div class="font-mono text-4xl mb-4" style="color: rgba(78, 158, 106, 0.3)">{item.icon}</div>
+            <div class="font-mono text-xs tracking-widest mb-3" style="color: rgba(184, 146, 84, 0.5)">
+              CAPABILITY · {item.ref}
+            </div>
+            <h3
+              class="font-display text-xl font-semibold mb-3"
+              style="color: #E8DDD0;"
+            >
+              {item.name}
+            </h3>
+            <p class="text-sm leading-relaxed" style="color: rgba(154, 144, 128, 0.85)">
+              {item.hint}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       FINAL — Second signup / footer CTA
+  ═══════════════════════════════════════════════════════════ -->
+  <section
+    class="section text-center relative overflow-hidden"
+    style="background: #0D0C0A;"
+    aria-label="Join the waitlist"
+  >
+    <!-- Green glow center -->
+    <div
+      class="absolute inset-x-0 bottom-0 pointer-events-none"
+      style="height: 400px; background: radial-gradient(ellipse at bottom center, rgba(78,158,106,0.07) 0%, transparent 70%);"
+    ></div>
+
+    <div class="container relative z-10">
+
+      <div class="flex items-center justify-center gap-3 mb-8">
+        <div class="h-px w-16" style="background: linear-gradient(to right, transparent, rgba(184, 146, 84, 0.3))"></div>
+        <span class="font-mono text-xs tracking-widest" style="color: rgba(184, 146, 84, 0.5)">§ 003 · ACCESS</span>
+        <div class="h-px w-16" style="background: linear-gradient(to left, transparent, rgba(184, 146, 84, 0.3))"></div>
+      </div>
+
+      <h2
+        class="font-display font-bold mb-6"
+        style="font-size: clamp(2rem, 4vw, 3rem); color: #E8DDD0; line-height: 1.2;"
+      >
+        The waitlist is open.<br />
+        <span style="color: #4E9E6A;">Early access is limited.</span>
+      </h2>
+
+      <p
+        class="font-display italic mb-10 mx-auto"
+        style="color: rgba(232, 221, 208, 0.5); max-width: 44ch; font-size: 1.1rem;"
+      >
+        Early access facilities will shape how Grownetics OS is built.
+        Their data informs the model. Their feedback defines the roadmap.
+      </p>
+
+      <form
+        action="https://grownetics.com/forms/os-waitlist"
+        method="POST"
+        class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-6"
+        aria-label="Join the Grownetics OS waitlist"
+      >
+        <input type="hidden" name="form" value="os-waitlist-footer" />
+        <input
+          type="email"
+          name="email"
+          placeholder="your@email.com"
+          required
+          autocomplete="email"
+          class="flex-1 px-4 py-3 rounded font-mono text-sm outline-none"
+          style="
+            background: rgba(255,255,255,0.04);
+            border: 1.5px solid rgba(184, 146, 84, 0.2);
+            color: #E8DDD0;
+            caret-color: #4E9E6A;
+          "
+          onfocus="this.style.borderColor='rgba(78,158,106,0.5)'"
+          onblur="this.style.borderColor='rgba(184,146,84,0.2)'"
+        />
+        <button
+          type="submit"
+          class="btn px-6 py-3 font-mono text-xs tracking-widest"
+          style="background: #4E9E6A; color: #fff; flex-shrink: 0;"
+        >
+          Join the Waitlist
+        </button>
+      </form>
+
+      <p class="font-mono text-xs" style="color: rgba(106, 96, 85, 0.7)">
+        Already have Grownetics hardware?{' '}
+        <a href="/contact" style="color: rgba(78, 158, 106, 0.7); text-decoration: underline;">
+          You're already in line.
+        </a>
+      </p>
+    </div>
+  </section>
+
+</Base>

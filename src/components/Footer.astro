@@ -1,0 +1,128 @@
+---
+const year = new Date().getFullYear();
+
+const products = [
+  { label: 'CropVision', href: '/cropvision' },
+  { label: 'Unity Automation', href: '/unity' },
+  { label: 'Foundation Design', href: '/foundation' },
+  { label: 'Optima Consulting', href: '/consulting' },
+  { label: 'Grownetics OS', href: '/os' },
+];
+
+const company = [
+  { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
+  { label: 'Book a Demo', href: '/contact' },
+];
+---
+
+<footer class="bg-ink text-parchment/80 pt-16 pb-8">
+  <div class="container">
+
+    <!-- Top grid -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-10 pb-12 border-b border-parchment/10">
+
+      <!-- Brand -->
+      <div class="col-span-2 md:col-span-1">
+        <img
+          src="/images/logo-white.png"
+          alt="Grownetics"
+          width="130"
+          height="26"
+          class="h-6 w-auto mb-4"
+          loading="lazy"
+        />
+        <p class="text-sm text-parchment/50 leading-relaxed max-w-[220px]">
+          Full-stack CEA technology for the growers who take yield seriously.
+        </p>
+        <div class="mt-5 flex items-center gap-2">
+          <span class="mono-label text-parchment/30">Boulder, CO</span>
+          <span class="text-parchment/20">·</span>
+          <span class="mono-label text-parchment/30">Est. 2015</span>
+        </div>
+      </div>
+
+      <!-- Products -->
+      <div>
+        <h3 class="font-mono text-xs tracking-widest uppercase text-parchment/40 mb-4">Products</h3>
+        <ul class="space-y-2.5">
+          {products.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class="text-sm text-parchment/60 hover:text-parchment transition-colors"
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div>
+        <h3 class="font-mono text-xs tracking-widest uppercase text-parchment/40 mb-4">Company</h3>
+        <ul class="space-y-2.5">
+          {company.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class="text-sm text-parchment/60 hover:text-parchment transition-colors"
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h3 class="font-mono text-xs tracking-widest uppercase text-parchment/40 mb-4">Contact</h3>
+        <ul class="space-y-2.5">
+          <li>
+            <a
+              href="mailto:hello@grownetics.com"
+              class="text-sm text-parchment/60 hover:text-parchment transition-colors"
+            >
+              hello@grownetics.com
+            </a>
+          </li>
+          <li>
+            <span class="text-sm text-parchment/40">Boulder, CO 80302</span>
+          </li>
+        </ul>
+        <div class="mt-6">
+          <a href="/contact" class="btn btn-outline text-parchment border-parchment/30 hover:border-parchment/60 text-xs py-2.5 px-4">
+            Book a Demo
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="pt-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+      <div class="flex flex-wrap items-center gap-4">
+        <span class="font-mono text-xs text-parchment/25 tracking-widest">
+          © {year} Grownetics, Inc.
+        </span>
+        <span class="text-parchment/15 hidden md:block">·</span>
+        <a href="/privacy" class="font-mono text-xs text-parchment/30 hover:text-parchment/60 transition-colors">
+          Privacy
+        </a>
+        <span class="text-parchment/15">·</span>
+        <a href="/terms" class="font-mono text-xs text-parchment/30 hover:text-parchment/60 transition-colors">
+          Terms
+        </a>
+      </div>
+
+      <!-- Catalog reference -->
+      <div class="flex items-center gap-3">
+        <div class="w-2 h-2 rounded-full bg-green opacity-60"></div>
+        <span class="font-mono text-xs text-parchment/20 tracking-widest uppercase">
+          Grownetics Field Catalog · REF-2026-A
+        </span>
+      </div>
+    </div>
+  </div>
+</footer>
