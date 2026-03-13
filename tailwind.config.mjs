@@ -17,7 +17,7 @@ export default {
         'surface-2':     '#F1F1F2',   // Anti-Flash White from brand
         // ── Brand greens
         'green':         '#4DB405',   // Primary brand green (replaces #017c32)
-        'green-light':   '#C7E55A',   // Lime / Yellow-Green (highlight accent)
+        'green-light':   '#A0AF9A',   // Sage Green (natural accent)
         'green-muted':   '#A0AF9A',   // Sage Green from brand
         // ── Accent colors (Archival DNA — kept for identity)
         'terracotta':    '#C4654A',   // Earthy warm accent — retained from Archival
@@ -30,7 +30,6 @@ export default {
         // ── Brand accent additions
         'sky':           '#B1D7E4',   // Light Blue / Sky from brand
         'sage':          '#A0AF9A',   // Sage Green alias
-        'lime':          '#C7E55A',   // Lime alias
         'dark-sage':     '#748068',   // Dark Sage from brand
         'charleston':    '#2B2C2E',   // Charleston alias
         'manatee':       '#9799A6',   // Manatee alias
