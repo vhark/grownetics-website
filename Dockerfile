@@ -1,23 +1,6 @@
-# Stage 1: Build
-FROM node:22-alpine AS builder
-
-WORKDIR /app
-
-COPY package*.json ./
-RUN npm install
-
-COPY . .
-RUN npm run build
-
-# Stage 2: Serve with nginx
-FROM nginx:alpine AS runner
-
-# Copy built output
-COPY --from=builder /app/dist /usr/share/nginx/html
-
-# Custom nginx config for SPA/static
+FROM nginx:1.27-alpine
+COPY . /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
-
+RUN rm -f /etc/nginx/conf.d/default.conf.bak 2>/dev/null || true
 EXPOSE 80
-
 CMD ["nginx", "-g", "daemon off;"]
