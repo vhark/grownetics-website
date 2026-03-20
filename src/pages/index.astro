@@ -2,7 +2,6 @@
 import Base from '../layouts/Base.astro';
 import ProductCard from '../components/ProductCard.astro';
 import Testimonial from '../components/Testimonial.astro';
-import CTASection from '../components/CTASection.astro';
 ---
 
 <Base
@@ -12,113 +11,162 @@ import CTASection from '../components/CTASection.astro';
 >
 
   <!-- ═══════════════════════════════════════════════════════
-       HERO - See. Control. Optimize.
+       HERO — Agricultural imagery + dark energy + stat bar
+       FROM: staging1 (greenhouse bg, logo, feel)
+       FROM: staging (dark overlay, graph grid, stat bar)
   ═══════════════════════════════════════════════════════════ -->
-  <section class="relative min-h-screen flex items-center graph-grid pt-16" aria-labelledby="hero-headline">
+  <section class="relative min-h-screen flex items-center pt-16" aria-labelledby="hero-headline">
+
+    <!-- Greenhouse / facility photo background -->
     <div class="absolute inset-0 overflow-hidden">
       <img
         src="/images/hero-bg.jpg"
         alt=""
         role="presentation"
-        class="w-full h-full object-cover"
+        class="w-full h-full object-cover object-center"
         loading="eager"
         width="1920"
         height="1080"
       />
-      <div class="absolute inset-0 bg-gradient-to-r from-parchment via-parchment/90 to-parchment/20"></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-parchment/60 via-transparent to-transparent"></div>
+      <!-- Dark overlay with green tint — not pure parchment, keeps agricultural feel -->
+      <div class="absolute inset-0" style="background: linear-gradient(105deg, rgba(13,26,13,0.88) 0%, rgba(13,26,13,0.75) 45%, rgba(13,26,13,0.4) 100%);"></div>
+      <!-- Graph grid on top -->
+      <div class="absolute inset-0" style="background-image: linear-gradient(rgba(82,230,25,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(82,230,25,0.03) 1px, transparent 1px); background-size: 72px 72px;"></div>
+      <!-- Phosphor glow — bottom left -->
+      <div class="absolute bottom-0 left-0 w-3/4 h-2/3 pointer-events-none" style="background: radial-gradient(ellipse at bottom left, rgba(77,180,5,0.12) 0%, transparent 65%);"></div>
     </div>
 
     <div class="container relative z-10 py-28">
       <div class="max-w-2xl">
 
-        <div class="section-ref mb-8">
-          <div class="section-ref-bar"></div>
-          <span class="ref-label">§ 001 · Field Operations</span>
+        <div class="section-ref mb-8" style="--ref-bar-color: rgba(82,230,25,0.6);">
+          <div class="section-ref-bar" style="background: rgba(82,230,25,0.6);"></div>
+          <span class="ref-label" style="color: rgba(82,230,25,0.7);">§ 001 · Field Operations</span>
+          <div class="flex-1 h-px" style="background: linear-gradient(to right, rgba(82,230,25,0.15), transparent);"></div>
         </div>
 
-        <h1 id="hero-headline" class="display-xl mb-6">
+        <h1 id="hero-headline" class="font-display font-bold mb-6 leading-tight" style="font-size: clamp(3rem, 7vw, 5.5rem); color: #E8DDD0; letter-spacing: -0.025em; line-height: 1.05;">
           See. Control.<br />
-          <span style="color: var(--green)">Optimize.</span>
+          <span style="color: #4DB405;">Optimize.</span>
         </h1>
 
-        <p class="text-xl font-display italic text-ink-2 mb-3">
+        <p class="text-lg leading-relaxed mb-3 max-w-xl" style="color: rgba(196,217,200,0.7); font-style: italic; font-family: var(--font-display);">
           The complete technology stack for commercial cultivation, from sensor to decision.
         </p>
 
-        <p class="text-lg text-ink-3 leading-relaxed mb-10 max-w-xl">
+        <p class="text-base leading-relaxed mb-10 max-w-xl" style="color: rgba(196,217,200,0.55);">
           Most facilities run on two sensor readings a day, reactive controls, and one grower's intuition. Grownetics replaces all three.
         </p>
 
-        <div class="flex flex-wrap gap-4">
+        <div class="flex flex-wrap gap-4 mb-14">
           <a href="/cropvision" class="btn btn-primary">Explore the Stack →</a>
-          <a href="/contact" class="btn btn-ghost">Book a Discovery Call</a>
+          <a href="/contact" class="btn" style="border: 1.5px solid rgba(196,217,200,0.3); color: rgba(196,217,200,0.75);">Book a Discovery Call</a>
         </div>
 
-        <div class="mt-12 flex flex-wrap items-center gap-6">
-          <div class="flex items-center gap-2">
-            <div class="w-2 h-2 rounded-full" style="background: var(--green)"></div>
-            <span class="font-mono text-xs text-ink-3 uppercase tracking-widest">UL Certified</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <div class="w-2 h-2 rounded-full" style="background: var(--green)"></div>
-            <span class="font-mono text-xs text-ink-3 uppercase tracking-widest">1M+ sq ft deployed</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <div class="w-2 h-2 rounded-full" style="background: var(--green)"></div>
-            <span class="font-mono text-xs text-ink-3 uppercase tracking-widest">CO · CA · Canada · International</span>
-          </div>
+        <!-- Stat bar — inside hero, FROM staging.grownetics.com -->
+        <div class="flex flex-wrap items-stretch gap-0 rounded-lg overflow-hidden" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.10); width: fit-content; max-width: 100%;">
+          {[
+            { num: "1M+",  label: "Sq ft managed" },
+            { num: "40%",  label: "Energy reduction" },
+            { num: "20%+", label: "HVAC efficiency gain" },
+            { num: "2015", label: "Founded in CO" },
+          ].map((s, i) => (
+            <div class="px-6 py-4 text-center" style={i > 0 ? "border-left: 1px solid rgba(255,255,255,0.08);" : ""}>
+              <div class="font-display font-bold leading-none mb-1" style="font-size: 1.5rem; color: #4DB405; letter-spacing: -0.025em;">{s.num}</div>
+              <div class="font-mono text-xs uppercase tracking-wider" style="color: rgba(196,217,200,0.4);">{s.label}</div>
+            </div>
+          ))}
         </div>
+
       </div>
     </div>
   </section>
 
 
   <!-- ═══════════════════════════════════════════════════════
-       § 001 - THE PROBLEM
+       § 001 — 5 FOUNDATIONAL PROBLEMS
+       FROM: staging.grownetics.com (complete, with dollar anchors)
   ═══════════════════════════════════════════════════════════ -->
-  <section class="section section-alt" aria-labelledby="problem-headline">
+  <section class="section" style="background: var(--bg-alt);" aria-labelledby="problems-headline">
     <div class="container">
 
       <div class="section-ref">
-        <div class="section-ref-bar" style="background: var(--terracotta)"></div>
-        <span class="ref-label" style="color: var(--terracotta)">§ 001 · The Real Cost of Fragmented Systems</span>
+        <div class="section-ref-bar" style="background: var(--terracotta);"></div>
+        <span class="ref-label" style="color: var(--terracotta);">§ 001 · Five Problems Costing You Every Harvest</span>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-16 items-center">
+      <div class="grid md:grid-cols-2 gap-14 items-start mb-12">
         <div class="reveal">
-          <h2 id="problem-headline" class="display-lg mb-4">
+          <h2 id="problems-headline" class="display-lg mb-4">
             Your growers aren't the problem.<br />
-            <span style="color: var(--terracotta)">Your tools are.</span>
+            <span style="color: var(--terracotta);">Your tools are.</span>
           </h2>
-          <p class="text-lg text-ink-3 leading-relaxed mb-4">
-            Commercial cultivation is one of the most demanding environments in agriculture.
-            The technology most operations run on wasn't built for it.
+          <p class="text-ink-3 leading-relaxed mb-4">
+            These aren't problems you solve by working harder. They're structural — built into how most facilities measure, control, and learn. Grownetics is built to eliminate all five.
           </p>
           <p class="text-ink-3 leading-relaxed">
-            The grower isn't broken. The system is. And fixing it doesn't start with another
-            tool. It starts with a complete one.
+            The grower isn't broken. The system is. And fixing it doesn't start with another tool. It starts with a complete one.
           </p>
         </div>
+        <div class="reveal flex flex-col gap-4">
+          <!-- Problem 01 -->
+          <div class="card p-5" style="border-left: 3px solid var(--terracotta);">
+            <div class="flex items-start gap-4">
+              <div class="font-mono text-xs font-semibold shrink-0 mt-0.5" style="color: var(--gold);">01</div>
+              <div>
+                <h3 class="font-display font-semibold text-sm text-ink mb-1">The Measurement Gap</h3>
+                <p class="text-xs text-ink-3 leading-relaxed mb-2">You have sensors. But do you have a 3D picture of every zone? Temperature at canopy isn't temperature at substrate.</p>
+                <p class="text-xs font-semibold" style="color: var(--terracotta);">That's 80% of your environmental variability — and the yield loss that comes with it.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Problem 02 -->
+          <div class="card p-5" style="border-left: 3px solid var(--terracotta);">
+            <div class="flex items-start gap-4">
+              <div class="font-mono text-xs font-semibold shrink-0 mt-0.5" style="color: var(--gold);">02</div>
+              <div>
+                <h3 class="font-display font-semibold text-sm text-ink mb-1">The Control Precision Gap</h3>
+                <p class="text-xs text-ink-3 leading-relaxed mb-2">If your climate reacts to problems, it's already too late. Thermostats chase excursions. Predictive controllers prevent them.</p>
+                <p class="text-xs font-semibold" style="color: var(--terracotta);">Reactive controls waste 20–30% more energy than predictive. Every month.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Problem 03 -->
+          <div class="card p-5" style="border-left: 3px solid var(--terracotta);">
+            <div class="flex items-start gap-4">
+              <div class="font-mono text-xs font-semibold shrink-0 mt-0.5" style="color: var(--gold);">03</div>
+              <div>
+                <h3 class="font-display font-semibold text-sm text-ink mb-1">The Knowledge Bottleneck</h3>
+                <p class="text-xs text-ink-3 leading-relaxed mb-2">Your best grower has intuition that can't be transferred. When they leave, the knowledge goes with them.</p>
+                <p class="text-xs font-semibold" style="color: var(--terracotta);">One resignation costs you years of institutional knowledge and months of recovery.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-        <div class="reveal grid grid-cols-1 gap-4">
-          <div class="card p-6" style="border-left: 3px solid var(--terracotta)">
-            <h3 class="font-display font-semibold text-sm text-ink mb-2">Blind Spots</h3>
-            <p class="text-xs text-ink-3 leading-relaxed">
-              You have sensors. But do you have a 3D picture of every zone? Temperature at canopy isn't temperature at substrate. The gap between your readings and reality is costing you yield — that's 80% of your environmental variability, and every point of it shows up in your harvest.
-            </p>
+      <!-- Problems 04 + 05 — full width row -->
+      <div class="grid md:grid-cols-2 gap-4 reveal">
+        <!-- Problem 04 -->
+        <div class="card p-5" style="border-left: 3px solid var(--terracotta);">
+          <div class="flex items-start gap-4">
+            <div class="font-mono text-xs font-semibold shrink-0 mt-0.5" style="color: var(--gold);">04</div>
+            <div>
+              <h3 class="font-display font-semibold text-sm text-ink mb-1">The Cycle Time Problem</h3>
+              <p class="text-xs text-ink-3 leading-relaxed mb-2">Every day a plant sits in your facility is cost without revenue. Eliminating the veg phase delivers 30% less electricity, 37% less labor, 50% more harvests per year — but only if your measurement and control are precise enough.</p>
+              <p class="text-xs font-semibold" style="color: var(--terracotta);">Every unnecessary day in veg is revenue you'll never recover.</p>
+            </div>
           </div>
-          <div class="card p-6" style="border-left: 3px solid var(--terracotta)">
-            <h3 class="font-display font-semibold text-sm text-ink mb-2">Reactive Control</h3>
-            <p class="text-xs text-ink-3 leading-relaxed">
-              If your climate control is reacting to problems, it's already too late. By the time a thermostat catches a VPD excursion, your plants have been stressed for hours. Reactive systems waste 20–30% more energy than predictive ones. Every month.
-            </p>
-          </div>
-          <div class="card p-6" style="border-left: 3px solid var(--terracotta)">
-            <h3 class="font-display font-semibold text-sm text-ink mb-2">Institutional Knowledge</h3>
-            <p class="text-xs text-ink-3 leading-relaxed">
-              Your best grower knows things your systems don't. When they leave, that knowledge goes with them. One resignation costs you years of institutional knowledge and months of recovery time.
-            </p>
+        </div>
+        <!-- Problem 05 -->
+        <div class="card p-5" style="border-left: 3px solid var(--terracotta);">
+          <div class="flex items-start gap-4">
+            <div class="font-mono text-xs font-semibold shrink-0 mt-0.5" style="color: var(--gold);">05</div>
+            <div>
+              <h3 class="font-display font-semibold text-sm text-ink mb-1">The Data Continuity Gap</h3>
+              <p class="text-xs text-ink-3 leading-relaxed mb-2">Every harvest starts from scratch because nobody recorded what actually happened in the last one. A batch biography — every sensor reading, recipe change, and crop observation — turns cultivation into a compounding learning system.</p>
+              <p class="text-xs font-semibold" style="color: var(--terracotta);">Your 50th harvest should be dramatically better than your first. Is it?</p>
+            </div>
           </div>
         </div>
       </div>
@@ -127,54 +175,50 @@ import CTASection from '../components/CTASection.astro';
 
 
   <!-- ═══════════════════════════════════════════════════════
-       SECONDARY LEAD CAPTURE — lower commitment than demo
+       SECONDARY LEAD CAPTURE — after problems, before products
   ═══════════════════════════════════════════════════════════ -->
-  <section class="section-surface py-12 border-y" style="border-color: var(--border-light);" aria-label="Get the guide">
+  <section class="py-10 border-y" style="background: var(--surface); border-color: var(--border-light);" aria-label="Get the guide">
     <div class="container">
       <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-        <div>
-          <div class="font-mono text-xs tracking-widest uppercase mb-2" style="color: var(--gold)">Free Resource</div>
-          <h3 class="font-display font-semibold text-xl text-ink mb-1">The 5 Foundational Problems in CEA</h3>
-          <p class="text-sm text-ink-3 max-w-md">The complete breakdown — with cost impact, root cause, and what changes when each one is solved. No demo required.</p>
+        <div class="flex-1 min-w-0">
+          <div class="font-mono text-xs tracking-widest uppercase mb-2" style="color: var(--gold);">Free Resource</div>
+          <h3 class="font-display font-semibold text-lg text-ink mb-1">The 5 Foundational Problems in CEA</h3>
+          <p class="text-sm text-ink-3 max-w-lg">Cost impact, root cause, and what changes when each one is solved. No demo required.</p>
         </div>
-        <form class="flex gap-3 flex-shrink-0 w-full md:w-auto" id="guide-form" onsubmit="handleGuideSubmit(event)">
+        <form class="flex gap-3 shrink-0 w-full md:w-auto" id="guide-form">
           <input
             type="email"
             placeholder="your@email.com"
             required
-            class="px-4 py-2.5 rounded border text-sm font-body flex-1 md:w-64 outline-none transition-all"
-            style="border-color: var(--border); background: white; color: var(--ink);"
-            onfocus="this.style.borderColor='var(--green)'"
-            onblur="this.style.borderColor='var(--border)'"
             id="guide-email"
+            class="px-4 py-2.5 rounded border text-sm flex-1 md:w-60 outline-none transition-all font-body"
+            style="border-color: var(--border); background: white; color: var(--ink);"
           />
-          <button type="submit" class="btn btn-outline text-sm py-2.5 px-5 whitespace-nowrap">
-            Get the Guide →
-          </button>
+          <button type="submit" class="btn btn-outline text-sm py-2.5 px-5 whitespace-nowrap">Get the Guide →</button>
         </form>
-        <div id="guide-success" style="display:none;" class="text-sm font-mono" style="color: var(--green);">
-          ✓ On its way to your inbox.
-        </div>
+        <p id="guide-success" class="text-sm font-mono hidden" style="color: var(--green);">✓ On its way to your inbox.</p>
       </div>
     </div>
   </section>
+
   <script>
-    function handleGuideSubmit(e) {
+    document.getElementById('guide-form')?.addEventListener('submit', function(e) {
       e.preventDefault();
       const email = document.getElementById('guide-email').value;
-      // Mautic form — update formId to actual guide form
       fetch('https://go.growneticsos.com/form/submit?formId=2', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
         body: JSON.stringify({ mauticform: { email, source: '5-problems-guide' } })
       }).catch(() => {});
       document.getElementById('guide-form').style.display = 'none';
-      document.getElementById('guide-success').style.display = 'block';
-    }
+      document.getElementById('guide-success').classList.remove('hidden');
+    });
   </script>
 
+
   <!-- ═══════════════════════════════════════════════════════
-       § 002 - THE STACK
+       § 002 — THE STACK
+       FROM: staging1 (ProductCard components, four layers)
   ═══════════════════════════════════════════════════════════ -->
   <section class="section" aria-labelledby="stack-headline">
     <div class="container">
@@ -185,12 +229,9 @@ import CTASection from '../components/CTASection.astro';
       </div>
 
       <div class="max-w-xl mb-12">
-        <h2 id="stack-headline" class="display-lg mb-4">
-          Four layers. One coherent system.
-        </h2>
+        <h2 id="stack-headline" class="display-lg mb-4">Four layers. One coherent system.</h2>
         <p class="text-lg text-ink-3 leading-relaxed">
-          Built to work independently or together. Designed so every layer makes
-          the next one more powerful.
+          Built to work independently or together. Designed so every layer makes the next one more powerful.
         </p>
       </div>
 
@@ -244,68 +285,49 @@ import CTASection from '../components/CTASection.astro';
 
 
   <!-- ═══════════════════════════════════════════════════════
-       § 003 - GROWNETICS OS TEASER
+       § 003 — GROWNETICS OS TEASER (marked In Development)
   ═══════════════════════════════════════════════════════════ -->
   <section
     class="relative overflow-hidden"
     style="padding: 96px 0; background: #2B2C2E;"
     aria-labelledby="os-teaser-headline"
   >
-    <div
-      class="absolute inset-0"
-      style="background-image: linear-gradient(rgba(154,136,96,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(154,136,96,0.04) 1px, transparent 1px); background-size: 72px 72px;"
-    ></div>
-    <div
-      class="absolute bottom-0 left-0 w-2/3 h-80 pointer-events-none"
-      style="background: radial-gradient(ellipse at bottom left, rgba(77,180,5,0.10) 0%, transparent 70%);"
-    ></div>
+    <div class="absolute inset-0" style="background-image: linear-gradient(rgba(154,136,96,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(154,136,96,0.04) 1px, transparent 1px); background-size: 72px 72px;"></div>
+    <div class="absolute bottom-0 left-0 w-2/3 h-80 pointer-events-none" style="background: radial-gradient(ellipse at bottom left, rgba(77,180,5,0.10) 0%, transparent 70%);"></div>
 
     <div class="container relative z-10">
-
       <div class="flex items-center gap-3 mb-8">
-        <div class="w-0.5 h-3.5 rounded" style="background: rgba(154,136,96,0.5)"></div>
-        <span class="font-mono text-xs tracking-widest uppercase" style="color: rgba(154,136,96,0.55)">§ 003 · What's Coming</span>
+        <div class="w-0.5 h-3.5 rounded" style="background: rgba(154,136,96,0.5);"></div>
+        <span class="font-mono text-xs tracking-widest uppercase" style="color: rgba(154,136,96,0.55);">§ 003 · What's Coming — H2 2026</span>
       </div>
 
       <div class="max-w-3xl">
         <div class="flex flex-wrap gap-3 mb-6">
-          <span
-            class="font-mono text-xs tracking-widest uppercase px-3 py-1.5 rounded border"
-            style="color: rgba(77,180,5,0.85); border-color: rgba(77,180,5,0.25); background: rgba(77,180,5,0.07);"
-          >
-            ◉ In Development
-          </span>
+          <span class="font-mono text-xs tracking-widest uppercase px-3 py-1.5 rounded border" style="color: rgba(77,180,5,0.85); border-color: rgba(77,180,5,0.25); background: rgba(77,180,5,0.07);">◉ In Development · Coming H2 2026</span>
         </div>
 
-        <h2
-          id="os-teaser-headline"
-          class="font-display font-semibold mb-5"
-          style="font-size: clamp(2rem, 4.5vw, 3.25rem); color: #E9E8EE; line-height: 1.15;"
-        >
+        <h2 id="os-teaser-headline" class="font-display font-semibold mb-5" style="font-size: clamp(2rem, 4.5vw, 3.25rem); color: #E9E8EE; line-height: 1.15;">
           Grownetics OS is the AI layer<br />
           <span style="color: #4DB405;">that connects it all.</span>
         </h2>
 
-        <p
-          class="text-base leading-relaxed mb-8 max-w-2xl"
-          style="color: rgba(151,153,166,0.9); font-size: 1.05rem;"
-        >
+        <p class="text-base leading-relaxed mb-8 max-w-2xl" style="color: rgba(151,153,166,0.9); font-size: 1.05rem;">
           Every data point your stack collects. Every decision your team makes.
           One intelligence layer that coordinates them and gets smarter with every grow.
+          Join the waitlist to be in the first cohort.
         </p>
 
-        <a href="/os" class="btn btn-primary">
-          Join the Waitlist. Be First →
-        </a>
+        <a href="/os" class="btn btn-primary">Join the Waitlist. Be First →</a>
       </div>
     </div>
   </section>
 
 
   <!-- ═══════════════════════════════════════════════════════
-       § 004 - CREDENTIALS
+       § 004 — PROOF (multiple evidence types)
+       FROM: staging.grownetics.com (case study + research + testimonials)
   ═══════════════════════════════════════════════════════════ -->
-  <section class="section section-surface" aria-label="Proven at commercial scale">
+  <section class="section" aria-labelledby="proof-headline">
     <div class="container">
 
       <div class="section-ref">
@@ -313,12 +335,16 @@ import CTASection from '../components/CTASection.astro';
         <span class="ref-label">§ 004 · Proven at Commercial Scale</span>
       </div>
 
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16 reveal">
+      <h2 id="proof-headline" class="display-md mb-4 reveal">Not promises. Documented results.</h2>
+      <p class="text-ink-3 leading-relaxed mb-12 max-w-lg reveal">From university-affiliated research to operating farms.</p>
+
+      <!-- Stat block -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-14 reveal">
         {[
           { value: "1M+", label: "sq ft managed", detail: "CO · CA · Canada · International" },
-          { value: "60+", label: "Years combined experience", detail: "Engineering + cultivation expertise" },
-          { value: "UL", label: "Certified controls", detail: "Industrial-grade reliability" },
-          { value: "UC", label: "Research affiliated", detail: "University of Colorado studies" },
+          { value: "40%", label: "Energy reduction", detail: "UC Boulder / Fleurish Farms study" },
+          { value: "20%+", label: "HVAC efficiency", detail: "HiFEC algorithm, any HVAC system" },
+          { value: "2015", label: "Founded Colorado", detail: "10+ years field-proven" },
         ].map((stat) => (
           <div class="card p-5 text-center">
             <div class="stat-number text-2xl mb-1">{stat.value}</div>
@@ -328,13 +354,91 @@ import CTASection from '../components/CTASection.astro';
         ))}
       </div>
 
-      <div class="flex flex-col items-center">
-        <p class="font-mono text-xs text-ink-3 uppercase tracking-widest mb-8">
-          Deployed in commercial facilities
-        </p>
-        <div class="flex flex-wrap justify-center items-center gap-8 md:gap-14 opacity-55">
-          {['The Work', 'House of Cultivars', 'Green Horizons', 'Fields of Light'].map((client) => (
-            <span class="font-display text-lg font-semibold text-ink-3 italic">{client}</span>
+      <!-- Proof cards — case study, research, enterprise -->
+      <div class="grid md:grid-cols-3 gap-5 mb-12 reveal">
+
+        <!-- Shift Cannabis — featured -->
+        <div class="card p-6 md:col-span-1" style="border-top: 3px solid var(--green); background: var(--surface-2);">
+          <div class="font-mono text-xs uppercase tracking-widest mb-3" style="color: var(--gold);">Case Study · Shift Cannabis</div>
+          <div class="flex items-end gap-4 mb-4">
+            <div>
+              <div class="stat-number" style="font-size: 2.5rem;">2</div>
+              <div class="text-xs text-ink-3 font-mono uppercase tracking-wide">full-time staff</div>
+            </div>
+            <div class="h-px flex-1 mb-4" style="background: var(--border-light);"></div>
+            <div>
+              <div class="stat-number" style="font-size: 2.5rem;">30K</div>
+              <div class="text-xs text-ink-3 font-mono uppercase tracking-wide">sq ft operation</div>
+            </div>
+          </div>
+          <p class="text-xs text-ink-3 leading-relaxed italic">"Great equipment and software for CEA. Grownetics helped us build custom solutions for a more efficient work environment. Great team."</p>
+          <div class="flex items-center gap-3 mt-4">
+            <img src="/images/testimonial-cody.jpg" alt="Cody Monroe" class="w-9 h-9 rounded-full object-cover" onerror="this.style.display='none'" />
+            <div>
+              <div class="text-sm font-semibold text-ink">Cody Monroe</div>
+              <div class="text-xs text-ink-3">Shift Cannabis</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- UC Boulder energy study -->
+        <div class="card p-6">
+          <div class="font-mono text-xs uppercase tracking-widest mb-3" style="color: var(--gold);">University Research</div>
+          <div class="stat-number mb-1" style="font-size: 3rem;">40%</div>
+          <div class="font-mono text-xs text-ink-3 uppercase tracking-widest mb-3">Energy reduction</div>
+          <p class="text-sm text-ink-3 leading-relaxed">Grownetics, Fleurish Farms, and University of Colorado, Boulder. 40% reduction in energy vs. sole-source LED lighting through open architecture platform integration.</p>
+        </div>
+
+        <!-- The Work Cannabis -->
+        <div class="card p-6">
+          <div class="font-mono text-xs uppercase tracking-widest mb-3" style="color: var(--gold);">Enterprise · R&D Facility</div>
+          <p class="text-sm text-ink-3 leading-relaxed italic mb-5">"We designed our R&D facility to be at the leading edge of efficiency, technology and innovation. What we were trying to do would never have been possible without the Grownetics sensing and automation platform to tie it all together."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full flex items-center justify-center font-bold text-sm shrink-0" style="background: var(--bg-alt); color: var(--ink-2);">ES</div>
+            <div>
+              <div class="text-sm font-semibold text-ink">Eliyahu Scheiman</div>
+              <div class="text-xs text-ink-3">The Work Cannabis</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Twin Peaks -->
+        <div class="card p-6">
+          <div class="font-mono text-xs uppercase tracking-widest mb-3" style="color: var(--gold);">Commercial · Retrofit</div>
+          <p class="text-sm text-ink-3 leading-relaxed italic mb-5">"Their advice and depth of knowledge in CEA is really top notch. Their recommended upgrades have been spot on and budget friendly. We'll be implementing Grownetics' systems for all our new sites."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full flex items-center justify-center font-bold text-sm shrink-0" style="background: var(--bg-alt); color: var(--ink-2);">PQ</div>
+            <div>
+              <div class="text-sm font-semibold text-ink">Paul Quinn</div>
+              <div class="text-xs text-ink-3">Twin Peaks Cannabis</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sacramento greenhouse -->
+        <div class="card p-6">
+          <div class="font-mono text-xs uppercase tracking-widest mb-3" style="color: var(--gold);">Scale · Greenhouse</div>
+          <div class="stat-number mb-1" style="font-size: 2.75rem;">250K</div>
+          <div class="font-mono text-xs text-ink-3 uppercase tracking-widest mb-3">Sq ft, fully automated</div>
+          <p class="text-sm text-ink-3 leading-relaxed">Sacramento greenhouse. Crop analytics and AI tools deployed across one of the largest automated CEA facilities in the country.</p>
+        </div>
+
+        <!-- San Diego / HiFEC energy -->
+        <div class="card p-6">
+          <div class="font-mono text-xs uppercase tracking-widest mb-3" style="color: var(--gold);">Controls · Energy</div>
+          <div class="stat-number mb-1" style="font-size: 2.75rem;">~30%</div>
+          <div class="font-mono text-xs text-ink-3 uppercase tracking-widest mb-3">Energy reduction</div>
+          <p class="text-sm text-ink-3 leading-relaxed">San Diego commercial greenhouse. HiFEC predictive algorithm deployed on existing HVAC infrastructure — no equipment replacement required.</p>
+        </div>
+
+      </div>
+
+      <!-- Customer logo bar — FROM staging.grownetics.com -->
+      <div class="reveal">
+        <p class="font-mono text-xs text-ink-3 uppercase tracking-widest mb-6">Deployed across commercial facilities</p>
+        <div class="flex flex-wrap items-center gap-x-10 gap-y-3 opacity-60">
+          {['Shift Cannabis', 'The Work Cannabis', 'Twin Peaks Cannabis', 'Dalwhinnie Farms', 'Fleurish Farms', 'Green Horizons', 'House of Cultivars'].map(name => (
+            <span class="font-display font-semibold text-base text-ink-3">{name}</span>
           ))}
         </div>
       </div>
@@ -343,19 +447,74 @@ import CTASection from '../components/CTASection.astro';
 
 
   <!-- ═══════════════════════════════════════════════════════
-       § 005 - TESTIMONIALS
+       § 005 — HOW WE WORK
+       FROM: staging.grownetics.com (4-step process, renamed step 1)
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="section" style="background: var(--bg-alt);" aria-labelledby="how-headline">
+    <div class="container">
+
+      <div class="section-ref">
+        <div class="section-ref-bar"></div>
+        <span class="ref-label">§ 005 · How We Work</span>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-14 items-start">
+        <div class="reveal">
+          <h2 id="how-headline" class="display-lg mb-5">We start with your facility. Not a product pitch.</h2>
+          <p class="text-ink-3 leading-relaxed mb-4">We've managed over 1 million sqft across the US, Canada, and internationally. We know what a 30,000 sqft smart farm looks like. We know what a Gen 2 facility built from tradeshow advice looks like. We'll tell you which one yours is — and what to unlock first.</p>
+          <p class="text-ink-3 leading-relaxed">Each engagement starts with a site evaluation. No obligation. Just an honest picture of where you are and what the data shows.</p>
+          <a href="/contact" class="btn btn-primary mt-6 inline-flex">Book a Discovery Call →</a>
+        </div>
+
+        <div class="reveal divide-y" style="border-color: var(--border-light);">
+          {[
+            {
+              num: "01",
+              title: "Discovery Session",
+              desc: "We walk your facility, identify where value is hiding, and show you what to unlock first. No pitch — just a clear picture of what the data shows.",
+            },
+            {
+              num: "02",
+              title: "Sensor Deployment",
+              desc: "CropVision installs in hours, not months. Zero wiring, zero configuration. Up to 2-mile wireless range. You see the full picture within days.",
+            },
+            {
+              num: "03",
+              title: "Controls Integration",
+              desc: "Unity connects to your existing HVAC, irrigation, and CO₂ systems. BACnet, Modbus, relay — we work with what you have. No equipment replacement required.",
+            },
+            {
+              num: "04",
+              title: "Ongoing Optimization",
+              desc: "Every harvest logs to Grownetics OS. Each cycle learns from the last. Your operation gets more efficient every grow.",
+            },
+          ].map(step => (
+            <div class="flex items-start gap-5 py-5">
+              <div class="font-mono text-xs font-semibold shrink-0 mt-1" style="color: var(--gold);">{step.num}</div>
+              <div>
+                <div class="font-display font-semibold text-ink mb-1">{step.title}</div>
+                <p class="text-sm text-ink-3 leading-relaxed">{step.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       § 006 — TESTIMONIALS (FROM staging1)
   ═══════════════════════════════════════════════════════════ -->
   <section class="section" aria-labelledby="testimonials-headline">
     <div class="container">
 
       <div class="section-ref">
         <div class="section-ref-bar"></div>
-        <span class="ref-label">§ 005 · From the Grow Room</span>
+        <span class="ref-label">§ 006 · From the Grow Room</span>
       </div>
 
-      <h2 id="testimonials-headline" class="display-md mb-12 max-w-lg reveal">
-        What growers say after they can finally see.
-      </h2>
+      <h2 id="testimonials-headline" class="display-md mb-12 max-w-lg reveal">What growers say after they can finally see.</h2>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 reveal">
         <Testimonial
@@ -384,23 +543,48 @@ import CTASection from '../components/CTASection.astro';
 
 
   <!-- ═══════════════════════════════════════════════════════
-       § 006 - FINAL CTA
+       § 007 — CREDENTIALS + AFFILIATIONS
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="section" style="background: var(--bg-alt);" aria-label="Credentials and affiliations">
+    <div class="container">
+      <div class="section-ref">
+        <div class="section-ref-bar"></div>
+        <span class="ref-label">§ 007 · Industry Recognition</span>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6 reveal">
+        {[
+          { label: "RII Technical Advisory Council", detail: "Resource Innovation Institute — setting energy standards for CEA" },
+          { label: "USDA Optimia Project", detail: "Economics Committee — contributing to federal CEA policy" },
+          { label: "UC Boulder Research Affiliate", detail: "Collaborative energy efficiency studies in controlled environment agriculture" },
+        ].map(c => (
+          <div class="card p-5">
+            <div class="w-1.5 h-1.5 rounded-full mb-3" style="background: var(--green);"></div>
+            <div class="font-display font-semibold text-sm text-ink mb-2">{c.label}</div>
+            <p class="text-xs text-ink-3 leading-relaxed">{c.detail}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       § 008 — FINAL CTA
+       Stronger close from Maven's review
   ═══════════════════════════════════════════════════════════ -->
   <section
     class="section relative overflow-hidden"
     style="background: #2B2C2E;"
     aria-labelledby="final-cta-headline"
   >
-    <div
-      class="absolute inset-0"
-      style="background-image: linear-gradient(rgba(154,136,96,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(154,136,96,0.03) 1px, transparent 1px); background-size: 72px 72px;"
-    ></div>
+    <div class="absolute inset-0" style="background-image: linear-gradient(rgba(154,136,96,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(154,136,96,0.03) 1px, transparent 1px); background-size: 72px 72px;"></div>
+    <div class="absolute bottom-0 right-0 w-1/2 h-2/3 pointer-events-none" style="background: radial-gradient(ellipse at bottom right, rgba(77,180,5,0.07) 0%, transparent 65%);"></div>
 
     <div class="container relative z-10 text-center max-w-2xl mx-auto">
       <div class="flex items-center justify-center gap-3 mb-8">
-        <div class="h-px w-12" style="background: linear-gradient(to right, transparent, rgba(154,136,96,0.4))"></div>
-        <span class="font-mono text-xs tracking-widest uppercase" style="color: rgba(154,136,96,0.55)">§ 006 · Start Here</span>
-        <div class="h-px w-12" style="background: linear-gradient(to left, transparent, rgba(154,136,96,0.4))"></div>
+        <div class="h-px w-12" style="background: linear-gradient(to right, transparent, rgba(154,136,96,0.4));"></div>
+        <span class="font-mono text-xs tracking-widest uppercase" style="color: rgba(154,136,96,0.55);">§ 008 · Start Here</span>
+        <div class="h-px w-12" style="background: linear-gradient(to left, transparent, rgba(154,136,96,0.4));"></div>
       </div>
 
       <h2
@@ -415,13 +599,7 @@ import CTASection from '../components/CTASection.astro';
       </p>
       <div class="flex flex-wrap gap-4 justify-center">
         <a href="/contact" class="btn btn-primary">Book a Discovery Call →</a>
-        <a
-          href="/cropvision"
-          class="btn"
-          style="border: 1px solid rgba(255,255,255,0.2); color: rgba(233,232,238,0.65);"
-        >
-          Explore the Stack
-        </a>
+        <a href="/cropvision" class="btn" style="border: 1px solid rgba(255,255,255,0.2); color: rgba(233,232,238,0.65);">Explore the Stack</a>
       </div>
     </div>
   </section>
