@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Grownetics — Precision Cultivation Intelligence</title>
-  <meta name="description" content="Grownetics gives cultivation operators the measurement, control, and intelligence to run better facilities. See. Control. Optimize." />
-  <meta property="og:title" content="Grownetics — Precision Cultivation Intelligence" />
-  <meta property="og:description" content="10x sensor density. Predictive multi-variable control. The OS for cultivation operators." />
+  <title>Grownetics — See. Control. Optimize.</title>
+  <meta name="description" content="Complete CEA technology for commercial cultivation: wireless monitoring, precision automation, facility design, and consulting. 1M+ sq ft deployed." />
+  <meta property="og:title" content="Grownetics — See. Control. Optimize." />
+  <meta property="og:description" content="10x sensor density. Predictive multi-variable control. The technology stack for precision cultivation." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://grownetics.com" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,13 +16,12 @@
 </head>
 <body>
 
-<!-- ════════════════════════════════════════════
-     NAVIGATION
-════════════════════════════════════════════ -->
+<!-- ════ NAVIGATION ════ -->
 <nav class="top-nav nav-dark" id="top-nav">
   <div class="nav-inner">
-    <a href="/" class="nav-logo">
-      <span class="nav-wordmark">Grownetics</span>
+    <a href="/" class="nav-logo" aria-label="Grownetics home">
+      <img src="images/logo-dark.png" alt="Grownetics" class="nav-logo-img" id="nav-logo-img"
+           data-light="images/logo-black.png" data-dark="images/logo-dark.png" />
     </a>
     <div class="nav-links" id="nav-links">
       <a href="#products" class="nav-link">Products</a>
@@ -46,364 +45,356 @@
   <a href="#contact" class="mobile-link" style="color:var(--green);margin-top:1rem;">Request Demo →</a>
 </div>
 
-<!-- ════════════════════════════════════════════
-     HERO
-════════════════════════════════════════════ -->
+<!-- ════ HERO — greenhouse imagery + dark overlay + dark energy ════ -->
 <section class="hero" id="hero">
-  <!-- Graph grid texture -->
-  <div class="hero-grid"></div>
-  <!-- Radial glow -->
-  <div class="hero-glow hero-glow-1"></div>
-  <div class="hero-glow hero-glow-2"></div>
-  <!-- Scan line -->
-  <div class="hero-scan-wrap"><div class="hero-scan"></div></div>
+  <!-- Greenhouse / facility background photo -->
+  <div class="hero-bg">
+    <img src="images/hero-bg.jpg" alt="" role="presentation" class="hero-bg-img" />
+    <!-- Dark overlay with green tint — agricultural, not pure SaaS black -->
+    <div class="hero-overlay"></div>
+    <!-- Graph grid on top -->
+    <div class="hero-grid"></div>
+    <!-- Phosphor glow -->
+    <div class="hero-glow"></div>
+  </div>
 
   <div class="container hero-inner">
-    <div class="reveal">
-      <span class="badge badge-phosphor" style="border-color:rgba(82,230,25,0.35); margin-bottom:28px; display:inline-flex;">
-        <span class="badge-live-dot"></span>
-        Precision Cultivation Intelligence
-      </span>
-    </div>
-    <h1 class="hero-headline reveal reveal-d1">
-      See.<br/>
-      Control.<br/>
-      <span class="hero-accent">Optimize.</span>
-    </h1>
-    <p class="hero-sub reveal reveal-d2">
-      Most cultivation facilities are flying blind — two sensor readings a day, reactive controls, and expertise locked in one grower's head. Grownetics gives you continuous visibility, predictive control, and a system that gets smarter with every harvest.
-    </p>
-    <div class="hero-actions reveal reveal-d3">
-      <a href="#contact" class="btn btn-primary btn-lg">Request a Demo →</a>
-      <a href="#problems" class="btn btn-ghost btn-lg">See the Problems</a>
-    </div>
-    <!-- Stat bar -->
-    <div class="hero-stats reveal reveal-d4">
-      <div class="hero-stat">
-        <span class="hero-stat-num">1M+</span>
-        <span class="hero-stat-label">Sqft Managed</span>
+    <div class="hero-content">
+      <div class="hero-ref reveal">
+        <div class="hero-ref-bar"></div>
+        <span class="hero-ref-label">§ 001 · Field Operations</span>
+        <div class="hero-ref-line"></div>
       </div>
-      <div class="hero-stat-divider"></div>
-      <div class="hero-stat">
-        <span class="hero-stat-num">40%</span>
-        <span class="hero-stat-label">Energy Reduction</span>
+
+      <h1 class="hero-headline reveal reveal-d1">
+        See. Control.<br />
+        <span class="hero-accent">Optimize.</span>
+      </h1>
+
+      <p class="hero-tagline reveal reveal-d2">
+        The complete technology stack for commercial cultivation, from sensor to decision.
+      </p>
+
+      <p class="hero-sub reveal reveal-d2">
+        Most facilities run on two sensor readings a day, reactive controls, and one grower's intuition. Grownetics replaces all three.
+      </p>
+
+      <div class="hero-actions reveal reveal-d3">
+        <a href="#contact" class="btn btn-primary btn-lg">Request a Demo →</a>
+        <a href="#problems" class="btn btn-dark-ghost btn-lg">See Why It Matters</a>
       </div>
-      <div class="hero-stat-divider"></div>
-      <div class="hero-stat">
-        <span class="hero-stat-num">20%+</span>
-        <span class="hero-stat-label">HVAC Efficiency Gain</span>
-      </div>
-      <div class="hero-stat-divider"></div>
-      <div class="hero-stat">
-        <span class="hero-stat-num">2015</span>
-        <span class="hero-stat-label">Founded in Colorado</span>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ════════════════════════════════════════════
-     SECTION REF: WHY
-════════════════════════════════════════════ -->
-<div class="section-divider"></div>
-
-<!-- ════════════════════════════════════════════
-     5 FOUNDATIONAL PROBLEMS
-════════════════════════════════════════════ -->
-<section class="section section-alt" id="problems">
-  <div class="container">
-    <div class="section-ref reveal">
-      <div class="section-ref-bar"></div>
-      <span class="ref-label">§ 001 · Why It Matters</span>
-    </div>
-    <div class="two-col" style="gap:80px; align-items:start;">
-      <div>
-        <h2 class="reveal" style="max-width:16ch;">Five problems costing you every harvest.</h2>
-        <p class="reveal" style="color:var(--text-2); margin-top:20px; max-width:48ch;">
-          These aren't problems you can solve by working harder. They're structural — built into how most facilities measure, control, and learn. Grownetics is built specifically to eliminate all five.
-        </p>
-      </div>
-      <div class="reveal reveal-d1">
-        <div class="problem-stack">
-
-          <div class="problem-item">
-            <div class="problem-num">01</div>
-            <div class="problem-content">
-              <h4 class="problem-title">The Measurement Gap</h4>
-              <p class="problem-body">You can't control what you can't measure — and most facilities barely measure. One or two sensors per room. Air temperature at a single point. No leaf temperature, no canopy PAR, no substrate WC. CropVision gives you 10x the resolution you have today.</p>
-              <div class="problem-tag">→ CropVision</div>
-            </div>
-          </div>
-
-          <div class="problem-item">
-            <div class="problem-num">02</div>
-            <div class="problem-content">
-              <h4 class="problem-title">The Control Precision Gap</h4>
-              <p class="problem-body">CEA runs on thermostats. Plants need predictive, multi-variable control — one that reads rate of change, models where the environment is going, and positions equipment before it gets there. Reactive systems chase. Predictive systems prevent.</p>
-              <div class="problem-tag">→ Unity / HiFEC</div>
-            </div>
-          </div>
-
-          <div class="problem-item">
-            <div class="problem-num">03</div>
-            <div class="problem-content">
-              <h4 class="problem-title">The Knowledge Bottleneck</h4>
-              <p class="problem-body">Your best grower has 20 years of intuition that can't be written down, transferred, or scaled. When they leave, it leaves with them. A cultivation OS captures what experts know and makes it accessible to every operator on every shift.</p>
-              <div class="problem-tag">→ Grownetics OS</div>
-            </div>
-          </div>
-
-          <div class="problem-item">
-            <div class="problem-num">04</div>
-            <div class="problem-content">
-              <h4 class="problem-title">The Cycle Time Problem</h4>
-              <p class="problem-body">Every day a plant sits in your facility is cost without revenue. Eliminating the veg phase alone delivers 30% less electricity, 37% less labor, and 50% more harvests per year — but only if your measurement and control are precise enough to support it.</p>
-              <div class="problem-tag">→ CropVision + Unity</div>
-            </div>
-          </div>
-
-          <div class="problem-item" style="border-bottom:none; padding-bottom:0;">
-            <div class="problem-num">05</div>
-            <div class="problem-content">
-              <h4 class="problem-title">The Data Continuity Gap</h4>
-              <p class="problem-body">Every harvest starts from scratch because nobody recorded what actually happened in the last one. A batch biography — every sensor reading, recipe change, and observation correlated to final yield — turns cultivation from intuition into a compounding learning system.</p>
-              <div class="problem-tag">→ Grownetics OS</div>
-            </div>
-          </div>
-
+      <!-- Stat bar -->
+      <div class="hero-stats reveal reveal-d4">
+        <div class="hero-stat">
+          <span class="hero-stat-num">1M+</span>
+          <span class="hero-stat-label">Sq ft managed</span>
+        </div>
+        <div class="hero-stat-div"></div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">40%</span>
+          <span class="hero-stat-label">Energy reduction</span>
+        </div>
+        <div class="hero-stat-div"></div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">20%+</span>
+          <span class="hero-stat-label">HVAC efficiency gain</span>
+        </div>
+        <div class="hero-stat-div"></div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">2015</span>
+          <span class="hero-stat-label">Founded in Colorado</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ════════════════════════════════════════════
-     PRODUCTS
-════════════════════════════════════════════ -->
+<!-- ════ 5 FOUNDATIONAL PROBLEMS ════ -->
+<section class="section" id="problems" style="background:var(--bg-alt);">
+  <div class="container">
+    <div class="section-ref reveal" style="--ref-color:var(--terracotta);">
+      <div class="section-ref-bar" style="background:var(--terracotta);"></div>
+      <span class="ref-label" style="color:var(--terracotta);">§ 001 · Five Problems Costing You Every Harvest</span>
+    </div>
+
+    <div class="two-col" style="gap:64px; align-items:start; margin-bottom:2rem;">
+      <div class="reveal">
+        <h2 style="max-width:14ch;">Your growers aren't the problem. <span style="color:var(--terracotta);">Your tools are.</span></h2>
+        <p class="body-text" style="margin-top:1.25rem;">
+          These aren't problems you solve by working harder. They're structural — built into how most facilities measure, control, and learn. Grownetics is built to eliminate all five.
+        </p>
+        <p class="body-text" style="margin-top:0.75rem;">
+          The grower isn't broken. The system is. And fixing it doesn't start with another tool. It starts with a complete one.
+        </p>
+      </div>
+      <div class="problems-col reveal reveal-d1">
+        <!-- Problem 01 -->
+        <div class="problem-item">
+          <div class="problem-num">01</div>
+          <div class="problem-body">
+            <div class="problem-title">The Measurement Gap</div>
+            <p class="problem-desc">You have sensors. But do you have a 3D picture of every zone? Temperature at canopy isn't temperature at substrate. The gap between your readings and reality costs you yield.</p>
+            <p class="problem-impact">That's 80% of your environmental variability — and the yield loss that comes with it.</p>
+            <div class="problem-tag">→ CropVision</div>
+          </div>
+        </div>
+        <!-- Problem 02 -->
+        <div class="problem-item">
+          <div class="problem-num">02</div>
+          <div class="problem-body">
+            <div class="problem-title">The Control Precision Gap</div>
+            <p class="problem-desc">If your climate control is reacting to problems, it's already too late. Thermostats chase excursions. Predictive controllers prevent them.</p>
+            <p class="problem-impact">Reactive controls waste 20–30% more energy than predictive. Every month.</p>
+            <div class="problem-tag">→ Unity / HiFEC</div>
+          </div>
+        </div>
+        <!-- Problem 03 -->
+        <div class="problem-item">
+          <div class="problem-num">03</div>
+          <div class="problem-body">
+            <div class="problem-title">The Knowledge Bottleneck</div>
+            <p class="problem-desc">Your best grower has intuition that took years to build and can't be transferred. When they leave, the knowledge goes with them.</p>
+            <p class="problem-impact">One resignation costs you years of institutional knowledge and months of recovery.</p>
+            <div class="problem-tag">→ Grownetics OS</div>
+          </div>
+        </div>
+        <!-- Problem 04 -->
+        <div class="problem-item">
+          <div class="problem-num">04</div>
+          <div class="problem-body">
+            <div class="problem-title">The Cycle Time Problem</div>
+            <p class="problem-desc">Every day a plant sits in your facility is cost without revenue. Eliminating the veg phase delivers 30% less electricity, 37% less labor, 50% more harvests per year — but only if measurement and control are precise enough.</p>
+            <p class="problem-impact">Every unnecessary day in veg is revenue you'll never recover.</p>
+            <div class="problem-tag">→ CropVision + Unity</div>
+          </div>
+        </div>
+        <!-- Problem 05 -->
+        <div class="problem-item" style="border-bottom:none;padding-bottom:0;">
+          <div class="problem-num">05</div>
+          <div class="problem-body">
+            <div class="problem-title">The Data Continuity Gap</div>
+            <p class="problem-desc">Every harvest starts from scratch because nobody recorded what actually happened in the last one. A batch biography turns cultivation into a compounding learning system.</p>
+            <p class="problem-impact">Your 50th harvest should be dramatically better than your first. Is it?</p>
+            <div class="problem-tag">→ Grownetics OS</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ SECONDARY LEAD CAPTURE ════ -->
+<section style="background:var(--surface);padding:2.5rem 0;border-top:1px solid var(--border-light);border-bottom:1px solid var(--border-light);">
+  <div class="container">
+    <div class="lead-capture-row reveal">
+      <div class="lead-capture-text">
+        <div class="lead-label">Free Resource</div>
+        <h3 class="lead-title">The 5 Foundational Problems in CEA</h3>
+        <p class="lead-desc">Cost impact, root cause, and what changes when each one is solved.</p>
+      </div>
+      <form class="lead-form" id="guide-form">
+        <input type="email" id="guide-email" class="form-input" placeholder="your@email.com" required />
+        <button type="submit" class="btn btn-outline">Get the Guide →</button>
+      </form>
+      <p class="lead-success" id="guide-success" style="display:none;">✓ On its way to your inbox.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════ PRODUCTS ════ -->
 <section class="section section-near-black" id="products">
   <div class="container">
     <div class="section-ref section-ref-instrument reveal">
-      <div class="section-ref-bar"></div>
-      <span class="ref-label">§ 002 · Products</span>
+      <div class="section-ref-bar" style="background:var(--instrument-green);"></div>
+      <span class="ref-label" style="color:var(--instrument-green);">§ 002 · Products</span>
     </div>
-    <h2 class="reveal" style="color:#E9E8EE; max-width:20ch;">Three layers. One integrated platform.</h2>
-    <p class="reveal" style="color:rgba(196,217,200,0.55); margin-top:16px; max-width:52ch;">Each layer builds on the last. You can't control what you can't see. You can't optimize a system you don't understand. Measurement → Control → Intelligence.</p>
+    <h2 class="reveal" style="color:#E9E8EE;max-width:20ch;">Three layers. One integrated platform.</h2>
+    <p class="reveal" style="color:rgba(196,217,200,0.55);margin-top:1rem;max-width:52ch;">Measurement → Control → Intelligence. Each layer makes the next one more powerful.</p>
 
     <div class="products-grid">
-
       <!-- CropVision -->
       <div class="product-card reveal">
         <div class="product-layer-badge layer-see">SEE</div>
-        <div class="product-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-        </div>
         <h3 class="product-name">CropVision</h3>
         <p class="product-sub">Wireless sensor platform</p>
-        <p class="product-desc">10x sensor density. Continuous environmental mapping at leaf, canopy, and root zone level. Leaf temperature, substrate WC/EC, canopy PAR — the measurements most facilities don't have.</p>
+        <p class="product-desc">10x sensor density. Continuous environmental mapping at leaf, canopy, and root zone. The measurements most facilities don't have — leaf temperature, substrate WC/EC, canopy PAR.</p>
         <ul class="product-features">
-          <li>Zero-touch configuration, up to 2-mile range</li>
+          <li>Zero-touch config, up to 2-mile wireless range</li>
           <li>2–5 year battery life, IP65 weatherproof</li>
           <li>Works with Aranet sensors — no lock-in</li>
           <li>Open source on GitLab</li>
         </ul>
         <div class="product-proof">
-          <span class="proof-metric">250,000 sqft</span>
-          <span class="proof-label">Sacramento greenhouse, fully automated</span>
+          <span class="proof-num">250,000 sqft</span>
+          <span class="proof-lbl">Sacramento greenhouse, fully automated</span>
         </div>
       </div>
-
-      <!-- Unity / HiFEC -->
+      <!-- Unity -->
       <div class="product-card reveal reveal-d1">
         <div class="product-layer-badge layer-control">CONTROL</div>
-        <div class="product-icon" style="background:rgba(77,166,232,0.10); color:var(--phosphor-blue);">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="9" height="9" rx="1.5"/><rect x="13" y="2" width="9" height="9" rx="1.5"/><rect x="2" y="13" width="9" height="9" rx="1.5"/><path d="M13 17h4m-2-2v4"/></svg>
-        </div>
         <h3 class="product-name">Unity + HiFEC</h3>
         <p class="product-sub">Predictive controls algorithm</p>
-        <p class="product-desc">The difference between a thermostat and a predictive controller. Unity reads rate of change across all variables simultaneously and positions your HVAC, irrigation, and CO₂ before the environment deviates — not after.</p>
+        <p class="product-desc">Reads rate of change across all variables simultaneously and positions your HVAC, irrigation, and CO₂ before the environment deviates — not after.</p>
         <ul class="product-features">
-          <li>Licensed HiFEC algorithm — 20%+ efficiency on any HVAC</li>
-          <li>Multi-variable simultaneous: temp, RH, VPD, CO₂, substrate</li>
+          <li>Licensed HiFEC — 20%+ efficiency on any HVAC</li>
+          <li>Multi-variable: temp, RH, VPD, CO₂, substrate</li>
           <li>BACnet, Modbus, 0-10V, relay integration</li>
           <li>Validated by Wageningen AGC research</li>
         </ul>
         <div class="product-proof">
-          <span class="proof-metric">20–30%</span>
-          <span class="proof-label">Energy reduction, proven across deployments</span>
+          <span class="proof-num">20–30%</span>
+          <span class="proof-lbl">Energy reduction, proven across deployments</span>
         </div>
       </div>
-
       <!-- Grownetics OS -->
       <div class="product-card reveal reveal-d2">
-        <div class="product-layer-badge layer-optimize">OPTIMIZE</div>
-        <div class="product-icon" style="background:rgba(199,229,90,0.08); color:var(--electric-lime);">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-        </div>
+        <div class="product-layer-badge layer-os">IN DEV · H2 2026</div>
         <h3 class="product-name">Grownetics OS</h3>
         <p class="product-sub">Cultivation intelligence platform</p>
-        <p class="product-desc">The operating system for your facility. Batch biographies that capture every measurement, recipe change, and crop observation correlated to final yield. The system that turns experience into institutional knowledge — and makes every operator grower-capable.</p>
+        <p class="product-desc">Every data point your stack collects. Every decision your team makes. One intelligence layer that captures batch biographies, surfaces patterns across cycles, and makes every operator grower-capable.</p>
         <ul class="product-features">
           <li>Full batch cultivation biography, every cycle</li>
           <li>Cross-cycle learning — each grow builds on the last</li>
           <li>Recipe management with decision logging</li>
           <li>AI-assisted crop steering recommendations</li>
         </ul>
-        <div class="product-proof" style="border-color:rgba(199,229,90,0.15); background:rgba(199,229,90,0.04);">
-          <span class="proof-metric" style="color:var(--electric-lime);">30K sqft</span>
-          <span class="proof-label">Shift Cannabis — operated by 2 full-time staff</span>
+        <div class="product-proof" style="border-color:rgba(199,229,90,0.15);background:rgba(199,229,90,0.04);">
+          <span class="proof-num" style="color:var(--electric-lime);">30K sqft</span>
+          <span class="proof-lbl">Shift Cannabis — operated by 2 full-time staff</span>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ════════════════════════════════════════════
-     RESULTS / PROOF
-════════════════════════════════════════════ -->
+<!-- ════ PROOF ════ -->
 <section class="section" id="proof">
   <div class="container">
     <div class="section-ref reveal">
       <div class="section-ref-bar"></div>
-      <span class="ref-label">§ 003 · Proof</span>
+      <span class="ref-label">§ 003 · Proven at Commercial Scale</span>
     </div>
-    <h2 class="reveal" style="max-width:20ch;">Not promises. Documented results.</h2>
+    <h2 class="reveal" style="max-width:18ch;">Not promises. Documented results.</h2>
 
     <div class="proof-grid">
-
-      <!-- Featured: Shift Cannabis -->
-      <div class="proof-card proof-card-featured reveal">
-        <div class="proof-badge">Case Study</div>
+      <!-- Shift Cannabis — featured -->
+      <div class="proof-card proof-featured reveal">
+        <div class="proof-badge">Case Study · Shift Cannabis</div>
         <div class="proof-numbers">
           <div class="proof-number-item">
-            <span class="proof-big-num">2</span>
-            <span class="proof-num-label">full-time staff</span>
+            <div class="proof-big-num">2</div>
+            <div class="proof-num-label">full-time staff</div>
           </div>
-          <div class="proof-number-div"></div>
+          <div class="proof-num-div"></div>
           <div class="proof-number-item">
-            <span class="proof-big-num">30K</span>
-            <span class="proof-num-label">sqft operation</span>
+            <div class="proof-big-num">30K</div>
+            <div class="proof-num-label">sq ft operation</div>
           </div>
         </div>
-        <blockquote class="proof-quote">"Great equipment and software for controlled environment agriculture. Grownetics has helped us build custom solutions to create a more efficient work environment."</blockquote>
-        <div class="proof-attribution">
+        <blockquote class="proof-quote">"Great equipment and software for controlled environment agriculture. Grownetics helped us build custom solutions to create a more efficient work environment."</blockquote>
+        <div class="proof-attr">
           <div class="proof-avatar">CM</div>
-          <div>
-            <div class="proof-name">Cody Monroe</div>
-            <div class="proof-company">Shift Cannabis</div>
-          </div>
+          <div><div class="proof-name">Cody Monroe</div><div class="proof-company">Shift Cannabis</div></div>
         </div>
       </div>
-
-      <!-- UC Boulder energy study -->
+      <!-- UC Boulder -->
       <div class="proof-card reveal reveal-d1">
-        <div class="proof-badge" style="color:var(--phosphor-blue); border-color:rgba(77,166,232,0.3); background:rgba(77,166,232,0.06);">Research</div>
-        <div class="proof-stat-lg">40%</div>
+        <div class="proof-badge" style="color:var(--phosphor-blue);border-color:rgba(77,166,232,0.25);background:rgba(77,166,232,0.05);">Research</div>
+        <div class="proof-stat-big">40%</div>
         <div class="proof-stat-label">Energy reduction</div>
-        <p class="proof-detail">Grownetics, Fleurish Farms, and University of Colorado Boulder. Demonstrated 40% reduction in energy vs. sole-source LED lighting through open architecture platform integration.</p>
+        <p class="proof-detail">Grownetics, Fleurish Farms + University of Colorado Boulder. 40% reduction in energy vs. sole-source LED through open architecture platform integration.</p>
       </div>
-
       <!-- The Work Cannabis -->
       <div class="proof-card reveal reveal-d2">
-        <div class="proof-badge">Enterprise</div>
-        <blockquote class="proof-quote">"We designed our R&D facility to be at the leading edge of efficiency, technology and innovation. What we were trying to do would never have been possible without the Grownetics sensing and automation platform to tie it all together."</blockquote>
-        <div class="proof-attribution">
+        <div class="proof-badge">Enterprise R&amp;D</div>
+        <blockquote class="proof-quote">"We designed our R&D facility to be at the leading edge of efficiency, technology and innovation. What we were trying to do would never have been possible without the Grownetics sensing and automation platform."</blockquote>
+        <div class="proof-attr">
           <div class="proof-avatar">ES</div>
-          <div>
-            <div class="proof-name">Eliyahu Scheiman</div>
-            <div class="proof-company">The Work Cannabis</div>
-          </div>
+          <div><div class="proof-name">Eliyahu Scheiman</div><div class="proof-company">The Work Cannabis</div></div>
         </div>
       </div>
-
       <!-- Sacramento -->
       <div class="proof-card reveal reveal-d1">
-        <div class="proof-badge" style="color:var(--sage); border-color:rgba(160,175,154,0.3); background:rgba(160,175,154,0.06);">Scale</div>
-        <div class="proof-stat-lg">250K</div>
-        <div class="proof-stat-label">Sqft, fully automated</div>
-        <p class="proof-detail">Sacramento greenhouse. Crop analytics and AI tools deployed at scale across one of the largest automated CEA facilities in the country.</p>
+        <div class="proof-badge" style="color:var(--sage);border-color:rgba(160,175,154,0.25);background:rgba(160,175,154,0.05);">Scale</div>
+        <div class="proof-stat-big">250K</div>
+        <div class="proof-stat-label">Sq ft, fully automated</div>
+        <p class="proof-detail">Sacramento greenhouse. Crop analytics and AI tools deployed across one of the largest automated CEA facilities in North America.</p>
       </div>
-
       <!-- Twin Peaks -->
       <div class="proof-card reveal reveal-d2">
-        <div class="proof-badge">Controls</div>
-        <blockquote class="proof-quote">"Their advice and depth of knowledge in controlled environment growing is really top notch. Their recommended upgrades to our existing greenhouse have been spot on and budget friendly. We'll be implementing Grownetics' systems for all our new sites."</blockquote>
-        <div class="proof-attribution">
+        <div class="proof-badge">Controls · Retrofit</div>
+        <blockquote class="proof-quote">"Their advice and depth of knowledge in CEA is really top notch. Their recommended upgrades have been spot on and budget friendly. We'll be implementing Grownetics' systems for all our new sites."</blockquote>
+        <div class="proof-attr">
           <div class="proof-avatar">PQ</div>
-          <div>
-            <div class="proof-name">Paul Quinn</div>
-            <div class="proof-company">Twin Peaks Cannabis</div>
-          </div>
+          <div><div class="proof-name">Paul Quinn</div><div class="proof-company">Twin Peaks Cannabis</div></div>
         </div>
       </div>
-
-      <!-- HiFEC / San Diego -->
+      <!-- San Diego HiFEC -->
       <div class="proof-card reveal reveal-d1">
-        <div class="proof-badge" style="color:var(--signal-amber); border-color:rgba(232,160,32,0.3); background:rgba(232,160,32,0.06);">Energy</div>
-        <div class="proof-stat-lg">~30%</div>
-        <div class="proof-stat-label">Energy reduction, San Diego</div>
-        <p class="proof-detail">Next-gen greenhouse controls deployed in San Diego. ~30% energy reduction through HiFEC predictive control algorithm on existing HVAC infrastructure — no equipment replacement required.</p>
+        <div class="proof-badge" style="color:var(--signal-amber);border-color:rgba(232,160,32,0.25);background:rgba(232,160,32,0.05);">Energy</div>
+        <div class="proof-stat-big">~30%</div>
+        <div class="proof-stat-label">Energy reduction</div>
+        <p class="proof-detail">San Diego commercial greenhouse. HiFEC predictive algorithm on existing HVAC — no equipment replacement required.</p>
       </div>
-
     </div>
 
     <!-- Client logos -->
-    <div class="client-logos reveal" style="margin-top:64px;">
-      <div class="client-logos-label">Trusted by operators across North America</div>
+    <div class="client-logos reveal" style="margin-top:3.5rem;">
+      <p class="client-logos-label">Deployed in commercial facilities</p>
       <div class="client-logos-grid">
-        <span class="client-name">Shift Cannabis</span>
-        <span class="client-name">The Work Cannabis</span>
-        <span class="client-name">Twin Peaks Cannabis</span>
-        <span class="client-name">Dalwhinnie Farms</span>
-        <span class="client-name">Fleurish Farms</span>
-        <span class="client-name">Elevated Equipment Supply</span>
-        <span class="client-name">Hydro Builder Holdings</span>
+        <span>Shift Cannabis</span>
+        <span>The Work Cannabis</span>
+        <span>Twin Peaks Cannabis</span>
+        <span>Dalwhinnie Farms</span>
+        <span>Fleurish Farms</span>
+        <span>Elevated Equipment Supply</span>
+        <span>House of Cultivars</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ════════════════════════════════════════════
-     HOW WE WORK
-════════════════════════════════════════════ -->
-<section class="section section-alt">
+<!-- ════ HOW WE WORK ════ -->
+<section class="section" style="background:var(--bg-alt);">
   <div class="container">
     <div class="section-ref reveal">
       <div class="section-ref-bar"></div>
       <span class="ref-label">§ 004 · How We Work</span>
     </div>
-    <div class="two-col" style="gap:80px; align-items:start;">
-      <div>
-        <h2 class="reveal">We start with your facility. Not a product pitch.</h2>
-        <p class="reveal" style="color:var(--text-2); margin-top:20px;">We've managed over 1 million sqft across the US, Canada, and internationally. We know what a 30,000 sqft smart farm looks like. We know what a Gen 2 facility built from tradeshow advice looks like. We'll tell you which one yours is — and exactly what to fix first.</p>
+    <div class="two-col" style="gap:64px; align-items:start;">
+      <div class="reveal">
+        <h2 style="max-width:16ch;">We start with your facility. Not a product pitch.</h2>
+        <p class="body-text" style="margin-top:1.25rem;">We've managed over 1 million sqft. We know what a 30,000 sqft smart farm looks like. We know what a Gen 2 facility built from tradeshow advice looks like. We'll tell you which one yours is — and what to unlock first.</p>
+        <a href="#contact" class="btn btn-primary" style="margin-top:1.5rem;display:inline-flex;">Book a Discovery Call →</a>
       </div>
       <div class="steps-list reveal reveal-d1">
         <div class="step-item">
           <div class="step-num">01</div>
-          <div class="step-content">
-            <div class="step-title">Facility Audit</div>
-            <p class="step-desc">We walk your facility, identify the gaps, and prioritize by impact. No sales pitch — just a clear picture of what's costing you.</p>
+          <div>
+            <div class="step-title">Discovery Session</div>
+            <p class="step-desc">We walk your facility, identify where value is hiding, and show you what to unlock first. No pitch — just a clear picture of what the data shows.</p>
           </div>
         </div>
         <div class="step-item">
           <div class="step-num">02</div>
-          <div class="step-content">
+          <div>
             <div class="step-title">Sensor Deployment</div>
             <p class="step-desc">CropVision installs in hours, not months. Zero wiring, zero configuration. Up to 2-mile wireless range.</p>
           </div>
         </div>
         <div class="step-item">
           <div class="step-num">03</div>
-          <div class="step-content">
+          <div>
             <div class="step-title">Controls Integration</div>
             <p class="step-desc">Unity connects to your existing HVAC, irrigation, and CO₂ systems. BACnet, Modbus, relay — we work with what you have.</p>
           </div>
         </div>
-        <div class="step-item" style="border-bottom:none; padding-bottom:0;">
+        <div class="step-item" style="border-bottom:none;padding-bottom:0;">
           <div class="step-num">04</div>
-          <div class="step-content">
+          <div>
             <div class="step-title">Ongoing Optimization</div>
-            <p class="step-desc">Every harvest logs to Grownetics OS. Each cycle learns from the last. Your facility gets more efficient every grow.</p>
+            <p class="step-desc">Every harvest logs to Grownetics OS. Each cycle learns from the last. Your operation gets more efficient every grow.</p>
           </div>
         </div>
       </div>
@@ -411,91 +402,69 @@
   </div>
 </section>
 
-<!-- ════════════════════════════════════════════
-     ABOUT / CREDENTIALS
-════════════════════════════════════════════ -->
+<!-- ════ ABOUT ════ -->
 <section class="section" id="about">
   <div class="container">
     <div class="section-ref reveal">
       <div class="section-ref-bar"></div>
       <span class="ref-label">§ 005 · About Grownetics</span>
     </div>
-    <div class="two-col" style="gap:80px; align-items:start;">
-      <div>
-        <h2 class="reveal">Founded 2015. Built by practitioners.</h2>
-        <p class="reveal" style="color:var(--text-2); margin-top:20px; max-width:50ch;">We started with a single conviction: sensor data correlated to crop outcomes, aggregated across farms, should be the foundation of how cultivation decisions are made. We built the sensors. Then the controls. Then we realized the industry needed a framework for using it all.</p>
-        <p class="reveal" style="color:var(--text-2); margin-top:16px; max-width:50ch;">A decade later, we've managed over 1 million sqft, contributed to USDA policy, co-authored RII best practices guides, and proven 40% energy reduction with the University of Colorado. We're still building.</p>
-
-        <div class="credentials reveal" style="margin-top:40px;">
-          <div class="credential-item">
-            <div class="cred-dot"></div>
-            <span>Resource Innovation Institute — Technical Advisory Council</span>
-          </div>
-          <div class="credential-item">
-            <div class="cred-dot"></div>
-            <span>USDA Optimia Project — Economics Committee</span>
-          </div>
-          <div class="credential-item">
-            <div class="cred-dot"></div>
-            <span>University of Colorado — Affiliated cultivation efficiency research</span>
-          </div>
-          <div class="credential-item">
-            <div class="cred-dot"></div>
-            <span>Wageningen AGC — HiFEC algorithm research partner</span>
-          </div>
-          <div class="credential-item">
-            <div class="cred-dot"></div>
-            <span>CropVision: open source on GitLab</span>
-          </div>
-        </div>
+    <div class="two-col" style="gap:64px; align-items:start;">
+      <div class="reveal">
+        <h2 style="max-width:16ch;">Founded 2015. Built by practitioners.</h2>
+        <p class="body-text" style="margin-top:1.25rem;max-width:50ch;">We started with one conviction: sensor data correlated to crop outcomes, aggregated across farms, should be the foundation of how cultivation decisions are made. We built the sensors. Then the controls. Then we realized the industry needed a framework for using it all.</p>
+        <p class="body-text" style="margin-top:1rem;max-width:50ch;">A decade later, we've managed over 1 million sqft, contributed to USDA policy, co-authored RII best practices guides, and proven 40% energy reduction with the University of Colorado.</p>
+        <ul class="credential-list" style="margin-top:1.75rem;">
+          <li>Resource Innovation Institute — Technical Advisory Council</li>
+          <li>USDA Optimia Project — Economics Committee</li>
+          <li>University of Colorado — Affiliated cultivation efficiency research</li>
+          <li>Wageningen AGC — HiFEC algorithm research partner</li>
+          <li>CropVision: open source on GitLab</li>
+        </ul>
       </div>
-      <div>
-        <div class="team-grid reveal reveal-d1">
-          <div class="team-card">
-            <div class="team-avatar">VH</div>
-            <div class="team-name">Vince Harkiewicz</div>
-            <div class="team-role">Co-Founder, CEO</div>
-            <p class="team-bio">Six Sigma. USDA Optimia. RII TAC. Colorado.</p>
-          </div>
-          <div class="team-card">
-            <div class="team-avatar">JL</div>
-            <div class="team-name">J.R. Loza</div>
-            <div class="team-role">US Consulting Lead</div>
-            <p class="team-bio">20+ years California and Israeli agronomy.</p>
-          </div>
-          <div class="team-card">
-            <div class="team-avatar" style="background:linear-gradient(135deg,rgba(82,230,25,0.15),rgba(77,166,232,0.15))">AF</div>
-            <div class="team-name">Atiyyah Ferouz, PMP</div>
-            <div class="team-role">International Consulting</div>
-            <p class="team-bio">GMP/GAP expert. 1.3M sqft greenhouse.</p>
-          </div>
-          <div class="team-card">
-            <div class="team-avatar" style="background:linear-gradient(135deg,rgba(232,160,32,0.15),rgba(196,101,74,0.15))">AK</div>
-            <div class="team-name">Dr. Aimon Kopera</div>
-            <div class="team-role">Product Formulation</div>
-            <p class="team-bio">M.D. Ethnobotanist. UN experience.</p>
-          </div>
+      <div class="team-grid reveal reveal-d1">
+        <div class="team-card">
+          <div class="team-avatar">VH</div>
+          <div class="team-name">Vince Harkiewicz</div>
+          <div class="team-role">Co-Founder, CEO</div>
+          <p class="team-bio">Six Sigma. USDA Optimia. RII TAC. Colorado.</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">JL</div>
+          <div class="team-name">J.R. Loza</div>
+          <div class="team-role">US Consulting Lead</div>
+          <p class="team-bio">20+ years CA and Israeli agronomy. Co-author of <em>Rule of 10s</em> — the first comprehensive benchmarking framework for CEA operations.</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar" style="background:linear-gradient(135deg,rgba(82,230,25,0.12),rgba(77,166,232,0.12))">AF</div>
+          <div class="team-name">Atiyyah Ferouz, PMP</div>
+          <div class="team-role">International Consulting</div>
+          <p class="team-bio">GMP/GAP expert. 1.3M sqft greenhouse experience.</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar" style="background:linear-gradient(135deg,rgba(232,160,32,0.12),rgba(196,101,74,0.12))">AK</div>
+          <div class="team-name">Dr. Aimon Kopera</div>
+          <div class="team-role">Product Formulation</div>
+          <p class="team-bio">M.D. Ethnobotanist. UN experience.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ════════════════════════════════════════════
-     CTA
-════════════════════════════════════════════ -->
+<!-- ════ CTA / CONTACT ════ -->
 <section class="section-cta" id="contact">
-  <div class="cta-grid"></div>
-  <div class="cta-glow"></div>
+  <div class="cta-bg-grid"></div>
+  <div class="cta-bg-glow"></div>
   <div class="container cta-inner">
-    <div class="section-ref section-ref-instrument reveal" style="justify-content:center; margin-bottom:32px;">
-      <div class="section-ref-bar"></div>
-      <span class="ref-label">§ 006 · Get Started</span>
+    <div class="section-ref section-ref-instrument reveal" style="justify-content:center;margin-bottom:2rem;">
+      <div class="section-ref-bar" style="background:var(--instrument-green);"></div>
+      <span class="ref-label" style="color:var(--instrument-green);">§ 006 · Start Here</span>
     </div>
-    <h2 class="reveal" style="color:#E9E8EE; font-size:clamp(2rem,4vw,3.5rem); text-align:center; max-width:20ch; margin:0 auto 20px;">
-      See what your current system is missing.
+    <h2 class="reveal" style="color:#E9E8EE;text-align:center;font-size:clamp(2rem,4vw,3.25rem);max-width:22ch;margin:0 auto 1.25rem;">
+      See the gaps your current system can't show you.
     </h2>
-    <p class="reveal reveal-d1" style="color:rgba(196,217,200,0.55); text-align:center; max-width:52ch; margin:0 auto 40px; font-size:1.05rem;">
+    <p class="reveal reveal-d1" style="color:rgba(196,217,200,0.55);text-align:center;max-width:50ch;margin:0 auto 2.5rem;font-size:1.05rem;">
       Request a 30-minute demo. We'll show you a live facility mapped in real time — and tell you exactly where the gaps are in your current setup.
     </p>
 
@@ -503,11 +472,11 @@
       <div class="form-row">
         <div class="form-group">
           <label class="form-label" for="fname">First Name</label>
-          <input type="text" id="fname" class="form-input" placeholder="First name" />
+          <input type="text" id="fname" class="form-input" placeholder="First" />
         </div>
         <div class="form-group">
           <label class="form-label" for="lname">Last Name</label>
-          <input type="text" id="lname" class="form-input" placeholder="Last name" />
+          <input type="text" id="lname" class="form-input" placeholder="Last" />
         </div>
       </div>
       <div class="form-group">
@@ -521,7 +490,7 @@
       <div class="form-group">
         <label class="form-label" for="system">Current Control System</label>
         <select id="system" class="form-input">
-          <option value="">Select current system…</option>
+          <option value="">Select…</option>
           <option>Trolmaster</option>
           <option>Argus</option>
           <option>Growlink</option>
@@ -541,39 +510,37 @@
 
     <div class="form-success" id="form-success" style="display:none;">
       <div class="success-icon">✓</div>
-      <h3 style="color:#E9E8EE; margin-bottom:8px;">We got it.</h3>
+      <h3 style="color:#E9E8EE;margin-bottom:0.5rem;">We got it.</h3>
       <p style="color:rgba(196,217,200,0.55);">We'll be in touch within 1 business day to schedule your demo.</p>
     </div>
   </div>
 </section>
 
-<!-- ════════════════════════════════════════════
-     FOOTER
-════════════════════════════════════════════ -->
+<!-- ════ FOOTER ════ -->
 <footer class="site-footer">
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <span class="nav-wordmark" style="font-size:1.25rem; color:white;">Grownetics</span>
-        <p class="footer-tagline">Precision cultivation intelligence.<br/>Built by growers, for growers. Since 2015.</p>
+        <img src="images/logo-dark.png" alt="Grownetics" style="height:32px;width:auto;opacity:0.7;margin-bottom:1rem;" onerror="this.style.display='none'" />
+        <p class="footer-tagline">Precision cultivation technology.<br/>Built by growers, for growers. Since 2015.</p>
         <a href="https://gitlab.com/grownetics" target="_blank" rel="noopener" class="oss-badge">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22.65 14.39L12 22.13 1.35 14.39a.84.84 0 01-.3-.94l1.22-3.78 2.44-7.51A.42.42 0 014.82 2a.43.43 0 01.58 0 .42.42 0 01.11.18l2.44 7.49h8.1l2.44-7.51A.42.42 0 0118.6 2a.43.43 0 01.58 0 .42.42 0 01.11.18l2.44 7.51L23 13.45a.84.84 0 01-.35.94z"/></svg>
           CropVision is open source · GitLab
         </a>
       </div>
-      <div class="footer-links-col">
+      <div class="footer-col">
         <div class="footer-col-head">Products</div>
-        <a href="#products" class="footer-link">CropVision Sensors</a>
+        <a href="#products" class="footer-link">CropVision</a>
         <a href="#products" class="footer-link">Unity Controls</a>
         <a href="#products" class="footer-link">Grownetics OS</a>
       </div>
-      <div class="footer-links-col">
+      <div class="footer-col">
         <div class="footer-col-head">Company</div>
         <a href="#about" class="footer-link">About</a>
         <a href="#proof" class="footer-link">Results</a>
         <a href="#problems" class="footer-link">Why It Matters</a>
       </div>
-      <div class="footer-links-col">
+      <div class="footer-col">
         <div class="footer-col-head">Contact</div>
         <a href="#contact" class="footer-link">Request Demo</a>
         <a href="https://linkedin.com/company/grownetics" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
