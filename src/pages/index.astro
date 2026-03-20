@@ -47,10 +47,7 @@ import CTASection from '../components/CTASection.astro';
         </p>
 
         <p class="text-lg text-ink-3 leading-relaxed mb-10 max-w-xl">
-          Most CEA technology was built to watch your grow. Grownetics was built to run it.
-          High-resolution monitoring, precision automation, facility design, and expert
-          consulting, fully integrated, commercially proven, designed for operators who
-          can't afford to guess.
+          Most facilities run on two sensor readings a day, reactive controls, and one grower's intuition. Grownetics replaces all three.
         </p>
 
         <div class="flex flex-wrap gap-4">
@@ -108,19 +105,19 @@ import CTASection from '../components/CTASection.astro';
           <div class="card p-6" style="border-left: 3px solid var(--terracotta)">
             <h3 class="font-display font-semibold text-sm text-ink mb-2">Blind Spots</h3>
             <p class="text-xs text-ink-3 leading-relaxed">
-              You have sensors. But do you have a 3D picture of every zone? Temperature at canopy isn't temperature at substrate. The gap between your readings and reality is costing you yield.
+              You have sensors. But do you have a 3D picture of every zone? Temperature at canopy isn't temperature at substrate. The gap between your readings and reality is costing you yield — that's 80% of your environmental variability, and every point of it shows up in your harvest.
             </p>
           </div>
           <div class="card p-6" style="border-left: 3px solid var(--terracotta)">
             <h3 class="font-display font-semibold text-sm text-ink mb-2">Reactive Control</h3>
             <p class="text-xs text-ink-3 leading-relaxed">
-              If your climate control is reacting to problems, it's already too late. By the time a thermostat catches a VPD excursion, your plants have been stressed for hours. Every reaction is a recovery.
+              If your climate control is reacting to problems, it's already too late. By the time a thermostat catches a VPD excursion, your plants have been stressed for hours. Reactive systems waste 20–30% more energy than predictive ones. Every month.
             </p>
           </div>
           <div class="card p-6" style="border-left: 3px solid var(--terracotta)">
             <h3 class="font-display font-semibold text-sm text-ink mb-2">Institutional Knowledge</h3>
             <p class="text-xs text-ink-3 leading-relaxed">
-              Your best grower knows things your systems don't. When they leave, that knowledge goes with them. The operation runs on tribal wisdom instead of documented precision.
+              Your best grower knows things your systems don't. When they leave, that knowledge goes with them. One resignation costs you years of institutional knowledge and months of recovery time.
             </p>
           </div>
         </div>
@@ -128,6 +125,53 @@ import CTASection from '../components/CTASection.astro';
     </div>
   </section>
 
+
+  <!-- ═══════════════════════════════════════════════════════
+       SECONDARY LEAD CAPTURE — lower commitment than demo
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="section-surface py-12 border-y" style="border-color: var(--border-light);" aria-label="Get the guide">
+    <div class="container">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <div class="font-mono text-xs tracking-widest uppercase mb-2" style="color: var(--gold)">Free Resource</div>
+          <h3 class="font-display font-semibold text-xl text-ink mb-1">The 5 Foundational Problems in CEA</h3>
+          <p class="text-sm text-ink-3 max-w-md">The complete breakdown — with cost impact, root cause, and what changes when each one is solved. No demo required.</p>
+        </div>
+        <form class="flex gap-3 flex-shrink-0 w-full md:w-auto" id="guide-form" onsubmit="handleGuideSubmit(event)">
+          <input
+            type="email"
+            placeholder="your@email.com"
+            required
+            class="px-4 py-2.5 rounded border text-sm font-body flex-1 md:w-64 outline-none transition-all"
+            style="border-color: var(--border); background: white; color: var(--ink);"
+            onfocus="this.style.borderColor='var(--green)'"
+            onblur="this.style.borderColor='var(--border)'"
+            id="guide-email"
+          />
+          <button type="submit" class="btn btn-outline text-sm py-2.5 px-5 whitespace-nowrap">
+            Get the Guide →
+          </button>
+        </form>
+        <div id="guide-success" style="display:none;" class="text-sm font-mono" style="color: var(--green);">
+          ✓ On its way to your inbox.
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    function handleGuideSubmit(e) {
+      e.preventDefault();
+      const email = document.getElementById('guide-email').value;
+      // Mautic form — update formId to actual guide form
+      fetch('https://go.growneticsos.com/form/submit?formId=2', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
+        body: JSON.stringify({ mauticform: { email, source: '5-problems-guide' } })
+      }).catch(() => {});
+      document.getElementById('guide-form').style.display = 'none';
+      document.getElementById('guide-success').style.display = 'block';
+    }
+  </script>
 
   <!-- ═══════════════════════════════════════════════════════
        § 002 - THE STACK
@@ -364,7 +408,7 @@ import CTASection from '../components/CTASection.astro';
         class="font-display font-bold mb-5"
         style="font-size: clamp(2rem, 4.5vw, 3rem); color: #E9E8EE; line-height: 1.15;"
       >
-        Your operation can perform better<br />than it does today.
+        See the gaps your current<br />system can't show you.
       </h2>
       <p class="text-base mb-10" style="color: rgba(151,153,166,0.85); max-width: 46ch; margin-inline: auto; line-height: 1.65;">
         Start with a free one-hour discovery call. No pitch deck. Just your operation and ours.
