@@ -2,7 +2,12 @@
 
 /* ── Scroll nav ── */
 const nav = document.getElementById('top-nav');
-const onScroll = () => nav?.classList.toggle('scrolled', window.scrollY > 24);
+const logoImg = document.getElementById('nav-logo-img');
+const onScroll = () => {
+  const scrolled = window.scrollY > 24;
+  nav?.classList.toggle('scrolled', scrolled);
+  if (logoImg) logoImg.src = scrolled ? 'images/logo-black.png' : 'images/logo-white.png';
+};
 window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
 
