@@ -680,3 +680,15 @@ p { max-width: 68ch; }
   .lead-capture-row { flex-direction:column; align-items:flex-start; }
   .lead-form { max-width:100%; }
 }
+
+/* ── Mobile nav — logo + bar sizing fix ── */
+.nav-logo-img {
+  height: 36px;
+  width: auto;
+  display: block;
+}
+@media (max-width: 768px) {
+  :root { --nav-h: 52px; }
+  .nav-logo-img { height: 24px; }
+  .nav-inner { padding-inline: 1.25rem; }
+}
