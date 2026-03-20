@@ -1,25 +1,20 @@
 /* ─── Grownetics Website — main.js ─── */
 
-/* ── Scroll nav: transparent over hero → solid on scroll ── */
+/* ── Nav: solid parchment bg always. No logo swap. ── */
 const nav = document.getElementById('top-nav');
-const logoImg = document.getElementById('nav-logo-img');
 
-const onScroll = () => {
-  const scrolled = window.scrollY > 80;
-  if (scrolled) {
-    nav?.classList.add('scrolled');
-    if (logoImg) logoImg.src = logoImg.dataset.light || logoImg.src;
-  } else {
-    nav?.classList.remove('scrolled');
-    if (logoImg) logoImg.src = logoImg.dataset.dark || logoImg.src;
-  }
-};
+// Force solid immediately — nav is always light bg, dark logo
+nav?.classList.remove('nav-dark');
+nav?.classList.add('nav-light', 'scrolled');
+
+// Keep scrolled class (shadow) when user scrolls past 20px
+const onScroll = () => nav?.classList.toggle('scrolled', window.scrollY > 20);
 window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
 
 /* ── Mobile menu ── */
-const hamburger  = document.getElementById('nav-hamburger');
-const mobileMenu = document.getElementById('mobile-menu');
+const hamburger   = document.getElementById('nav-hamburger');
+const mobileMenu  = document.getElementById('mobile-menu');
 const mobileClose = document.getElementById('mobile-close');
 
 hamburger?.addEventListener('click', () => mobileMenu?.classList.add('open'));
@@ -34,7 +29,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     const target = document.querySelector(a.getAttribute('href'));
     if (!target) return;
     e.preventDefault();
-    const offset = 68;
+    const offset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 68;
     window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - offset - 16, behavior: 'smooth' });
     mobileMenu?.classList.remove('open');
   });
@@ -49,7 +44,7 @@ const revealObserver = new IntersectionObserver(
 );
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-/* ── Guide form (secondary lead capture) ── */
+/* ── Guide form ── */
 document.getElementById('guide-form')?.addEventListener('submit', function(e) {
   e.preventDefault();
   const email = document.getElementById('guide-email')?.value?.trim();
