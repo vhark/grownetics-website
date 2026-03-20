@@ -12,7 +12,7 @@ const currentPath = Astro.url.pathname;
 
 <nav
   id="main-nav"
-  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 nav-solid"
   aria-label="Main navigation"
 >
   <div class="container">
@@ -129,7 +129,12 @@ const currentPath = Astro.url.pathname;
 </script>
 
 <style>
+  /* Solid from the start — no invisible-nav-on-load bug */
   nav {
-    background: transparent;
+    background: rgba(243, 240, 237, 0.97);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border-light, #E9E8EE);
+    box-shadow: 0 1px 12px rgba(43, 44, 46, 0.05);
   }
 </style>
